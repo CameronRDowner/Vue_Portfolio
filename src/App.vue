@@ -31,10 +31,19 @@ p, h1, h2, h3, h4, h5{
 	font-weight: 300;
   line-height: 1;
 }
+h1{
+    font-size: 2em;
+  }
 body{
   margin: 0;
+  background-color: #f8f9fa;
 }
 html{
   font-size: 16px;
 }
+hr{
+  max-width: 30%;
+  background-color: #e6e6e6; height: 1px; border: 0;
+}
+
 </style>

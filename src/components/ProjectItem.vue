@@ -1,7 +1,8 @@
 <template lang="html">
 
-  <section id="project-item">
+  <section class="project-item-wrapper">
     <h2>{{project.name}}</h2>
+    <img src="" >
   </section>
 
 </template>
@@ -31,7 +32,7 @@
 </script>
 
 <style scoped lang="scss">
-  #project-item {
-
+  .project-item-wrapper {
+    margin: 1em;
   }
 </style>

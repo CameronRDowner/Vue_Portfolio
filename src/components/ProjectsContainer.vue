@@ -1,12 +1,7 @@
 <template lang="html">
-
-  <section id="projects-container">
-    <h1>My Projects</h1>
-    <div v-bind:key="project.id" v-for="project in projectList">
-      <ProjectItem v-bind:project="project"></ProjectItem>
+    <div id="projects-container">
+      <ProjectItem v-bind:key="project.id" v-for="project in projectList" :project="project"></ProjectItem>
     </div>
-  </section>
-
 </template>
 
 <script lang="js">
@@ -16,13 +11,38 @@
     components: {
       ProjectItem
     },
-    props: ["projectList"],
+    props: [],
     mounted () {
 
     },
     data () {
       return {
-
+        projectList: [
+          {
+            id: 1,
+            name: "Project1",
+            screenshotPath: "",
+            description: "Lorem Ipsum Dolor. . . . . . . ."
+          }, 
+          {
+            id: 2,
+            name: "Project2",
+            screenshotPath: "",
+            description: "Lorem Ipsum Dolor. . . . . . . ."
+          },
+          {
+            id: 3,
+            name: "Project3",
+            screenshotPath: "",
+            description: "Lorem Ipsum Dolor. . . . . . . ."
+          },
+          {
+            id: 4,
+            name: "Project4",
+            screenshotPath: "",
+            description: "Lorem Ipsum Dolor. . . . . . . ."
+          }
+        ]
       }
     },
     methods: {
@@ -37,10 +57,13 @@
 </script>
 
 <style scoped lang="scss">
-#projects-container{
-  padding-top: 6rem;
-  h1{
-    font-size: 2em;
-  }
+  #projects-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
 }
+
 </style>

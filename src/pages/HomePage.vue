@@ -1,20 +1,23 @@
 <template lang="html">
 
   <div id="home-page">
-    <Header></Header>
-    <ProjectsContainer v-bind:projectList = "projectList"></ProjectsContainer>
+    <Header/>
+    <ProjectsSection/>
+    <TechnologiesSection/> 
   </div>
 
 </template>
 
 <script lang="js">
   import Header from "../components/Header.vue"
-  import ProjectsContainer from "../components/ProjectsContainer.vue"
+  import ProjectsSection from "../components/ProjectsSection.vue"
+  import TechnologiesSection from "../components/TechnologiesSection.vue"
   export default  {
     name: 'HomePage',
     components: {
       Header,
-      ProjectsContainer
+      ProjectsSection,
+      TechnologiesSection
     },
     props: [],
     mounted () {
@@ -22,20 +25,7 @@
     },
     data () {
       return {
-        projectList: [
-          {
-            id: 1,
-            name: "Project1"
-          }, 
-          {
-            id: 2,
-            name: "Project2"
-          },
-          {
-            id: 3,
-            name: "Project3"
-          }
-        ]
+        
       }
     },
     methods: {
@@ -54,5 +44,8 @@
     width: 100%;
     height: 100%;
     margin: 0;
+  }
+  #technologies-wrapper{
+    width: 100%;
   }
 </style>
