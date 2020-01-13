@@ -3,7 +3,7 @@
   <header>
     <div class="banner">
       <div class="floating-box">
-        <img src="../assets/images/profile.png">
+        <img src="../assets/images/profile.png" alt="profile picture">
         <h1>Cameron Downer</h1>
         <h2>Software Engineer</h2>
         <div id="header-buttons-container">
@@ -71,6 +71,7 @@
       h2{
         font-size: 1.5em;
         margin: 0.25em 0;
+        color:#4A4E69;
       }
       
     }

@@ -27,7 +27,6 @@ export default {
   color: #2c3e50;
 }
 p, h1, h2, h3, h4, h5{
-	color:#4A4E69;
 	font-weight: 300;
   line-height: 1;
 }
@@ -44,6 +43,10 @@ html{
 hr{
   max-width: 30%;
   background-color: #e6e6e6; height: 1px; border: 0;
+}
+ul{
+  list-style: none;
+  padding-left: 0;
 }
 
 </style>

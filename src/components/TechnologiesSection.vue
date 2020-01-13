@@ -8,6 +8,7 @@
      <TechnologiesContainer v-bind:technologyData="javascriptFrameworkData"/>
      <TechnologiesContainer v-bind:technologyData="libraryData"/>
     </div>
+    <hr>
   </section>
 
 </template>
@@ -124,14 +125,20 @@
 <style scoped lang="scss">
   #technologies {
     width: 100%;
+
+    hr{
+      margin-top: 3em;
+    }
   }
   #technologies-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     background-color: 	white;
-    box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.18);
+    padding: 3em
   }
+
 </style>

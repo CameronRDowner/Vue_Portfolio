@@ -1,6 +1,6 @@
 <template lang="html">
 <div>
-  <h4>{{technologyData.name}}</h4>
+  <h3>{{technologyData.name}}</h3>
   <ul class="technologies-container">
     <Technology v-bind:key="technology.id" v-for="technology in technologyData.technologyList" :technology="technology"></Technology>
   </ul>
@@ -40,12 +40,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 11em;
   }
-  h4{
-    margin-bottom: 0.3em;
+  h3{
+    font-weight: 500;
+    margin: 0 0 0.6em 0;
   }
   
 </style>

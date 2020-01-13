@@ -2,7 +2,7 @@
 
   <li class="technology-item">
     <i :class="technology.deviconClasses"></i>
-    <h5>{{technology.name}}</h5>
+    <h4>{{technology.name}}</h4>
   </li>
 
 </template>
@@ -33,15 +33,16 @@
 
 <style scoped lang="scss">
   .technology-item {
-    margin: 0.5em;
+    margin: 0.25em;
     i{
-      font-size: 2.5em;
+      font-size: 4em;
       margin-bottom: 4em;
     }
-    h5{
-      border-top: solid 1px #e6e6e6;
+    h4{
       padding-top: 0.25em;
       margin-top: 0.25em;
+      margin-bottom: 0;
+      color:#4A4E69;
     }
   }
 </style>

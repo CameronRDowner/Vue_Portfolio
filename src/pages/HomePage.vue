@@ -4,6 +4,7 @@
     <Header/>
     <ProjectsSection/>
     <TechnologiesSection/> 
+    <EducationSection/>
   </div>
 
 </template>
@@ -12,12 +13,14 @@
   import Header from "../components/Header.vue"
   import ProjectsSection from "../components/ProjectsSection.vue"
   import TechnologiesSection from "../components/TechnologiesSection.vue"
+  import EducationSection from "../components/EducationSection.vue"
   export default  {
     name: 'HomePage',
     components: {
       Header,
       ProjectsSection,
-      TechnologiesSection
+      TechnologiesSection,
+      EducationSection
     },
     props: [],
     mounted () {
