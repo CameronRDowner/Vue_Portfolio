@@ -1,7 +1,7 @@
 <template lang="html">
 
   <li class="certification-item">
-    <img v-bind:src="certification.logoPath" alt="certification logo">
+    <img :src="require(`@/assets/images/certification_logos/${certification.logoName}`)" alt="certification logo">
     <div class="certification-item-text-container">
       <h4>{{certification.name}}</h4>
       <h4>{{certification.vendorName}}</h4>
@@ -36,6 +36,17 @@
 
 <style scoped lang="scss">
   .certification-item {
+    width: 15em;
+    height: 5em;
+    margin: 0.1em;
+    padding: 0.25em;
+
+
+    img{
+      max-width: 5em;
+      display: inline-block;
+      margin-right: 0.25em;
+    }
     h4{
       margin: 0.3em;
       &:first-child{
@@ -44,6 +55,10 @@
     }
   }
   .certification-item-text-container{
-    
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    height: 100%;
   }
 </style>

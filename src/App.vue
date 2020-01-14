@@ -48,5 +48,12 @@ ul{
   list-style: none;
   padding-left: 0;
 }
+.floating-box{
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
+    padding: 40px;
+    background-color: white;
+  }
 
 </style>
