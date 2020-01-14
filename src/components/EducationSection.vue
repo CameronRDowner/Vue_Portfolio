@@ -41,7 +41,7 @@
 
 <style scoped lang="scss">
   #education {
-    padding-bottom: 3em;
+    padding-bottom: 7em;
   }
   #education-containers-wrapper{
     display: flex;
