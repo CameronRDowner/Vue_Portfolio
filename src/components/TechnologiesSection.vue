@@ -27,7 +27,7 @@
     data () {
       return {
         backEndTechnologyData: {
-          name: "Back End",
+          headerTitle: "Back End",
           technologyList: [
           {
             id: 1,
@@ -54,7 +54,7 @@
 
         },
         frontEndTechnologyData:{
-          name: "Front End",
+          headerTitle: "Front End",
           technologyList: [
           {
             id: 1,
@@ -80,7 +80,7 @@
         ]
         },
         javascriptFrameworkData: {
-          name: "Javascript Frameworks",
+          headerTitle: "Frameworks",
           technologyList: [
           {
             id: 1,
@@ -95,7 +95,7 @@
         ]
         },
         libraryData: {
-          name: "Other Libraries",
+          headerTitle: "Libraries",
           technologyList: [
           {
             id: 1,

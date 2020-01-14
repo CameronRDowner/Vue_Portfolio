@@ -85,7 +85,7 @@
 
 <style scoped lang="scss">
  #certifications-wrapper{
-    width: 32em;
+    width: 33em;
     h2{
       font-weight: 500;
     }

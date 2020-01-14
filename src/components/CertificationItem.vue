@@ -38,7 +38,7 @@
   .certification-item {
     width: 15em;
     height: 5em;
-    margin: 0.1em;
+    margin: 0.3em 0 0.9em 0;
     padding: 0.25em;
 
 

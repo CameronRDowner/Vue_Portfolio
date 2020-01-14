@@ -1,6 +1,6 @@
 <template lang="html">
 <div>
-  <h3>{{technologyData.name}}</h3>
+  <h3>{{technologyData.headerTitle}}</h3>
   <ul class="technologies-container">
     <Technology v-bind:key="technology.id" v-for="technology in technologyData.technologyList" :technology="technology"></Technology>
   </ul>

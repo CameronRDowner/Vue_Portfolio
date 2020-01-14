@@ -56,6 +56,7 @@
     transition: background-position 1s;
     margin: 0 0.5em;
     text-decoration: none;
+    border-radius: 5%;
     &:hover{
       background-position: 0 -100%;
     }
