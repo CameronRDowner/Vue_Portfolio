@@ -33,7 +33,7 @@
 
     },
     computed: {
-
+      
     }
 }
 
@@ -47,7 +47,7 @@
     background-color: gray;
     .floating-box{
       font-size: 1rem;
-      bottom: 8em;
+      bottom: 2em;
       left: 0;
       right: 0;
       margin-left: auto;

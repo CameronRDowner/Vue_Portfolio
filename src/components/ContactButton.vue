@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="contact-button">
-    <a :href="contactButton.hyperlinkUrl" target="_blank" >
-      <i :class="contactButton.iconClasses"></i>
+    <a :style="buttonColorVariables" :href="contactButton.hyperlinkUrl" target="_blank" >
+      <i :style="{ color: contactButton.iconColor }" :class="contactButton.iconClasses"></i>
       </a>
   </div>
   
@@ -18,14 +18,19 @@
     },
     data () {
       return {
-
+        
       }
     },
     methods: {
 
     },
     computed: {
-
+      buttonColorVariables(){
+        return {
+          '--button-color': this.contactButton.buttonColor,
+          '--button-hover-color' : this.contactButton.buttonHoverColor
+        }
+      }
     }
 }
 
@@ -35,14 +40,25 @@
 <style scoped lang="scss">
 .contact-button{
   i{
-      font-size: 4em;
+      font-size: 2.2em;
       text-align: center;
     }
   a{
-    display: inline-block;
-    height: 5em;
-    width: 5em;
-    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5em;
+    width: 5.5em;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, var(--button-color) 50%, var(--button-hover-color) 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    margin: 0 0.5em;
+    text-decoration: none;
+    &:hover{
+      background-position: 0 -100%;
+    }
   }
 }
   

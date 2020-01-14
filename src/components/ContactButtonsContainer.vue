@@ -25,21 +25,24 @@
             hyperlinkUrl : "",
             iconClasses: "far fa-envelope",
             iconColor: "white",
-            buttonColor: "#FFBF00"
+            buttonColor: "#FFBF00",
+            buttonHoverColor: "#ffc826"
           },
           {
             id: 2,
             hyperlinkUrl : "https://github.com/CameronRDowner",
             iconClasses: "fab fa-github",
             iconColor: "white",
-            buttonColor: "#212529"
+            buttonColor: "#212529",
+            buttonHoverColor: "#3e464d"
           },
           { 
             id: 3,
             hyperlinkUrl : "www.linkedin.com/in/cameron-downer-392863173",
-            iconClasses: "fab fa-linkedin",
+            iconClasses: "fab fa-linkedin-in",
             iconColor: "white",
-            buttonColor: "#0077b5"
+            buttonColor: "#0077b5",
+            buttonHoverColor: "#0097e6"
           },
         ]
       }
@@ -64,11 +67,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1em 0 0 0;
-    a{
-      margin: 0 0.5em;
-      border: solid 1px black;
-      background-color: #FFBF00
-    }
+    margin: 1.75em 0 0 0;
   }
 </style>
