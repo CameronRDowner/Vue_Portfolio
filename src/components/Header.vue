@@ -6,7 +6,9 @@
         <img src="../assets/images/profile.png" alt="profile picture">
         <h1>Cameron Downer</h1>
         <h2>Software Engineer</h2>
-        <ContactButtonsContainer/>
+        <div class="flex-container-row contact-buttons-container" >
+          <IconButton v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+        </div>
       </div>
     </div>
     </header>
@@ -14,11 +16,11 @@
 </template>
 
 <script lang="js">
-  import ContactButtonsContainer from "./ContactButtonsContainer.vue"
+  import IconButton from "./IconButton.vue"
   export default  {
     name: 'Header',
     components: {
-      ContactButtonsContainer
+      IconButton
     },
     props: [],
     mounted () {
@@ -26,7 +28,32 @@
     },
     data () {
       return {
-
+        contactButtonsList: [
+          {
+            id: 1,
+            hyperlinkUrl : "",
+            iconClasses: "far fa-envelope",
+            iconColor: "white",
+            buttonColor: "#FFBF00",
+            iconSize: "2rem"
+          },
+          {
+            id: 2,
+            hyperlinkUrl : "https://github.com/CameronRDowner",
+            iconClasses: "fab fa-github",
+            iconColor: "white",
+            buttonColor: "#212529",
+            iconSize: "2rem"
+          },
+          { 
+            id: 3,
+            hyperlinkUrl : "www.linkedin.com/in/cameron-downer-392863173",
+            iconClasses: "fab fa-linkedin-in",
+            iconColor: "white",
+            buttonColor: "#0077b5",
+            iconSize: "2rem"
+          }
+        ]
       }
     },
     methods: {
@@ -72,17 +99,10 @@
         margin: 0.25em 0;
         color:#4A4E69;
       }
+      .contact-buttons-container{
+      margin-top: 1.5rem;
+      }
     }
     
-  }
-
-  .fa-icon{
-    font-size: 4em;
-  }
-  #header-buttons-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 2em;
   }
 </style>

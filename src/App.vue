@@ -55,5 +55,21 @@ ul{
     padding: 40px;
     background-color: white;
   }
-
+.flex-container-row{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-container-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-buttons-container{
+    margin-top: 1.5rem;
+  }
 </style>

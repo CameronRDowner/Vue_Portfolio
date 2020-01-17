@@ -3,8 +3,10 @@
   <footer>
     <div class="floating-box">
       <h3>Thanks for checking out my portfolio!</h3>
-      <p>Feel free to reach out to me at any of my below handles</p>
-      <ContactButtonsContainer/>
+      <p>You can reach out to me via any of my handles</p>
+      <div class="flex-container-row contact-buttons-container" >
+          <IconButton v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+      </div>
       <div>
 
       </div>
@@ -14,11 +16,11 @@
 </template>
 
 <script lang="js">
-  import ContactButtonsContainer from "./ContactButtonsContainer.vue"
+  import IconButton from "./IconButton.vue"
   export default  {
     name: 'footer',
     components: {
-      ContactButtonsContainer
+      IconButton
     },
     props: [],
     mounted () {
@@ -26,7 +28,32 @@
     },
     data () {
       return {
-
+      contactButtonsList: [
+          {
+            id: 1,
+            hyperlinkUrl : "",
+            iconClasses: "far fa-envelope",
+            iconColor: "white",
+            buttonColor: "#FFBF00",
+            iconSize: "2rem"
+          },
+          {
+            id: 2,
+            hyperlinkUrl : "https://github.com/CameronRDowner",
+            iconClasses: "fab fa-github",
+            iconColor: "white",
+            buttonColor: "#212529",
+            iconSize: "2rem"
+          },
+          { 
+            id: 3,
+            hyperlinkUrl : "www.linkedin.com/in/cameron-downer-392863173",
+            iconClasses: "fab fa-linkedin-in",
+            iconColor: "white",
+            buttonColor: "#0077b5",
+            iconSize: "2rem"
+          }
+        ]
       }
     },
     methods: {
@@ -47,7 +74,7 @@
     background-color: gray;
     .floating-box{
       font-size: 1rem;
-      bottom: 2em;
+      bottom: 4em;
       left: 0;
       right: 0;
       margin-left: auto;

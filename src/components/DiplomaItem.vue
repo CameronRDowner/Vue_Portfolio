@@ -2,9 +2,9 @@
 
   <li class="diploma-item">
     <img :src="require(`@/assets/images/school_logos/${diploma.schoolLogoName}`)" alt="school logo">
-    <h2>{{diploma.name}}</h2>
-    <i><h3>{{diploma.accolade}}</h3></i>
-    <h3>{{diploma.graduationDate}}</h3>
+    <h3>{{diploma.name}}</h3>
+    <i><h4>{{diploma.accolade}}</h4></i>
+    <h4>{{diploma.graduationDate}}</h4>
   </li>
 
 </template>
@@ -37,12 +37,12 @@
   .diploma-item {
     margin: 2em auto;
     img{
-      width: 19em;
+      width: 17em;
     }
-    h2{
+    h3{
       font-weight: 500;
     }
-    h2, h3 {
+    h3, h4 {
       margin: 0.3em auto;
     }
   }

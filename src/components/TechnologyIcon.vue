@@ -1,8 +1,8 @@
 <template lang="html">
 
-  <li class="technology-item">
+  <li class="technology-icon">
     <i :class="technology.deviconClasses"></i>
-    <h4>{{technology.name}}</h4>
+    <h4 v-if="technology.name.length !== 0">{{technology.name}}</h4>
   </li>
 
 </template>
@@ -10,7 +10,7 @@
 <script lang="js">
 
   export default  {
-    name: 'technology-item',
+    name: 'technology-icon',
     props: ["technology"],
     mounted () {
 
@@ -32,7 +32,7 @@
 </script>
 
 <style scoped lang="scss">
-  .technology-item {
+  .technology-icon {
     margin: 0.25em;
     i{
       font-size: 4em;
