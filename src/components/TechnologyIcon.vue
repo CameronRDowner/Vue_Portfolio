@@ -2,7 +2,7 @@
 
   <li class="technology-icon">
     <i :class="technology.deviconClasses"></i>
-    <h4 v-if="technology.name.length !== 0">{{technology.name}}</h4>
+    <h4 v-if="technology.name !== undefined">{{technology.name}}</h4>
   </li>
 
 </template>
@@ -35,12 +35,11 @@
   .technology-icon {
     margin: 0.25em;
     i{
-      font-size: 4em;
-      margin-bottom: 4em;
+      font-size: 3.5rem;
     }
     h4{
       padding-top: 0.25em;
-      margin-top: 0.25em;
+      margin-top: 0.5em;
       margin-bottom: 0;
       color:#4A4E69;
     }
