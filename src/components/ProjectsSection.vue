@@ -41,7 +41,7 @@
             projectButtonsList: [
               {
                 id: 2,
-                hyperlinkUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
+                hrefUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
                 iconClasses: "fab fa-github",
                 iconColor: "white",
                 buttonColor: "#212529",
@@ -49,7 +49,7 @@
               },
               {
                 id: 3,
-                hyperlinkUrl: "https://www.wescotroofing.com",
+                hrefUrl: "https://www.wescotroofing.com",
                 iconClasses: "fas fa-external-link-alt",
                 iconColor: "white",
                 buttonColor: "#008148",
@@ -76,7 +76,7 @@
             ],
             projectButtonsList: [{
                 id: 2,
-                hyperlinkUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
+                hrefUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
                 iconClasses: "fab fa-github",
                 iconColor: "white",
                 buttonColor: "#212529",
@@ -84,7 +84,7 @@
               },
               {
                 id: 3,
-                hyperlinkUrl: "www.linkedin.com/in/cameron-downer-392863173",
+                hrefUrl: "https://cameronrdowner.github.io/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
                 iconColor: "white",
                 buttonColor: "#008148",
@@ -102,7 +102,7 @@
             ],
             projectButtonsList: [{
                 id: 2,
-                hyperlinkUrl: "https://github.com/CameronRDowner",
+                hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
                 iconColor: "white",
                 buttonColor: "#212529",
@@ -110,7 +110,7 @@
               },
               {
                 id: 3,
-                hyperlinkUrl: "www.linkedin.com/in/cameron-downer-392863173",
+                hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
                 iconColor: "white",
                 buttonColor: "#0077b5",
@@ -128,7 +128,7 @@
             ],
             projectButtonsList: [{
                 id: 2,
-                hyperlinkUrl: "https://github.com/CameronRDowner",
+                hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
                 iconColor: "white",
                 buttonColor: "#212529",
@@ -136,7 +136,7 @@
               },
               {
                 id: 3,
-                hyperlinkUrl: "www.linkedin.com/in/cameron-downer-392863173",
+                hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
                 iconColor: "white",
                 buttonColor: "#0077b5",

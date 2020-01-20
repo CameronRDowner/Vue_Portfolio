@@ -31,27 +31,27 @@
       contactButtonsList: [
           {
             id: 1,
-            hyperlinkUrl : "",
             iconClasses: "far fa-envelope",
             iconColor: "white",
             buttonColor: "#FFBF00",
-            iconSize: "2rem"
+            iconSize: "2rem",
+            eventBusChannel: "contact-button-clicks"
           },
           {
             id: 2,
-            hyperlinkUrl : "https://github.com/CameronRDowner",
             iconClasses: "fab fa-github",
             iconColor: "white",
             buttonColor: "#212529",
-            iconSize: "2rem"
+            iconSize: "2rem",
+            hrefUrl : "https://github.com/CameronRDowner"
           },
           { 
             id: 3,
-            hyperlinkUrl : "www.linkedin.com/in/cameron-downer-392863173",
             iconClasses: "fab fa-linkedin-in",
             iconColor: "white",
             buttonColor: "#0077b5",
-            iconSize: "2rem"
+            iconSize: "2rem",
+            hrefUrl : "https://www.linkedin.com/in/cameron-downer-392863173"
           }
         ]
       }

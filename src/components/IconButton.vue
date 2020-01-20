@@ -1,7 +1,9 @@
 <template lang="html">
 
   <div class="icon-button">
-    <a :style="buttonColorVariables" :href="button.hyperlinkUrl" target="_blank" >
+    <a :style="buttonColorVariables" 
+    :href="button.hrefUrl" target="_blank"
+    v-on:click="emitClick">
       <i :style="iconStyles" :class="button.iconClasses"></i>
       </a>
   </div>
@@ -9,7 +11,8 @@
 </template>
 
 <script lang="js">
-  import tinycolor from 'tinycolor2'
+  import tinycolor from 'tinycolor2';
+  import { eventBus } from "../main";
   export default  {
     name: 'icon-button',
     props: ["button"],
@@ -25,16 +28,18 @@
       }
     },
     methods: {
-      getButtonHoverColor(){
-        let color = tinycolor(this.button.buttonColor);
-        return color.lighten(15).toString();
+      emitClick: function () {
+        // eslint-disable-next-line no-console
+        console.log('emit sent');
+        eventBus.$emit(this.button.eventBusChannel);
       }
+
     },
     computed: {
-      buttonColorVariables(){
+      buttonColorVariables: function (){
         return {
           '--button-color': this.button.buttonColor,
-          '--button-hover-color' : this.getButtonHoverColor()
+          '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString()
         }
       }
     }
@@ -58,6 +63,7 @@
     text-decoration: none;
     border-radius: 5%;
     &:hover{
+      cursor: pointer;
       background-position: 0 -100%;
     }
   }

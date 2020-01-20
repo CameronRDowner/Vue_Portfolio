@@ -54,6 +54,7 @@ ul{
     box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
     padding: 40px;
     background-color: white;
+    z-index: 3;
   }
 .flex-container-row{
   display: flex;
@@ -71,5 +72,8 @@ ul{
 }
 .contact-buttons-container{
     margin-top: 1.5rem;
+  }
+  .hidden{
+    display: none;
   }
 </style>

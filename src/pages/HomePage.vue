@@ -8,7 +8,9 @@
       <EducationSection/>
     </main>
     <Footer/>
+    <ContactModal/>
   </div>
+    
 
 </template>
 
@@ -18,6 +20,7 @@
   import TechnologiesSection from "../components/TechnologiesSection.vue"
   import EducationSection from "../components/EducationSection.vue"
   import Footer from "../components/Footer.vue"
+  import ContactModal from "../components/ContactModal.vue"
   export default  {
     name: 'HomePage',
     components: {
@@ -25,7 +28,8 @@
       ProjectsSection,
       TechnologiesSection,
       EducationSection,
-      Footer
+      Footer,
+      ContactModal
     },
     props: [],
     mounted () {
@@ -37,7 +41,9 @@
       }
     },
     methods: {
-
+      openModal(){
+        this.$refs.modal.open();
+      }
     },
     computed: {
 
