@@ -7,7 +7,7 @@
         <p>{{project.description}}</p>
       </div>
       <div class="project-buttons-container flex-container-row">
-        <IconButton v-bind:key="button.id" v-for="button in project.projectButtonsList" :button="button" />
+        <Button v-bind:key="button.id" v-for="button in project.projectButtonsList" :button="button" />
       </div>
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
@@ -19,12 +19,12 @@
 </template>
 
 <script lang="js">
-  import IconButton from "./IconButton.vue"
+  import Button from "./Button.vue"
   import TechnologyIcon from "./TechnologyIcon.vue"
   export default  {
     name: 'project-item',
     components: {
-      IconButton,
+      Button,
       TechnologyIcon
     },
     props: ["project"],
@@ -69,8 +69,8 @@ $tablet-max-width: "(max-width: 770px)";
       line-height: 1.5rem;
     }
     img{
-      width: 100%;
       border: solid 1px black;
+      width: 100%;
       grid-area: project-mockup;
     }
   }
@@ -82,6 +82,7 @@ $tablet-max-width: "(max-width: 770px)";
   }
   .project-buttons-container{
     grid-area: buttons-container;
+    align-items: flex-end;
     @media #{$tablet-max-width}{
       justify-content: flex-start;
     }
@@ -98,7 +99,7 @@ $tablet-max-width: "(max-width: 770px)";
   .project-grid-container-right{
     display: grid;
     grid-template-columns: 10rem 10rem 30rem;
-    grid-template-rows: 16.6rem 3.5rem;
+    grid-template-rows: 16.6rem 3.7rem;
     grid-template-areas: 
       "text-container text-container project-mockup"
       "technologies-container buttons-container project-mockup";
@@ -118,7 +119,7 @@ $tablet-max-width: "(max-width: 770px)";
   .project-grid-container-left{
     display: grid;
     grid-template-columns: 30rem 10rem 10rem;
-    grid-template-rows: 16.6rem 3.5rem;
+    grid-template-rows: 16.6rem 3.7rem;
     grid-template-areas: 
     "project-mockup text-container text-container"
     "project-mockup buttons-container technologies-container";

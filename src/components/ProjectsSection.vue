@@ -43,7 +43,7 @@
                 id: 2,
                 hrefUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
                 iconClasses: "fab fa-github",
-                iconColor: "white",
+                textOrIconColor: "white",
                 buttonColor: "#212529",
                 iconSize: "2rem"
               },
@@ -51,7 +51,7 @@
                 id: 3,
                 hrefUrl: "https://www.wescotroofing.com",
                 iconClasses: "fas fa-external-link-alt",
-                iconColor: "white",
+                textOrIconColor: "white",
                 buttonColor: "#008148",
                 iconSize: "2rem"
               }
@@ -78,17 +78,15 @@
                 id: 2,
                 hrefUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
                 iconClasses: "fab fa-github",
-                iconColor: "white",
-                buttonColor: "#212529",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#212529"
               },
               {
                 id: 3,
                 hrefUrl: "https://cameronrdowner.github.io/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
-                iconColor: "white",
-                buttonColor: "#008148",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#008148"
               }
             ]
           },
@@ -104,17 +102,15 @@
                 id: 2,
                 hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
-                iconColor: "white",
-                buttonColor: "#212529",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#212529"
               },
               {
                 id: 3,
                 hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
-                iconColor: "white",
-                buttonColor: "#0077b5",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#0077b5"
               }
             ]
           },
@@ -130,17 +126,15 @@
                 id: 2,
                 hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
-                iconColor: "white",
-                buttonColor: "#212529",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#212529"
               },
               {
                 id: 3,
                 hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
-                iconColor: "white",
-                buttonColor: "#0077b5",
-                iconSize: "2rem"
+                textOrIconColor: "white",
+                buttonColor: "#0077b5"
               }
             ]
           }

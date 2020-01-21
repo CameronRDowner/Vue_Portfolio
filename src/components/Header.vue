@@ -7,7 +7,7 @@
         <h1>Cameron Downer</h1>
         <h2>Software Engineer</h2>
         <div class="flex-container-row contact-buttons-container" >
-          <IconButton v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+          <Button v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
         </div>
 
       </div>
@@ -17,11 +17,11 @@
 </template>
 
 <script lang="js">
-  import IconButton from "./IconButton.vue"
+  import Button from "./Button.vue"
   export default  {
     name: 'Header',
     components: {
-      IconButton
+      Button
     },
     props: [],
     mounted () {
@@ -33,25 +33,22 @@
           {
             id: 1,
             iconClasses: "far fa-envelope",
-            iconColor: "white",
+            textOrIconColor: "white",
             buttonColor: "#FFBF00",
-            iconSize: "2rem",
             eventBusChannel: "contact-button-clicks"
           },
           {
             id: 2,
             iconClasses: "fab fa-github",
-            iconColor: "white",
+            textOrIconColor: "white",
             buttonColor: "#212529",
-            iconSize: "2rem",
             hrefUrl : "https://github.com/CameronRDowner"
           },
           { 
             id: 3,
             iconClasses: "fab fa-linkedin-in",
-            iconColor: "white",
+            textOrIconColor: "white",
             buttonColor: "#0077b5",
-            iconSize: "2rem",
             hrefUrl : "https://www.linkedin.com/in/cameron-downer-392863173"
           }
         ]

@@ -1,10 +1,8 @@
 <template lang="html">
 
-  <div class="icon-button">
-    <a :style="buttonColorVariables" 
-    :href="button.hrefUrl" target="_blank"
-    v-on:click="emitClick">
-      <i :style="iconStyles" :class="button.iconClasses"></i>
+  <div class="button">
+    <a :style="buttonColorVariables" :href="button.hrefUrl" target="_blank" v-on:click="handleClickEvent">
+      <p :style="buttonTextStyles" :class="button.iconClasses">{{button.text}}</p>
       </a>
   </div>
 
@@ -21,17 +19,25 @@
     },
     data () {
       return {
-        iconStyles: {
-          color: this.button.iconColor,
-          'font-size' : this.button.iconSize
-        }
       }
     },
     methods: {
       emitClick: function () {
-        // eslint-disable-next-line no-console
-        console.log('emit sent');
         eventBus.$emit(this.button.eventBusChannel);
+      },
+      submitForm: function() {
+        document.getElementById(this.button.formId).submit();
+      },
+      handleClickEvent: function() {
+        if(this.button.hasOwnProperty('eventBusChannel')){
+          this.emitClick();
+        }
+        else if(this.button.hasOwnProperty('formId')){
+          this.submitForm();
+        }
+        else{
+          return
+        }
       }
 
     },
@@ -41,7 +47,14 @@
           '--button-color': this.button.buttonColor,
           '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString()
         }
+      },
+      buttonTextStyles: function (){
+        return {
+          color : this.button.textOrIconColor,
+          'font-size' : this.button.hasOwnProperty('textSize') ? this.button.textSize : '1.75rem'
+        }
       }
+      
     }
 }
 
@@ -49,7 +62,8 @@
 </script>
 
 <style scoped lang="scss">
-  a{
+  .button{
+    a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,5 +80,12 @@
       cursor: pointer;
       background-position: 0 -100%;
     }
+    p{
+      margin: 0;
+    }
   }
+  }
+  
+
+  
 </style>

@@ -73,7 +73,15 @@ ul{
 .contact-buttons-container{
     margin-top: 1.5rem;
   }
-  .hidden{
+.hidden{
     display: none;
   }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 500ms ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 </style>
