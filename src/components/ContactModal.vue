@@ -1,66 +1,136 @@
 /* eslint-disable no-console */
 <template lang="html">
 <div id="contact-modal-wrapper">
-<div id="contact-modal-backdrop" v-on:click="closeModal" v-show="modalVisible"></div>
-    <transition name="fade">
+  <div id="contact-modal-backdrop" v-on:click="closeModal" v-show="modalVisible"></div>
+  <transition name="fade">
     <div id="contact-modal" v-show="modalVisible">
-          <h1>Contact Me</h1>
-        <form id="contact-modal-form" action="https://mailthis.to/cdowner" method="post" target="formSending">
-            <input type="text" name="full-name" placeholder="* Full Name">
-            <input type="text" name="email-address" placeholder="* Email Address" >
-            <textarea rows="8" placeholder="* Message" name="main-message"></textarea>
+      <h2>Contact Me</h2>
+      <i id="form-sent-checkmark" class="fas fa-check"></i>
+      <Transition>
+        <div id="form-sending-panel"></div>
+      </Transition>
+      <ValidationObserver v-slot="{ handleSubmit, reset }">
+        <form @submit.prevent="handleSubmit(handleFormSubmit)" @reset.prevent="reset" id="contact-modal-form"
+          action="https://mailthis.to/cdowner" method="post" target="formSender">
+          <ValidationProvider v-slot="fullName" rules="required|alpha_spaces" tag="div">
+            <input type="text" name="FullName" v-model="contactForm.fullName" placeholder="* Full Name">
+            <div class="validator-text-feedback">{{ fullName.errors[0] }}</div>
+          </ValidationProvider>
+          <ValidationProvider v-slot="emailAddress" rules="required|email" tag="div">
+            <input type="text" name="EmailAddress" v-model="contactForm.emailAddress" placeholder="* Email Address">
+            <div class="validator-text-feedback">{{ emailAddress.errors[0] }}</div>
+          </ValidationProvider>
+          <textarea rows="8" placeholder="* Message" name="MainMessage" v-model="contactForm.mainMessage"></textarea>
+          <ValidationProvider v-slot="captcha" :rules="{ required: { allowFalse: false } }" tag="div">
             <label class="contact-modal-checkbox-container">* I am a human and not a robot
-            <input type="checkbox">
-            <span class="checkmark"></span>
+              <input name="captcha" type="checkbox" v-model="contactForm.captcha">
+              <div class="checkmark"></div>
             </label>
-            <div id="contact-modal-buttons-container" class="flex-container-row">
-              <Button  :button="submitButton" />
-              <a id="contact-modal-cancel-button" v-on:click="closeModal">Cancel</a>
-            </div>
+            <div class="validator-text-feedback">{{ captcha.errors[0] }}</div>
+          </ValidationProvider>
+          <div id="contact-modal-buttons-container" class="flex-container-row">
+            <Button :button="pseudoSubmitButton" />
+            <a id="contact-modal-cancel-button" v-on:click="closeModal">Cancel</a>
+          </div>
+          <button id="form-submit-button" type="submit">Submit</button>
         </form>
-        <iframe class="hidden" name="formSending" v-on:load="clearModal"></iframe>
-        </div>
-        </transition>
+      </ValidationObserver>
+      <iframe id="form-sender" class="hidden" name="formSender" v-on:load="notifyFormRecieved"></iframe>
+    </div>
+  </transition>
 </div>
 </template>
 
 <script lang="js">
   import Button from '../components/Button.vue';
   import { eventBus } from '../main';
+  import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
+  import { required, email, alpha_spaces } from 'vee-validate/dist/rules';
+    extend('required', {
+      ...required,
+      message: 'This field is required.'
+    });
+    extend('email', {
+      ...email,
+      message: 'Please use a valid email address.'
+    });
+    extend('alpha_spaces', {
+      ...alpha_spaces,
+      message: 'Please only use alphabetical charactors.'
+    });
+
   export default  {
     name: 'contact-modal',
     components: {
-      Button
+      Button,
+      ValidationProvider,
+      ValidationObserver
     },
     props: [],
     mounted () {
-      eventBus.$on('contact-button-clicks',this.openModal)
+
+      eventBus.$on('contact-button-clicks',this.openModal);
+      eventBus.$on('contact-form-submit-clicks',this.clickSubmitButton);
     },
     data () {
       return {
-        submitButton: {
+        modalVisible: false,
+        formSubmitted: false,
+        contactForm: {
+          fullName: "",
+          emailAddress: "",
+          mainMessage: "",
+          captcha: false
+        },
+        pseudoSubmitButton: {
             text: "Submit",
             textOrIconColor: "white",
             buttonColor: "#008148",
             textSize: '1rem',
-            formId: "contact-modal-form"
-        },
-        modalVisible: false
+            eventBusChannel: 'contact-form-submit-clicks'
+        }
       }
     },
     methods: {
       closeModal: function() {  
-        this.modalVisible = false;
+        this.toggleModalVisibility();
+        this.resetForm();
       },
       openModal: function(){
-        this.modalVisible = true;
+        this.toggleModalVisibility();
       },
-      clearModal: function(){
-
+      toggleModalVisibility : function (){
+        this.modalVisible = !this.modalVisible;
       },
-      notifyFormSent : function(){
-        document.getElementById('contact-modal-content-wrapper').classList;
-      }
+      resetForm: function(){
+        this.clearFormFields();
+        this.clearFormValidationText();
+      },
+      clearFormFields : function (){
+        this.contactForm.fullName = "";
+        this.contactForm.emailAddress = "";
+        this.contactForm.mainMessage= "";
+        this.contactForm.captcha = false;
+      },
+      clearFormValidationText: function () {
+        document.getElementById('contact-modal-form').reset();
+      },
+      submitFormData : function(){
+        document.getElementById('contact-modal-form').submit();
+      },
+      clickSubmitButton : function (){
+        document.getElementById('form-submit-button').click();
+      },
+      notifyFormRecieved : function(){
+        // eslint-disable-next-line no-console
+        console.log('form has been successfully recieved!!!')
+      },
+      handleFormSubmit : function(){
+        // eslint-disable-next-line no-console
+        console.log('form has been sent');
+        this.submitFormData();
+      },
+          
     },
     computed: {
 
@@ -87,7 +157,7 @@
       height: 30rem;
       width: 30rem;
     }
-    h1{
+    h2{
       margin-top: 0;
       font-weight: 500;
     }
@@ -104,14 +174,15 @@
       padding: 0.5rem;
       font-size: 1rem;
       border:1px solid 	#dddddd;
+      box-sizing: border-box;
+      width: 100%;
 
       &::placeholder{
         color: #989898; 
       }
       &:focus{
       outline: none;
-      border:1px solid #008148;
-      box-shadow: 0 0 4px #008148;
+      border:2px solid #008148 !important;
       }
     }
     textarea {
@@ -189,5 +260,32 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.validator-text-feedback{
+color: red;
+text-align: left;
+}
+#form-submit-button{
+  display: none
+}
+#form-sending-panel{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  top:0;
+  right: 0;
+  z-index: 5;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+#form-sent-checkmark{
+  position: absolute;
+  font-size: 8rem;
+  color: #008148;
+  z-index: 6;
+  top: 35%;
+  left: 35%;
+  
 }
 </style>

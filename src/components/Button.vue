@@ -25,15 +25,9 @@
       emitClick: function () {
         eventBus.$emit(this.button.eventBusChannel);
       },
-      submitForm: function() {
-        document.getElementById(this.button.formId).submit();
-      },
       handleClickEvent: function() {
         if(this.button.hasOwnProperty('eventBusChannel')){
           this.emitClick();
-        }
-        else if(this.button.hasOwnProperty('formId')){
-          this.submitForm();
         }
         else{
           return
