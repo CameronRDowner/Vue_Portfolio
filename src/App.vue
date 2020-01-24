@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './sass/_animations.scss';
 #app {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -76,12 +77,5 @@ ul{
 .hidden{
     display: none;
   }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 500ms ease-out;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 </style>

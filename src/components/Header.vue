@@ -2,15 +2,16 @@
 
   <header>
     <div class="banner">
-      <div class="floating-box">
-        <img src="../assets/images/profile.png" alt="profile picture">
-        <h1>Cameron Downer</h1>
-        <h2>Software Engineer</h2>
-        <div class="flex-container-row contact-buttons-container" >
-          <Button v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
-        </div>
-
+      <vue-aos animation-class="slide-in-top">
+        <div class="floating-box">
+          <img src="../assets/images/profile.png" alt="profile picture">
+          <h1>Cameron Downer</h1>
+          <h2>Software Engineer</h2>
+          <div class="flex-container-row contact-buttons-container" >
+            <Button v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+          </div>
       </div>
+      </vue-aos>
     </div>
     </header>
 
@@ -18,10 +19,12 @@
 
 <script lang="js">
   import Button from "./Button.vue"
+  import VueAos from 'vue-aos'
   export default  {
     name: 'Header',
     components: {
-      Button
+      Button,
+      VueAos
     },
     props: [],
     mounted () {
@@ -35,7 +38,7 @@
             iconClasses: "far fa-envelope",
             textOrIconColor: "white",
             buttonColor: "#FFBF00",
-            eventBusChannel: "contact-button-clicks"
+            eventBusChannel: "contact-modal-open-clicks"
           },
           {
             id: 2,

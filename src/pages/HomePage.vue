@@ -1,7 +1,7 @@
 <template lang="html">
 
   <div id="home-page">
-    <Header/>
+      <Header/>
     <main>
       <ProjectsSection/>
       <TechnologiesSection/> 

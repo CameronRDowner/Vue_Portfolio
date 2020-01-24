@@ -2,7 +2,7 @@
 
   <div class="project-item" :class="getOrientation">
     
-      <div class="project-text-container" :style="{ 'text-align' : getAlignmentValue}">
+      <div class="project-text-container">
         <h2>{{project.name}}</h2>
         <p>{{project.description}}</p>
       </div>

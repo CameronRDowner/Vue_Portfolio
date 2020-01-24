@@ -1,6 +1,7 @@
 <template lang="html">
 
   <footer>
+    <vue-aos animation-class="slide-in-bottom">
     <div class="floating-box">
       <h3>Thanks for checking out my portfolio!</h3>
       <p>You can reach out to me via any of my handles</p>
@@ -11,16 +12,19 @@
 
       </div>
     </div>
+    </vue-aos>
   </footer>
 
 </template>
 
 <script lang="js">
-  import Button from "./Button.vue"
+  import Button from "./Button.vue";
+  import VueAos from 'vue-aos';
   export default  {
     name: 'footer',
     components: {
-      Button
+      Button,
+      VueAos
     },
     props: [],
     mounted () {
@@ -34,7 +38,7 @@
             iconClasses: "far fa-envelope",
             textOrIconColor: "white",
             buttonColor: "#FFBF00",
-            eventBusChannel: "contact-button-clicks"
+            eventBusChannel: "contact-modal-open-clicks"
           },
           {
             id: 2,
