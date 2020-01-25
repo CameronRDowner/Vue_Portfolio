@@ -49,14 +49,16 @@ ul{
   list-style: none;
   padding-left: 0;
 }
-.floating-box{
+.rounded-box{
     position: absolute;
     border-radius: 5px;
-    box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
     padding: 40px;
     background-color: white;
     z-index: 3;
   }
+.floating {
+  box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.18);
+}
 .flex-container-row{
   display: flex;
   flex-direction: row;

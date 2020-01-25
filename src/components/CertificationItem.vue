@@ -1,7 +1,7 @@
 <template lang="html">
 
   <li class="certification-item">
-    <img :src="require(`@/assets/images/certification_logos/${certification.logoName}`)" alt="certification logo">
+    <img :src="require(`@/assets/images/certification_logos/${certification.logoName}`)" alt="certification logo" class="floating">
     <div class="certification-item-text-container">
       <h4>{{certification.name}}</h4>
       <h4>{{certification.vendorName}}</h4>
@@ -38,7 +38,7 @@
   .certification-item {
     width: 16em;
     height: 5em;
-    margin: 0.3em 0 0.9em 0;
+    margin: 0.3em 0.3em 0.9em 0;
 
 
     img{

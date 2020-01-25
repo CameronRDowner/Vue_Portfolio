@@ -2,32 +2,42 @@
 
   <section id="technologies">
     <h1>Technologies</h1>
-    <div id="technologies-wrapper">
+    <vue-aos animation-class="shadow-drop">
+    <div id="technologies-wrapper" class="floating">
+      <vue-aos animation-class="slide-in-blurred-left">
       <div>
         <h3>Front End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frontEndTechnologyList" :technology="technology" />
         </ul>
       </div>
+      </vue-aos>
+      <vue-aos animation-class="slide-in-blurred-left">
       <div>
         <h3>Back End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in backEndTechnologyList" :technology="technology" />
         </ul>
       </div>
+      </vue-aos>
+      <vue-aos animation-class="slide-in-blurred-right"> 
       <div>
         <h3>Frameworks</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frameworksTechnologyList" :technology="technology" />
         </ul>
       </div>
+      </vue-aos>
+      <vue-aos animation-class="slide-in-blurred-right"> 
       <div>
         <h3>Libraries</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in librariesTechnologyList" :technology="technology" />
         </ul>
       </div>
+      </vue-aos>
     </div>
+    </vue-aos>
     <hr>
   </section>
 
@@ -35,10 +45,12 @@
 
 <script lang="js">
   import TechnologyIcon from './TechnologyIcon.vue'
+  import VueAos from 'vue-aos'
   export default  {
     name: 'technologies-section',
     components: {
-      TechnologyIcon
+      TechnologyIcon,
+      VueAos
     },
     props: [],
     mounted () {
@@ -50,22 +62,26 @@
           {
             id: 1,
             name: "C#",
-            deviconClasses: "devicon-csharp-plain colored"
+            deviconClasses: "devicon-csharp-plain colored",
+            startHidden: true
           },
           {
             id: 2,
             name: "C++",
-            deviconClasses: "devicon-cplusplus-plain colored"
+            deviconClasses: "devicon-cplusplus-plain colored",
+            startHidden: true
           },
           {
             id: 3,
             name: "MySQL",
-            deviconClasses: "devicon-mysql-plain colored"
+            deviconClasses: "devicon-mysql-plain colored",
+            startHidden: true
           },
           {
             id: 4,
             name: "SQL",
-            deviconClasses: "devicon-oracle-plain colored"
+            deviconClasses: "devicon-oracle-plain colored",
+            startHidden: true
           }
 
         ],
@@ -73,22 +89,26 @@
           {
             id: 1,
             name: "HTML5",
-            deviconClasses: "devicon-html5-plain colored"
+            deviconClasses: "devicon-html5-plain colored",
+            startHidden: true
           },
           {
             id: 2,
             name: "CSS3",
-            deviconClasses: "devicon-css3-plain colored"
+            deviconClasses: "devicon-css3-plain colored",
+            startHidden: true
           },
           {
             id: 3,
             name: "Sass",
-            deviconClasses: "devicon-sass-plain colored"
+            deviconClasses: "devicon-sass-plain colored",
+            startHidden: true
           },
           {
             id: 4,
             name: "Javascript",
-            deviconClasses: "devicon-javascript-plain colored"
+            deviconClasses: "devicon-javascript-plain colored",
+            startHidden: true
           }
 
         ],
@@ -96,24 +116,28 @@
           {
             id: 1,
             name: "Angular",
-            deviconClasses: "devicon-angularjs-plain colored"
+            deviconClasses: "devicon-angularjs-plain colored",
+            startHidden: true
           },
           {
             id: 2,
             name: "Vue",
-            deviconClasses: "devicon-vuejs-plain colored"
+            deviconClasses: "devicon-vuejs-plain colored",
+            startHidden: true
           }
         ],
           librariesTechnologyList: [
           {
             id: 1,
             name: "jQuery",
-            deviconClasses: "devicon-jquery-plain colored"
+            deviconClasses: "devicon-jquery-plain colored",
+            startHidden: true
           },
           {
             id: 2,
             name: "Bootstrap",
-            deviconClasses: "devicon-bootstrap-plain colored"
+            deviconClasses: "devicon-bootstrap-plain colored",
+            startHidden: true
           }
         ]
       }
@@ -144,7 +168,6 @@
     justify-content: space-evenly;
     align-items: flex-start;
     background-color: 	white;
-    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.18);
     padding: 3em;
 
     ul{

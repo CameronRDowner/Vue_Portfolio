@@ -1,18 +1,17 @@
 <template lang="html">
-
   <li class="diploma-item">
     <img :src="require(`@/assets/images/school_logos/${diploma.schoolLogoName}`)" alt="school logo">
     <h3>{{diploma.name}}</h3>
     <i><h4>{{diploma.accolade}}</h4></i>
     <h4>{{diploma.graduationDate}}</h4>
   </li>
-
 </template>
 
 <script lang="js">
-
   export default  {
     name: 'diploma-item',
+    components: {
+    },
     props: ["diploma"],
     mounted () {
 

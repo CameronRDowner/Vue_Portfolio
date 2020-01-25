@@ -1,7 +1,6 @@
 <template lang="html">
-
-  <div class="project-item" :class="getOrientation">
-    
+<vue-aos :animation-class="'slide-in-' + getOrientation">
+  <div class="project-item" :class="'project-grid-container-' + getOrientation">
       <div class="project-text-container">
         <h2>{{project.name}}</h2>
         <p>{{project.description}}</p>
@@ -12,20 +11,23 @@
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
       </ul>
-    <img 
-      :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)">
+    <vue-aos animation-class="delayed-shadow-drop">
+      <img :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)" class="floating">
+    </vue-aos>
   </div>
-
+</vue-aos>
 </template>
 
 <script lang="js">
   import Button from "./Button.vue"
   import TechnologyIcon from "./TechnologyIcon.vue"
+  import VueAos from 'vue-aos'
   export default  {
     name: 'project-item',
     components: {
       Button,
-      TechnologyIcon
+      TechnologyIcon,
+      VueAos
     },
     props: ["project"],
     mounted () {
@@ -40,14 +42,14 @@
 
     },
     computed: {
-      getOrientation(){
+      getOrientation : function (){
       if (this.project.id % 2 == 0){
-          return "project-grid-container-right";
+          return "right";
         }
       else {
-        return "project-grid-container-left";
+        return "left";
       }  
-    },
+    }
 }
 
   }
@@ -69,7 +71,6 @@ $tablet-max-width: "(max-width: 770px)";
       line-height: 1.5rem;
     }
     img{
-      border: solid 1px black;
       width: 100%;
       grid-area: project-mockup;
     }

@@ -5,15 +5,19 @@
     <div id="education-containers-wrapper" class="flex-container-row">
       <div id="certifications-container">
         <h2>Certifications</h2>
+      <vue-aos animation-class="slide-in-bottom-left">
         <ul class="flex-container-row">
           <CertificationItem v-bind:key="certification.id" v-for="certification in certificationsList" :certification="certification" />
         </ul>
+        </vue-aos>
       </div>
       <div id="diplomas-container">
         <h2>Diplomas</h2>
+        <vue-aos animation-class="slide-in-bottom-right">
         <ul>
           <DiplomaItem v-bind:key="diploma.id" v-for="diploma in diplomasList" :diploma="diploma" />
         </ul>
+        </vue-aos>
       </div>
     </div>
   </section>
@@ -21,13 +25,15 @@
 </template>
 
 <script lang="js">
+  import VueAos from 'vue-aos'
   import CertificationItem from "./CertificationItem.vue"
   import DiplomaItem from "./DiplomaItem.vue"
   export default  {
     name: 'education-section',
     components: {
       DiplomaItem,
-      CertificationItem
+      CertificationItem,
+      VueAos
     },
     props: [],
     mounted () {
@@ -116,7 +122,7 @@
 
 <style scoped lang="scss">
   #education {
-    padding-bottom: 5em;
+    padding-bottom: 2.5em;
   }
   #education-containers-wrapper{
     align-items: flex-start;
@@ -125,7 +131,7 @@
     }
   }
   #certifications-container{
-    max-width: 32rem;
+    max-width: 35rem;
     margin: 1rem;
   }
   #diplomas-container{

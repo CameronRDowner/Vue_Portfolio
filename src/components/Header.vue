@@ -3,7 +3,7 @@
   <header>
     <div class="banner">
       <vue-aos animation-class="slide-in-top">
-        <div class="floating-box">
+        <div class="rounded-box floating">
           <img src="../assets/images/profile.png" alt="profile picture">
           <h1>Cameron Downer</h1>
           <h2>Software Engineer</h2>
@@ -72,14 +72,17 @@
    .banner{
     margin: 0 auto;
     width: 100%;
-    height: 30em;
-    background-color:gray;
+    height: 25em;
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
   }
   header{
-    .floating-box{
+    .rounded-box{
       font-size: 1rem;
-      top: 140px;
+      top: 80px;
       left: 0;
       right: 0;
       margin-left: auto;

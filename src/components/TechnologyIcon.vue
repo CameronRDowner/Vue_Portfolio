@@ -1,8 +1,8 @@
 <template lang="html">
 
   <li class="technology-icon">
-    <i :class="technology.deviconClasses"></i>
-    <h4 v-if="technology.name !== undefined">{{technology.name}}</h4>
+      <i :class="technology.deviconClasses"></i>
+      <h4 v-if="technology.name !== undefined">{{technology.name}}</h4>
   </li>
 
 </template>
@@ -21,11 +21,10 @@
       }
     },
     methods: {
-
     },
     computed: {
-
-    }
+      
+}
 }
 
 
@@ -38,7 +37,6 @@
       font-size: 3.5rem;
     }
     h4{
-      padding-top: 0.25em;
       margin-top: 0.5em;
       margin-bottom: 0;
       color:#4A4E69;
