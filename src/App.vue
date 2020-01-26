@@ -16,7 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import './sass/_animations.scss';
+@import "./assets/sass/_animations.scss";
+@import "./assets/sass/_variables.scss";
 #app {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +37,7 @@ h1{
   }
 body{
   margin: 0;
-  background-color: #f8f9fa;
+  background-color: $background;
 }
 html{
   font-size: 16px;
@@ -53,7 +54,7 @@ ul{
     position: absolute;
     border-radius: 5px;
     padding: 40px;
-    background-color: white;
+    background-color: $foreground;
     z-index: 3;
   }
 .floating {

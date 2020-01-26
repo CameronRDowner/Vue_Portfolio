@@ -22,6 +22,7 @@
 </template>
 
 <script lang="js">
+  import ColorVariables from "../assets/sass/_variables.scss";
   import ContactForm from './ContactForm.vue'
   import { eventBus } from '../main';
   import Button from '../components/Button.vue';
@@ -45,7 +46,7 @@
         pseudoSubmitButton: {
             text: "Submit",
             textOrIconColor: "white",
-            buttonColor: "#008148",
+            buttonColor: ColorVariables.primary,
             textSize: '1rem',
             eventBusChannel: 'contact-form-submit-clicks'
         }
@@ -93,6 +94,7 @@
 </script>
 
 <style scoped lang="scss">
+@import "../assets/sass/_variables.scss";
   #contact-modal {
     position: fixed;
     border-radius: 5px;
@@ -102,10 +104,9 @@
     right: 0;
     left: 0;
     margin: 0 auto;
-    background-color: white;
+    background-color: $foreground;
     z-index: 6;
     iframe{
-      border: solid 1px black;
       height: 30rem;
       width: 30rem;
     }
@@ -142,13 +143,13 @@
   #form-recieved-checkmark{
     position: absolute;
     font-size: 12rem;
-    color: #008148;
+    color: $primary;
     z-index: 6;
     top: 30%;
     left: 25%;
 }
 #contact-modal-cancel-button{
-    color: #008148;
+    color: $primary;
     margin: 1rem;
     cursor: pointer;
   }

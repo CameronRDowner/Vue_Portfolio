@@ -20,7 +20,7 @@
         </ul>
       </div>
       </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right"> 
+      <vue-aos animation-class="slide-in-blurred-right">
       <div>
         <h3>Frameworks</h3>
         <ul class="flex-container-row">
@@ -28,7 +28,7 @@
         </ul>
       </div>
       </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right"> 
+      <vue-aos animation-class="slide-in-blurred-right">
       <div>
         <h3>Libraries</h3>
         <ul class="flex-container-row">
@@ -45,12 +45,10 @@
 
 <script lang="js">
   import TechnologyIcon from './TechnologyIcon.vue'
-  import VueAos from 'vue-aos'
   export default  {
     name: 'technologies-section',
     components: {
       TechnologyIcon,
-      VueAos
     },
     props: [],
     mounted () {

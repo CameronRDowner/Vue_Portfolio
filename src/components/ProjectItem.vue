@@ -11,23 +11,21 @@
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
       </ul>
-    <vue-aos animation-class="delayed-shadow-drop">
-      <img :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)" class="floating">
-    </vue-aos>
+      <vue-aos animation-class="delayed-shadow-drop">
+        <img :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)" class="floating">
+      </vue-aos>
   </div>
-</vue-aos>
+  </vue-aos>
 </template>
 
 <script lang="js">
   import Button from "./Button.vue"
   import TechnologyIcon from "./TechnologyIcon.vue"
-  import VueAos from 'vue-aos'
   export default  {
     name: 'project-item',
     components: {
       Button,
       TechnologyIcon,
-      VueAos
     },
     props: ["project"],
     mounted () {
@@ -49,7 +47,8 @@
       else {
         return "left";
       }  
-    }
+    },
+     
 }
 
   }

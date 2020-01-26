@@ -35,15 +35,14 @@
     mounted () {
 
     },
+    created (){
+    },
     data () {
       return {
         
       }
     },
     methods: {
-      openModal(){
-        this.$refs.modal.open();
-      }
     },
     computed: {
 

@@ -111,6 +111,7 @@
 </script>
 
 <style scoped lang="scss">
+@import "../assets/sass/_variables.scss";
   .contact-form {
     height: 100%;
     width: 100%;
@@ -146,7 +147,7 @@
   background-color: #ccc;
 }
 .contact-modal-checkbox-container input:checked ~ .checkmark {
-  background-color: #008148;
+  background-color: $primary;
 }
 .checkmark:after {
   content: "";
@@ -195,7 +196,7 @@ form{
       }
       &:focus{
       outline: none;
-      border:2px solid #008148 !important;
+      border:2px solid $primary;
       }
     }
     textarea {

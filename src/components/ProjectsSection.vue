@@ -12,6 +12,7 @@
 
 <script lang="js">
   import ProjectItem from "./ProjectItem.vue"
+  import ColorVariables from "../assets/sass/_variables.scss"
   export default  {
     name: 'projects-section',
     components: {
@@ -44,7 +45,7 @@
                 hrefUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
-                buttonColor: "#212529",
+                buttonColor: ColorVariables.github,
                 iconSize: "2rem"
               },
               {
@@ -52,7 +53,7 @@
                 hrefUrl: "https://www.wescotroofing.com",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
-                buttonColor: "#008148",
+                buttonColor: ColorVariables.primary,
                 iconSize: "2rem"
               }
             ]
@@ -79,14 +80,14 @@
                 hrefUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
-                buttonColor: "#212529"
+                buttonColor: ColorVariables.github
               },
               {
                 id: 3,
                 hrefUrl: "https://cameronrdowner.github.io/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
-                buttonColor: "#008148"
+                buttonColor: ColorVariables.primary
               }
             ]
           },
@@ -103,14 +104,14 @@
                 hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
-                buttonColor: "#212529"
+                buttonColor: ColorVariables.github
               },
               {
                 id: 3,
                 hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
                 textOrIconColor: "white",
-                buttonColor: "#0077b5"
+                buttonColor: ColorVariables.primary
               }
             ]
           },
@@ -127,14 +128,14 @@
                 hrefUrl: "https://github.com/CameronRDowner",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
-                buttonColor: "#212529"
+                buttonColor: ColorVariables.github
               },
               {
                 id: 3,
                 hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
                 iconClasses: "fab fa-linkedin-in",
                 textOrIconColor: "white",
-                buttonColor: "#0077b5"
+                buttonColor: ColorVariables.primary
               }
             ]
           }

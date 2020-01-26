@@ -20,6 +20,7 @@
 <script lang="js">
   import Button from "./Button.vue";
   import VueAos from 'vue-aos';
+  import ColorVariables from "../assets/sass/_variables.scss"
   export default  {
     name: 'footer',
     components: {
@@ -37,21 +38,21 @@
             id: 1,
             iconClasses: "far fa-envelope",
             textOrIconColor: "white",
-            buttonColor: "#FFBF00",
+            buttonColor: ColorVariables.primary,
             eventBusChannel: "contact-modal-open-clicks"
           },
           {
             id: 2,
             iconClasses: "fab fa-github",
             textOrIconColor: "white",
-            buttonColor: "#212529",
+            buttonColor: ColorVariables.github,
             hrefUrl : "https://github.com/CameronRDowner"
           },
           { 
             id: 3,
             iconClasses: "fab fa-linkedin-in",
             textOrIconColor: "white",
-            buttonColor: "#0077b5",
+            buttonColor: ColorVariables.linkedin,
             hrefUrl : "https://www.linkedin.com/in/cameron-downer-392863173"
           }
         ]
@@ -69,16 +70,18 @@
 </script>
 
 <style scoped lang="scss">
+@import "../assets/sass/_variables.scss";
   footer {
     position: relative;
-    height: 15em;
-    background: #6441A5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 13em;
+    background: $primary;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2a0845, $primary);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2a0845, $primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
     .rounded-box{
       font-size: 1rem;
-      bottom: 4em;
+      bottom: 2em;
       left: 0;
       right: 0;
       margin-left: auto;
