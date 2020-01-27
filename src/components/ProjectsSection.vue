@@ -28,7 +28,7 @@
             id: 1,
             name: "Wescot Roofing Website",
             mockupFileName: "wescot_roofing_website1.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Duis aute irure dolor in.",
             technologiesList: [
                 {
                   id: 1,
@@ -41,7 +41,7 @@
             ],
             projectButtonsList: [
               {
-                id: 2,
+                id: 1,
                 hrefUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
@@ -49,7 +49,7 @@
                 iconSize: "2rem"
               },
               {
-                id: 3,
+                id: 2,
                 hrefUrl: "https://www.wescotroofing.com",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
@@ -76,14 +76,14 @@
                 }
             ],
             projectButtonsList: [{
-                id: 2,
+                id: 1,
                 hrefUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.github
               },
               {
-                id: 3,
+                id: 2,
                 hrefUrl: "https://cameronrdowner.github.io/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
@@ -94,22 +94,31 @@
           {
             id: 3,
             name: "Portfolio Website",
-            mockupFileName: "",
-            description: "Lorem Ipsum Dolor. . . . . . . .",
+            mockupFileName: "portfolio_website.jpg",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
             technologiesList: [
-
+              {
+                  id: 1,
+                  deviconClasses: "devicon-sass-plain colored",
+                  name: ""
+                },
+                {
+                  id: 2,
+                  deviconClasses: "devicon-vuejs-plain colored",
+                  name: ""
+                }
             ],
             projectButtonsList: [{
-                id: 2,
-                hrefUrl: "https://github.com/CameronRDowner",
+                id: 1,
+                hrefUrl: "https://github.com/CameronRDowner/Vue_Portfolio",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.github
               },
               {
-                id: 3,
-                hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
-                iconClasses: "fab fa-linkedin-in",
+                id: 2,
+                hrefUrl: "https://www.camerondowner.com",
+                iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.primary
               }
@@ -117,23 +126,33 @@
           },
           {
             id: 4,
-            name: "Project4",
-            mockupFileName: "",
-            description: "Lorem Ipsum Dolor. . . . . . . .",
+            name: "Agenda CRM",
+            mockupFileName: "agenda_crm.jpg",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
             technologiesList: [
-
+              {
+                  id: 1,
+                  deviconClasses: "devicon-csharp-plain colored",
+                  name: ""
+                },
+                {
+                  id: 2,
+                  deviconClasses: "devicon-mysql-plain colored",
+                  name: ""
+                }
             ],
-            projectButtonsList: [{
-                id: 2,
-                hrefUrl: "https://github.com/CameronRDowner",
+            projectButtonsList: [
+              {
+                id: 1,
+                hrefUrl: "https://github.com/CameronRDowner/Agenda_CRM",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.github
               },
               {
-                id: 3,
-                hrefUrl: "www.linkedin.com/in/cameron-downer-392863173",
-                iconClasses: "fab fa-linkedin-in",
+                id: 2,
+                hrefUrl: "",
+                iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.primary
               }
