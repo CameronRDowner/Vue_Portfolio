@@ -98,8 +98,8 @@ $tablet-max-width: "(max-width: 770px)";
   }
   .project-grid-container-right{
     display: grid;
-    grid-template-columns: 10rem 10rem 30rem;
-    grid-template-rows: 16.6rem 3.7rem;
+    grid-template-columns: 10rem 10rem 30.7rem;
+    grid-template-rows: 16.9rem 3.7rem;
     grid-template-areas: 
       "text-container text-container project-mockup"
       "technologies-container buttons-container project-mockup";
@@ -118,8 +118,8 @@ $tablet-max-width: "(max-width: 770px)";
   }
   .project-grid-container-left{
     display: grid;
-    grid-template-columns: 30rem 10rem 10rem;
-    grid-template-rows: 16.6rem 3.7rem;
+    grid-template-columns: 30.7rem 10rem 10rem;
+    grid-template-rows: 16.9rem 3.7rem;
     grid-template-areas: 
     "project-mockup text-container text-container"
     "project-mockup buttons-container technologies-container";

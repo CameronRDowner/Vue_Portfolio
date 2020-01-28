@@ -27,8 +27,8 @@
         projectList: [{
             id: 1,
             name: "Wescot Roofing Website",
-            mockupFileName: "wescot_roofing_website1.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Duis aute irure dolor in.",
+            mockupFileName: "wescot_roofing_website.jpg",
+            description: "This website began with the Elevation template from pixilarity.com which was then heavily modified to meet the branding and functional needs of the client. CSS animations were added along with a scroll event handler to activate them. Additionally, field validation was integrated into the contact form to ensure accurate submissions.",
             technologiesList: [
                 {
                   id: 1,
@@ -61,8 +61,8 @@
           {
             id: 2,
             name: "Todo List App",
-            mockupFileName: "todo_app2.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
+            mockupFileName: "todo_app.jpg",
+            description: "A todo list app built in Angular that can Add, Delete, and Complete todo list items. All todo items are retrieved from a REST API using the RxJS library. CSS animations were handled via Angular's built-in Browser Animations module. Many of the common Angular directives were utilized in the markup of this project.",
             technologiesList: [
               {
                   id: 1,
@@ -95,7 +95,7 @@
             id: 3,
             name: "Portfolio Website",
             mockupFileName: "portfolio_website.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
+            description: "The portfolio page you are currently viewing was built with Vue. Many of the components that make up this page utilize Vue directives and customization. When appropriate, animations use the Vue transition wrapper component for triggering; all others utilize a scroll event handler. And lastly, the contact form uses a validation library to ensure accuracy.",
             technologiesList: [
               {
                   id: 1,
@@ -128,7 +128,7 @@
             id: 4,
             name: "Agenda CRM",
             mockupFileName: "agenda_crm.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.",
+            description: "This windows app allows users to add, delete, and edit appointments as well as customer data. Furthermore, it has user authentication, reminders for appointments, multi-language support for prompts, report generation, and field validation. The customer and appointment data is stored on a mySQL relational database.",
             technologiesList: [
               {
                   id: 1,
