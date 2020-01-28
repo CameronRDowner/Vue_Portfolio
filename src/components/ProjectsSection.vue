@@ -144,17 +144,17 @@
             projectButtonsList: [
               {
                 id: 1,
+                hrefUrl: "",
+                iconClasses: "",
+                textOrIconColor: "",
+                buttonColor: ""
+              },
+              {
+                id: 2,
                 hrefUrl: "https://github.com/CameronRDowner/Agenda_CRM",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.github
-              },
-              {
-                id: 2,
-                hrefUrl: "",
-                iconClasses: "fas fa-external-link-alt",
-                textOrIconColor: "white",
-                buttonColor: ColorVariables.primary
               }
             ]
           }

@@ -106,8 +106,8 @@ $tablet-max-width: "(max-width: 770px)";
     text-align: right;
     column-gap: 1rem;
     @media (max-width: 770px){
-      grid-template-columns: 15rem 15rem;
-      grid-template-rows: 10.5rem 3.8rem 20.1rem;
+      grid-template-columns: 14rem 14rem;
+      grid-template-rows: 12.5rem 3.8rem 20.1rem;
       grid-template-areas:
       "text-container text-container"
       "technologies-container buttons-container"
@@ -126,8 +126,8 @@ $tablet-max-width: "(max-width: 770px)";
     text-align: left;
     column-gap: 1rem;
     @media (max-width: 770px){
-      grid-template-columns: 15rem 15rem;
-      grid-template-rows: 10.5rem 3.8rem 20.1rem;
+      grid-template-columns: 14rem 14rem;
+      grid-template-rows: 12.5rem 3.8rem 20.1rem;
       grid-template-areas:
       "text-container text-container"
       "technologies-container buttons-container"
