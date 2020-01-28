@@ -32,7 +32,7 @@
 
 <style scoped lang="scss">
   .technology-icon {
-    margin: 0.25em;
+    margin: 0.5rem 0.25rem;
     i{
       font-size: 3.5rem;
     }

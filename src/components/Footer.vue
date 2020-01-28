@@ -82,11 +82,6 @@
     .rounded-box{
       font-size: 1rem;
       bottom: 2em;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      width: 22rem;
     }
     h3{
       font-weight: 500;

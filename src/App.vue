@@ -18,6 +18,7 @@ export default {
 <style lang="scss">
 @import "./assets/sass/_animations.scss";
 @import "./assets/sass/_variables.scss";
+@import "./assets/sass/_breakpoints.scss";
 #app {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -56,6 +57,14 @@ ul{
     padding: 40px;
     background-color: $foreground;
     z-index: 3;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 22rem;
+    @media #{$small}{
+      width: 78%;
+      padding: 25px;
+    }
   }
 .floating {
   box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.18);
@@ -75,7 +84,8 @@ ul{
   flex-wrap: wrap;
 }
 .contact-buttons-container{
-    margin-top: 1.5rem;
+    width: 13rem;
+    margin: 1.5rem auto 0 auto;
   }
 .hidden{
     display: none;

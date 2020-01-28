@@ -55,7 +55,7 @@
 </script>
 
 <style scoped lang="scss">
-$tablet-max-width: "(max-width: 770px)";
+@import "../assets/sass/_breakpoints.scss";
   .project-item {
     justify-content: center;
     width: 100%;
@@ -68,6 +68,10 @@ $tablet-max-width: "(max-width: 770px)";
     p{
       padding: 0 1rem;
       line-height: 1.5rem;
+      @media #{$medium}{
+        padding: 0;
+        margin: 0;
+      }
     }
     img{
       width: 100%;
@@ -83,8 +87,8 @@ $tablet-max-width: "(max-width: 770px)";
   .project-buttons-container{
     grid-area: buttons-container;
     align-items: flex-end;
-    @media (max-width: 770px){
-      justify-content: flex-start;
+    @media #{$medium}{
+      justify-content: space-evenly;
     }
   }
   .project-technologies-container{    
@@ -92,8 +96,8 @@ $tablet-max-width: "(max-width: 770px)";
     width: 100%;
     height: 100%;
     grid-area: technologies-container;
-    @media (max-width: 770px){
-      justify-content: flex-end;
+    @media #{$medium}{
+      justify-content: center;
     }
   }
   .project-grid-container-right{
@@ -105,15 +109,18 @@ $tablet-max-width: "(max-width: 770px)";
       "technologies-container buttons-container project-mockup";
     text-align: right;
     column-gap: 1rem;
-    @media (max-width: 770px){
+    @media #{$medium} {
       grid-template-columns: 14rem 14rem;
-      grid-template-rows: 12.5rem 3.8rem 20.1rem;
+      grid-template-rows: auto 3.8rem auto;
       grid-template-areas:
       "text-container text-container"
       "technologies-container buttons-container"
       "project-mockup project-mockup";
       text-align: center;
       row-gap: 1rem;
+    }
+    @media #{$small}{
+      grid-template-columns: 45% 45%;
     }
   }
   .project-grid-container-left{
@@ -125,15 +132,18 @@ $tablet-max-width: "(max-width: 770px)";
     "project-mockup buttons-container technologies-container";
     text-align: left;
     column-gap: 1rem;
-    @media (max-width: 770px){
+    @media #{$medium}{
       grid-template-columns: 14rem 14rem;
-      grid-template-rows: 12.5rem 3.8rem 20.1rem;
+      grid-template-rows: auto 3.8rem auto;
       grid-template-areas:
       "text-container text-container"
       "technologies-container buttons-container"
       "project-mockup project-mockup";
       text-align: center;
       row-gap: 1rem;
+    }
+    @media #{$small}{
+      grid-template-columns: 45% 45%;
     }
   }
 </style>

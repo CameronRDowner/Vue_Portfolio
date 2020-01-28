@@ -69,6 +69,7 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_variables.scss";
+@import "../assets/sass/_breakpoints.scss";
    .banner{
     margin: 0 auto;
     width: 100%;
@@ -76,25 +77,18 @@
     background: $primary;
     background: -webkit-linear-gradient(to left, #2a0845, $primary);
     background: linear-gradient(to left, #2a0845, $primary);
-
-
-
-
-
   }
   header{
     .rounded-box{
       font-size: 1rem;
       top: 80px;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      width: 22rem;
       img{
         max-width: 200px;
-        width: 40%;
+        width: 8.5rem;
         border-radius: 50%;
+        @media #{$medium}{
+          
+        }
       }
       h1{
         color: #212529;
@@ -105,9 +99,6 @@
         font-size: 1.5em;
         margin: 0.25em 0;
         color:#4A4E69;
-      }
-      .contact-buttons-container{
-      margin-top: 1.5rem;
       }
     }
     

@@ -152,6 +152,7 @@
 </script>
 
 <style scoped lang="scss">
+@import "../assets/sass/_breakpoints.scss";
   #technologies {
     width: 100%;
 
@@ -167,11 +168,9 @@
     align-items: flex-start;
     background-color: 	white;
     padding: 3em;
-  @media (max-width: 705px){
-    padding: 3em 8rem;
-  }
+  
     ul{
-      max-width: 10rem;
+      width: 10rem;
     }
     h3{
       font-weight: 500;
