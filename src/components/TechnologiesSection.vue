@@ -2,9 +2,9 @@
 
   <section id="technologies">
     <h1>Technologies</h1>
-    <vue-aos animation-class="shadow-drop">
+    <vue-aos animation-class="shadow-drop" threshold="0.8">
     <div id="technologies-wrapper" class="floating">
-      <vue-aos animation-class="slide-in-blurred-left">
+      <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
       <div>
         <h3>Front End</h3>
         <ul class="flex-container-row">
@@ -12,7 +12,7 @@
         </ul>
       </div>
       </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-left">
+      <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
       <div>
         <h3>Back End</h3>
         <ul class="flex-container-row">
@@ -20,7 +20,7 @@
         </ul>
       </div>
       </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right">
+      <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
       <div>
         <h3>Frameworks</h3>
         <ul class="flex-container-row">
@@ -28,7 +28,7 @@
         </ul>
       </div>
       </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right">
+      <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
       <div>
         <h3>Libraries</h3>
         <ul class="flex-container-row">
@@ -167,7 +167,9 @@
     align-items: flex-start;
     background-color: 	white;
     padding: 3em;
-
+  @media (max-width: 705px){
+    padding: 3em 8rem;
+  }
     ul{
       max-width: 10rem;
     }

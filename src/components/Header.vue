@@ -2,7 +2,7 @@
 
   <header>
     <div class="banner">
-      <vue-aos animation-class="slide-in-top">
+      <vue-aos animation-class="slide-in-top" threshold="0.2">
         <div class="rounded-box floating">
           <img src="../assets/images/profile.png" alt="profile picture">
           <h1>Cameron Downer</h1>

@@ -1,5 +1,5 @@
 <template lang="html">
-<vue-aos :animation-class="'slide-in-' + getOrientation">
+<vue-aos :animation-class="'slide-in-' + getOrientation" threshold="0.1">
   <div class="project-item" :class="'project-grid-container-' + getOrientation">
       <div class="project-text-container">
         <h2>{{project.name}}</h2>
@@ -11,7 +11,7 @@
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
       </ul>
-      <vue-aos animation-class="delayed-shadow-drop">
+      <vue-aos animation-class="delayed-shadow-drop" threshold="0.1">
         <img :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)" class="floating">
       </vue-aos>
   </div>
@@ -83,7 +83,7 @@ $tablet-max-width: "(max-width: 770px)";
   .project-buttons-container{
     grid-area: buttons-container;
     align-items: flex-end;
-    @media #{$tablet-max-width}{
+    @media (max-width: 770px){
       justify-content: flex-start;
     }
   }
@@ -92,7 +92,7 @@ $tablet-max-width: "(max-width: 770px)";
     width: 100%;
     height: 100%;
     grid-area: technologies-container;
-    @media #{$tablet-max-width}{
+    @media (max-width: 770px){
       justify-content: flex-end;
     }
   }
@@ -105,7 +105,7 @@ $tablet-max-width: "(max-width: 770px)";
       "technologies-container buttons-container project-mockup";
     text-align: right;
     column-gap: 1rem;
-    @media #{$tablet-max-width}{
+    @media (max-width: 770px){
       grid-template-columns: 15rem 15rem;
       grid-template-rows: 10.5rem 3.8rem 20.1rem;
       grid-template-areas:
@@ -125,7 +125,7 @@ $tablet-max-width: "(max-width: 770px)";
     "project-mockup buttons-container technologies-container";
     text-align: left;
     column-gap: 1rem;
-    @media #{$tablet-max-width}{
+    @media (max-width: 770px){
       grid-template-columns: 15rem 15rem;
       grid-template-rows: 10.5rem 3.8rem 20.1rem;
       grid-template-areas:
