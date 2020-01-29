@@ -42,16 +42,15 @@
           this.makeProjectVisible();
           setTimeout(()=>{
             this.floatMockup();
-          },1300)
+          },600)
         }
       },
       floatMockup: function (){
-        let mockupClassList = document.getElementById(this.mockupId).classList;
-        mockupClassList.add("shadow-drop", "floating");
+        document.getElementById(this.mockupId).classList.add("shadow-drop", "floating");
+        this.mockupFloating = true;
       },
       unfloatMockup: function(){
-        let mockupClassList = document.getElementById(this.mockupId).classList;
-        mockupClassList.remove("shadow-drop","floating");
+        document.getElementById(this.mockupId).ClassList.remove("shadow-drop","floating");
         this.mockupFloating = false;
       },
       makeProjectVisible : function (){

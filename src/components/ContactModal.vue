@@ -123,7 +123,7 @@
     position: fixed;
     top: 0;
     background-color:#404040;
-    opacity: 70%;
+    opacity: 0.7;
     height: 100%;
     width: 100%;
     z-index: 5;

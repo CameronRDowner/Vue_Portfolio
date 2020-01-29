@@ -51,7 +51,7 @@
             iconClasses: "fab fa-linkedin-in",
             textOrIconColor: "white",
             buttonColor: ColorVariables.linkedin,
-            hrefUrl : "https://www.linkedin.com/in/cameron-downer-392863173"
+            hrefUrl : "https://www.linkedin.com/in/CameronRDowner"
           }
         ]
       }
