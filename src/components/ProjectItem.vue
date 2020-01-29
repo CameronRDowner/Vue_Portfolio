@@ -1,6 +1,6 @@
 <template lang="html">
-<vue-aos :animation-class="'slide-in-' + getOrientation" threshold="0.1">
-  <div class="project-item" :class="'project-grid-container-' + getOrientation">
+<div class="project-wrapper" v-observe-visibility="{callback: handleProjectVisibility, once: true, intersection: {threshold: 0.3}}">
+  <div class="project-item" :class="['project-grid-container-' + getOrientation, 'slide-in-' + getOrientation]" v-show="projectVisible">
       <div class="project-text-container">
         <h2>{{project.name}}</h2>
         <p>{{project.description}}</p>
@@ -11,11 +11,9 @@
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
       </ul>
-      <vue-aos animation-class="delayed-shadow-drop" threshold="0.1">
-        <img :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)" class="floating">
-      </vue-aos>
+        <img :id="mockupId" :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)">
   </div>
-  </vue-aos>
+</div>
 </template>
 
 <script lang="js">
@@ -33,11 +31,32 @@
     },
     data () {
       return {
-        
+        projectVisible: false,
+        mockupFloating: false,
+        mockupId: "projectMockup" + this.project.id.toString()
       }
     },
     methods: {
-
+      handleProjectVisibility : function (isVisible){
+        if(isVisible){
+          this.makeProjectVisible();
+          setTimeout(()=>{
+            this.floatMockup();
+          },1300)
+        }
+      },
+      floatMockup: function (){
+        let mockupClassList = document.getElementById(this.mockupId).classList;
+        mockupClassList.add("shadow-drop", "floating");
+      },
+      unfloatMockup: function(){
+        let mockupClassList = document.getElementById(this.mockupId).classList;
+        mockupClassList.remove("shadow-drop","floating");
+        this.mockupFloating = false;
+      },
+      makeProjectVisible : function (){
+        this.projectVisible = true;
+      }
     },
     computed: {
       getOrientation : function (){
@@ -56,10 +75,17 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_breakpoints.scss";
+  .project-wrapper{
+    height: 24rem;
+
+    @media #{$medium}{
+      height: 40rem;
+    }
+  }
   .project-item {
     justify-content: center;
     width: 100%;
-    margin: 4rem auto;
+    margin: 1rem auto;
     h2{
       margin-top: 0;
       font-weight: 500;

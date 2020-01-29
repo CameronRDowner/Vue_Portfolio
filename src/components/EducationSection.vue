@@ -153,7 +153,7 @@
 
 <style scoped lang="scss">
   #education {
-    padding-bottom: 2.5em;
+    padding-bottom: 5em;
   }
   #education-containers-wrapper{
     align-items: flex-start;

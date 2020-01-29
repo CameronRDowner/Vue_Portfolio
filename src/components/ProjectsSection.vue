@@ -175,6 +175,9 @@
 <style scoped lang="scss">
   #projects {
     padding-top: 6rem;
+    h1{
+      padding-bottom: 2rem;
+    }
   }
   #projects-container{
     max-width: 50rem;

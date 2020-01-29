@@ -88,7 +88,7 @@ ul{
     margin: 1.5rem auto 0 auto;
   }
 .hidden{
-    display: none;
+    display: none !important;
   }
 
 </style>
