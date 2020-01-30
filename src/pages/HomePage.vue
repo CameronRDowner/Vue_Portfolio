@@ -9,6 +9,7 @@
     </main>
     <Footer/>
     <ContactModal/>
+    <AlertModal/>
   </div>
     
 
@@ -21,6 +22,7 @@
   import EducationSection from "../components/EducationSection.vue"
   import Footer from "../components/Footer.vue"
   import ContactModal from "../components/ContactModal.vue"
+  import AlertModal from "../components/AlertModal.vue"
   export default  {
     name: 'HomePage',
     components: {
@@ -29,7 +31,8 @@
       TechnologiesSection,
       EducationSection,
       Footer,
-      ContactModal
+      ContactModal,
+      AlertModal
     },
     props: [],
     mounted () {

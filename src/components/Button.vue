@@ -25,9 +25,20 @@
       emitClick: function () {
         eventBus.$emit(this.button.eventBusChannel);
       },
+      emitClickWithMessage: function(){
+        eventBus.$emit(this.button.eventBusChannel, this.button.eventBusMessage);
+      },
+      handleEmitClick : function(){
+        if(this.button.hasOwnProperty("eventBusMessage")){
+          this.emitClickWithMessage();
+        }
+        else{
+          this.emitClick();
+        }
+      },
       handleClickEvent: function() {
         if(this.button.hasOwnProperty('eventBusChannel')){
-          this.emitClick();
+          this.handleEmitClick();
         }
         else{
           return

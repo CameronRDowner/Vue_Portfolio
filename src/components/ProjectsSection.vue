@@ -42,11 +42,12 @@
             projectButtonsList: [
               {
                 id: 1,
-                hrefUrl: "https://github.com/CameronRDowner/Wescot_Roofing_Website",
                 iconClasses: "fab fa-github",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.github,
-                iconSize: "2rem"
+                iconSize: "2rem",
+                eventBusChannel: "alert-modal-open-clicks",
+                eventBusMessage: "This Github repository was made private. Please contact me if you need access.",
               },
               {
                 id: 2,
@@ -117,7 +118,7 @@
               },
               {
                 id: 2,
-                hrefUrl: "https://www.camerondowner.com",
+                hrefUrl: "https://camerondowner.com",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.primary
