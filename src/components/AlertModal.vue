@@ -52,6 +52,7 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_variables.scss";
+@import "../assets/sass/_breakpoints.scss";
   .alert-modal {
     position: fixed;
     border-radius: 5px;
@@ -63,8 +64,12 @@
     margin: 0 auto;
     background-color: $foreground;
     z-index: 6;
+    padding: 2rem;
+    @media #{$small}{
+      width: 80vw;
+      padding: 2rem 1rem;
+    }
     p{
-      padding: 0.5rem;
       margin: 0;
       line-height: 1.5rem;
     }

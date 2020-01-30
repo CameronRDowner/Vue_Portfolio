@@ -119,7 +119,7 @@
   .contact-modal-checkbox-container {
   display: block;
   position: relative;
-  padding-left: 0.1rem;
+  padding-left: 1.5rem;
   font-size: 1rem;
   margin: 0.5rem 0 0.5rem 0rem;
   cursor: pointer;
@@ -127,6 +127,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 .contact-modal-checkbox-container input {
   position: absolute;

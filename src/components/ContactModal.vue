@@ -95,6 +95,7 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_variables.scss";
+@import "../assets/sass/_breakpoints.scss";
   #contact-modal {
     position: fixed;
     border-radius: 5px;
@@ -106,6 +107,10 @@
     margin: 0 auto;
     background-color: $foreground;
     z-index: 6;
+    @media #{$small}{
+      width: 80vw;
+      padding: 1rem;
+    }
     iframe{
       height: 30rem;
       width: 30rem;
