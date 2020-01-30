@@ -3,7 +3,7 @@
   <section class="contact-form">
     <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form @submit.prevent="handleSubmit(handleFormSubmit)" @reset.prevent="reset" id="contact-modal-form"
-          action="https://mailthis.to/cdowner" method="post" target="FormSender">
+          action="https://formspree.io/mvoaojaa" method="post" target="FormSender">
           <ValidationProvider v-slot="fullName" rules="required|alpha_spaces" tag="div">
             <input type="text" name="FullName" v-model="contactForm.fullName" placeholder="* Full Name">
             <div class="validator-text-feedback">{{ fullName.errors[0] }}</div>

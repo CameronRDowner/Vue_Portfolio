@@ -79,9 +79,9 @@
       },
       handleFormRecieved : function (){
         this.toggleCheckmarkVisibility();
-        setTimeout(() => {
-          this.closeModal();
-        }, 2000);
+         setTimeout(() => {
+           this.closeModal();
+         }, 2000);
       }
           
     },
@@ -151,7 +151,11 @@
     color: $primary;
     z-index: 6;
     top: 30%;
-    left: 25%;
+    left: 0;
+    right: 0;
+    @media #{$small}{
+      font-size: 10rem;
+    }
 }
 #contact-modal-cancel-button{
     color: $primary;
