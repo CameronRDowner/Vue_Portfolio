@@ -85,7 +85,7 @@
               },
               {
                 id: 2,
-                hrefUrl: "https://cameronrdowner.github.io/Angular_Todo_App/",
+                hrefUrl: "https://camerondowner.com/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
                 textOrIconColor: "white",
                 buttonColor: ColorVariables.primary
