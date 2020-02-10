@@ -24,7 +24,43 @@
     },
     data() {
       return {
-        projectList: [{
+        projectList: [
+          {
+            id: 0,
+            name: "PokeDirectory",
+            mockupFileName: "project_coming_soon.jpg",
+            description: "An Angular webapp for the purpose of browsing and viewing the stats of your favorite pokemon. All pokemon data is retrieved via the RESTful PokeApi. Click the Github button below to follow the development process and view all commits thus far.",
+            technologiesList: [
+                {
+                  id: 1,
+                  deviconClasses: "devicon-angularjs-plain colored"
+                },
+                {
+                  id: 2,
+                  deviconClasses: "devicon-sass-plain colored"
+                }
+            ],
+            projectButtonsList: [
+              {
+                id: 1,
+                iconClasses: "fab fa-github",
+                textOrIconColor: "white",
+                buttonColor: ColorVariables.github,
+                iconSize: "2rem",
+                hrefUrl: "https://github.com/CameronRDowner/Angular_PokeDirectory",
+              },
+              {
+                id: 2,
+                eventBusChannel: "alert-modal-open-clicks",
+                eventBusMessage: "This project is currently under development. To view the progress so far, click the corresponding Github button.",
+                iconClasses: "fas fa-external-link-alt",
+                textOrIconColor: "white",
+                buttonColor: ColorVariables.primary,
+                iconSize: "2rem"
+              }
+            ]
+          },
+          {
             id: 1,
             name: "Wescot Roofing Website",
             mockupFileName: "wescot_roofing_website.jpg",
