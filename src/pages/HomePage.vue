@@ -1,6 +1,7 @@
 <template lang="html">
 
   <div id="home-page">
+      <NavBar/>
       <Header/>
     <main>
       <ProjectsSection/>
@@ -23,6 +24,7 @@
   import Footer from "../components/Footer.vue"
   import ContactModal from "../components/ContactModal.vue"
   import AlertModal from "../components/AlertModal.vue"
+  import NavBar from "../components/NavBar.vue"
   export default  {
     name: 'HomePage',
     components: {
@@ -32,7 +34,8 @@
       EducationSection,
       Footer,
       ContactModal,
-      AlertModal
+      AlertModal,
+      NavBar
     },
     props: [],
     mounted () {
