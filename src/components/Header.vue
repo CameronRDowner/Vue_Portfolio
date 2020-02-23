@@ -2,58 +2,75 @@
 
   <header>
     <div class="banner">
+        <div id="resume-button-container">
+          <Button :button="resumeButton" v-on:buttonClicked="buttonHelper.openExternalLink(resumeButton.hrefUrl)" />
+        </div>
       <vue-aos animation-class="slide-in-top" threshold="0.2">
         <div class="rounded-box floating">
           <img src="../assets/images/profile.png" alt="profile picture">
           <h1>Cameron Downer</h1>
-          <h2>Software Engineer</h2>
-          <div class="flex-container-row contact-buttons-container" >
-            <Button v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+          <h2>Front End Developer</h2>
+          <div class="flex-container-row contact-buttons-container">
+            <Button :button="contactButton" v-on:buttonClicked="buttonHelper.emitEventBus(`contact-modal-open-clicks`)" />
+            <Button :button="githubButton" v-on:buttonClicked="buttonHelper.openExternalLink(githubButton.hrefUrl)"/>
+            <Button :button="linkedinButton" v-on:buttonClicked="buttonHelper.openExternalLink(linkedinButton.hrefUrl)"/>
           </div>
       </div>
       </vue-aos>
+      <NavBar/>
     </div>
     </header>
 
 </template>
 
 <script lang="js">
+  import NavBar from "../components/NavBar.vue";
   import Button from "./Button.vue";
-  import ColorVariables from "../assets/sass/_variables.scss";
+  import ButtonHelper from "../models/ButtonHelper.js"
+  import colorVariables from "../assets/sass/_variables.scss";
   export default  {
     name: 'Header',
     components: {
-      Button
+      Button,
+      NavBar
     },
     props: [],
     mounted () {
 
     },
+    created(){
+    },
     data () {
       return {
-        contactButtonsList: [
-          {
-            id: 1,
-            iconClasses: "far fa-envelope",
-            textOrIconColor: "white",
-            buttonColor: ColorVariables.primary,
-            eventBusChannel: "contact-modal-open-clicks"
+          buttonHelper: new ButtonHelper(),
+
+          resumeButton:{
+            iconClasses: "fas fa-file-download",
+            contentColor: "white",
+            buttonColor: colorVariables.primary,
+            hrefUrl: "https://docs.google.com/document/d/14EKr-8gt5VWqWSdxVEhmRJofBPEyvn71atU7G04D1U4/export?format=pdf",
+            text:"Resume",
+            contentSize: "0.9rem",
+            padding: "0.4rem"
           },
-          {
-            id: 2,
+          contactButton: {
+            iconClasses: "far fa-envelope",
+            contentColor: "white",
+            buttonColor: colorVariables.primary
+          },
+          githubButton: {
             iconClasses: "fab fa-github",
-            textOrIconColor: "white",
-            buttonColor: ColorVariables.github,
+            contentColor: "white",
+            buttonColor: colorVariables.github,
             hrefUrl : "https://github.com/CameronRDowner"
           },
-          { 
-            id: 3,
+          linkedinButton:  { 
             iconClasses: "fab fa-linkedin-in",
-            textOrIconColor: "white",
-            buttonColor: ColorVariables.linkedin,
+            contentColor: "white",
+            buttonColor: colorVariables.linkedin,
             hrefUrl : "https://www.linkedin.com/in/CameronRDowner"
           }
-        ]
+        
       }
     },
     methods: {
@@ -71,9 +88,10 @@
 @import "../assets/sass/_variables.scss";
 @import "../assets/sass/_breakpoints.scss";
    .banner{
+    position: relative;
     margin: 0 auto;
     width: 100%;
-    height: 25em;
+    height: 22rem;
     background: $primary;
     background: -webkit-linear-gradient(to left, #2a0845, $primary);
     background: linear-gradient(to left, #2a0845, $primary);
@@ -81,7 +99,7 @@
   header{
     .rounded-box{
       font-size: 1rem;
-      top: 80px;
+      top: 30px;
       img{
         max-width: 200px;
         width: 8.5rem;
@@ -101,6 +119,28 @@
         color:#4A4E69;
       }
     }
-    
+    #resume-button-container{
+      position: absolute;
+      right: 0;
+      padding: 1rem;
+      a{
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        margin: 1px;
+        background-color: $primary;
+        border-radius: 5%;
+        &:hover{
+        background: white;
+        color: $primary;
+        margin: 0;
+      }
+        i{
+          padding-right: 1rem;
+          font-size: 1rem;
+        }
+      }
+    }
   }
 </style>

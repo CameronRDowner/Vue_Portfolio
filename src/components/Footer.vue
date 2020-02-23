@@ -6,7 +6,10 @@
       <h3>Thanks for checking out my portfolio!</h3>
       <p>You can reach out to me via any of my handles</p>
       <div class="flex-container-row contact-buttons-container" >
-          <Button v-bind:key="button.id" v-for="button in contactButtonsList" :button="button"/>
+          <Button :button="contactButton" v-on:buttonClicked="buttonHelper.emitEventBus(`contact-modal-open-clicks`)" />
+          <Button :button="githubButton" v-on:buttonClicked="buttonHelper.openExternalLink(githubButton.hrefUrl)"/>
+          <Button :button="linkedinButton" v-on:buttonClicked="buttonHelper.openExternalLink(linkedinButton.hrefUrl)"/>
+          
       </div>
       <div>
 
@@ -20,9 +23,10 @@
 <script lang="js">
   import Button from "./Button.vue";
   import VueAos from 'vue-aos';
+  import ButtonHelper from "../models/ButtonHelper.js";
   import ColorVariables from "../assets/sass/_variables.scss"
   export default  {
-    name: 'footer',
+    name: 'Footer',
     components: {
       Button,
       VueAos
@@ -33,33 +37,30 @@
     },
     data () {
       return {
-      contactButtonsList: [
-          {
+      buttonHelper: new ButtonHelper(),
+      contactButton: {
             id: 1,
             iconClasses: "far fa-envelope",
-            textOrIconColor: "white",
-            buttonColor: ColorVariables.primary,
-            eventBusChannel: "contact-modal-open-clicks"
+            contentColor: "white",
+            buttonColor: ColorVariables.primary
           },
-          {
+          githubButton: {
             id: 2,
             iconClasses: "fab fa-github",
-            textOrIconColor: "white",
+            contentColor: "white",
             buttonColor: ColorVariables.github,
             hrefUrl : "https://github.com/CameronRDowner"
           },
-          { 
+          linkedinButton:  { 
             id: 3,
             iconClasses: "fab fa-linkedin-in",
-            textOrIconColor: "white",
+            contentColor: "white",
             buttonColor: ColorVariables.linkedin,
-            hrefUrl : "https://www.linkedin.com/in/cameron-downer-392863173"
+            hrefUrl : "https://www.linkedin.com/in/CameronRDowner"
           }
-        ]
       }
     },
     methods: {
-
     },
     computed: {
       

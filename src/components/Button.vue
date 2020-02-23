@@ -1,8 +1,8 @@
 <template lang="html">
 
   <div class="button">
-    <a :style="buttonColorVariables" :href="button.hrefUrl" target="_blank" v-on:click="handleClickEvent">
-      <p :style="buttonTextStyles" :class="button.iconClasses">{{button.text}}</p>
+    <a :style="buttonStyles" v-on:click="emitClick()">{{button.text}}
+      <i  v-if="button.iconClasses !== undefined" :class="button.iconClasses" :style="iconStyles"></i>
       </a>
   </div>
 
@@ -10,9 +10,8 @@
 
 <script lang="js">
   import tinycolor from 'tinycolor2';
-  import { eventBus } from "../main";
   export default  {
-    name: 'icon-button',
+    name: 'Button',
     props: ["button"],
     mounted () {
 
@@ -23,40 +22,22 @@
     },
     methods: {
       emitClick: function () {
-        eventBus.$emit(this.button.eventBusChannel);
+        this.$emit('buttonClicked');
       },
-      emitClickWithMessage: function(){
-        eventBus.$emit(this.button.eventBusChannel, this.button.eventBusMessage);
-      },
-      handleEmitClick : function(){
-        if(this.button.hasOwnProperty("eventBusMessage")){
-          this.emitClickWithMessage();
-        }
-        else{
-          this.emitClick();
-        }
-      },
-      handleClickEvent: function() {
-        if(this.button.hasOwnProperty('eventBusChannel')){
-          this.handleEmitClick();
-        }
-        else{
-          return
-        }
-      }
-
     },
     computed: {
-      buttonColorVariables: function (){
+      buttonStyles: function (){
         return {
+          color : this.button.contentColor,
+          'font-size' : this.button.hasOwnProperty('contentSize') ? this.button.contentSize : '1.75rem',
           '--button-color': this.button.buttonColor,
-          '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString()
+          '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString(),
+          padding : this.button.hasOwnProperty('padding') ? this.button.padding : '0.75rem'
         }
       },
-      buttonTextStyles: function (){
+      iconStyles: function(){
         return {
-          color : this.button.textOrIconColor,
-          'font-size' : this.button.hasOwnProperty('textSize') ? this.button.textSize : '1.75rem'
+          'padding-left' : this.button.iconClasses && this.button.text ? '0.4rem' : '0'
         }
       }
       
@@ -69,6 +50,7 @@
 <style scoped lang="scss">
   .button{
     a{
+    padding: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,14 +60,13 @@
     -moz-transition: background-position 1s;
     transition: background-position 1s;
     margin: 0 0.5rem;
-    padding: 0.75rem;
     text-decoration: none;
-    border-radius: 5%;
+    cursor: pointer;
+
     &:hover{
-      cursor: pointer;
       background-position: 0 -100%;
     }
-    p{
+    a{
       margin: 0;
     }
   }

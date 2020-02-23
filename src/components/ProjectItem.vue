@@ -6,7 +6,8 @@
         <p>{{project.description}}</p>
       </div>
       <div class="project-buttons-container flex-container-row">
-        <Button v-bind:key="button.id" v-for="button in project.projectButtonsList" :button="button" />
+        <Button :button="project.buttonsList[0]"  v-on:buttonClicked="handleOpenProjectGithub()"/>
+        <Button :button="project.buttonsList[1]"  v-on:buttonClicked="handleOpenLiveProject()"/>
       </div>
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
@@ -18,6 +19,7 @@
 
 <script lang="js">
   import Button from "./Button.vue"
+  import ButtonHelper from "../models/ButtonHelper.js"
   import TechnologyIcon from "./TechnologyIcon.vue"
   export default  {
     name: 'project-item',
@@ -31,12 +33,29 @@
     },
     data () {
       return {
+        buttonHelper: new ButtonHelper(),
         projectVisible: false,
         mockupFloating: false,
         mockupId: "projectMockup" + this.project.id.toString()
       }
     },
     methods: {
+      handleOpenLiveProject : function (){
+        if(this.project.buttonsList[1].hrefUrl === undefined){
+          this.buttonHelper.emitEventBus("alert-modal-open-clicks", "This project is currently under development. To view the progress so far, click the corresponding Github button.");
+        }
+        else{
+          this.buttonHelper.openExternalLink(this.project.buttonsList[1].hrefUrl);
+        }
+      },
+      handleOpenProjectGithub: function(){
+        if(this.project.buttonsList[0].hrefUrl === undefined){
+          this.buttonHelper.emitEventBus("alert-modal-open-clicks", "This Github repository was made private. Please contact me if you need access.");
+        }
+        else{
+          this.buttonHelper.openExternalLink(this.project.buttonsList[0].hrefUrl);
+        }
+      },
       handleProjectVisibility : function (isVisible){
         if(isVisible){
           this.makeProjectVisible();

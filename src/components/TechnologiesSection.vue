@@ -153,6 +153,7 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_breakpoints.scss";
+@import "../assets/sass/_variables.scss";
   #technologies {
     width: 100%;
 

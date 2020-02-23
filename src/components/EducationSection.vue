@@ -162,11 +162,11 @@
     }
   }
   #certifications-container{
-    max-width: 35rem;
-    margin: 1rem;
+    max-width: 33rem;
+    margin: 0.75rem;
   }
   #diplomas-container{
     max-width: 19rem;
-    margin: 1rem;
+    margin: 0.75rem;
   }
 </style>

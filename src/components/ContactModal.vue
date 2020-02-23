@@ -13,7 +13,7 @@
       </transition>
       <ContactForm/>
       <div id="contact-modal-buttons-container" class="flex-container-row">
-            <Button :button="pseudoSubmitButton" />
+            <Button :button="pseudoSubmitButton" v-on:buttonClicked="buttonHelper.emitEventBus(`contact-form-submit-clicks`)" />
             <a id="contact-modal-cancel-button" v-on:click="closeModal">Cancel</a>
           </div>
     </div>
@@ -25,6 +25,7 @@
   import ColorVariables from "../assets/sass/_variables.scss";
   import ContactForm from './ContactForm.vue'
   import { eventBus } from '../main';
+  import ButtonHelper from '../models/ButtonHelper.js'
   import Button from '../components/Button.vue';
   export default  {
     name: 'contact-modal',
@@ -40,15 +41,15 @@
     },
     data () {
       return {
+        buttonHelper: new ButtonHelper(),
         checkmarkVisible: false,
         submitPanelVisible: false,
         modalVisible: false,
         pseudoSubmitButton: {
             text: "Submit",
-            textOrIconColor: "white",
+            contentColor: "white",
             buttonColor: ColorVariables.primary,
-            textSize: '1rem',
-            eventBusChannel: 'contact-form-submit-clicks'
+            contentSize: '1rem'
         }
       }
     },

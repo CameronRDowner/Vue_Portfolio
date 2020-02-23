@@ -33,6 +33,9 @@ p, h1, h2, h3, h4, h5{
 	font-weight: 300;
   line-height: 1;
 }
+p{
+  line-height: 2rem;
+}
 h1{
     font-size: 2em;
   }
@@ -57,7 +60,7 @@ ul{
     padding: 40px;
     background-color: $foreground;
     z-index: 3;
-    left: 0;
+    left:0;
     right: 0;
     margin: auto;
     width: 22rem;
@@ -86,9 +89,14 @@ ul{
 .contact-buttons-container{
     width: 13rem;
     margin: 1.5rem auto 0 auto;
-  }
+}
 .hidden{
     display: none !important;
-  }
+}
+.width-limit{
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
 
 </style>

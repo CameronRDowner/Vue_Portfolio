@@ -40,23 +40,17 @@
                   deviconClasses: "devicon-sass-plain colored"
                 }
             ],
-            projectButtonsList: [
+            buttonsList: [
               {
-                id: 1,
                 iconClasses: "fab fa-github",
-                textOrIconColor: "white",
+                contentColor: "white",
                 buttonColor: ColorVariables.github,
-                iconSize: "2rem",
-                hrefUrl: "https://github.com/CameronRDowner/Angular_PokeDirectory",
+                hrefUrl: "https://github.com/CameronRDowner/Angular_PokeDirectory"
               },
               {
-                id: 2,
-                eventBusChannel: "alert-modal-open-clicks",
-                eventBusMessage: "This project is currently under development. To view the progress so far, click the corresponding Github button.",
                 iconClasses: "fas fa-external-link-alt",
-                textOrIconColor: "white",
-                buttonColor: ColorVariables.primary,
-                iconSize: "2rem"
+                contentColor: "white",
+                buttonColor: ColorVariables.primary
               }
             ]
           },
@@ -75,23 +69,17 @@
                   deviconClasses: "devicon-sass-plain colored"
                 }
             ],
-            projectButtonsList: [
+            buttonsList: [
               {
-                id: 1,
                 iconClasses: "fab fa-github",
-                textOrIconColor: "white",
-                buttonColor: ColorVariables.github,
-                iconSize: "2rem",
-                eventBusChannel: "alert-modal-open-clicks",
-                eventBusMessage: "This Github repository was made private. Please contact me if you need access.",
+                contentColor: "white",
+                buttonColor: ColorVariables.github
               },
               {
-                id: 2,
                 hrefUrl: "https://www.wescotroofing.com",
                 iconClasses: "fas fa-external-link-alt",
-                textOrIconColor: "white",
-                buttonColor: ColorVariables.primary,
-                iconSize: "2rem"
+                contentColor: "white",
+                buttonColor: ColorVariables.primary
               }
             ]
           },
@@ -112,24 +100,22 @@
                   name: ""
                 }
             ],
-            projectButtonsList: [{
-                id: 1,
+            buttonsList: [{
                 hrefUrl: "https://github.com/CameronRDowner/Angular_Todo_App",
                 iconClasses: "fab fa-github",
-                textOrIconColor: "white",
+                contentColor: "white",
                 buttonColor: ColorVariables.github
               },
               {
-                id: 2,
                 hrefUrl: "https://camerondowner.com/Angular_Todo_App/",
                 iconClasses: "fas fa-external-link-alt",
-                textOrIconColor: "white",
+                contentColor: "white",
                 buttonColor: ColorVariables.primary
               }
             ]
           },
           {
-            id: 3,
+            id: 4,
             name: "Portfolio Website",
             mockupFileName: "portfolio_website.jpg",
             description: "The portfolio page you are currently browsing is built with Vue. Many of the components that make up this page utilize Vue directives, Flexbox and Grid. When appropriate, animations use the Vue transition wrapper component for triggering; all others utilize a scroll event handler. And lastly, the contact form uses a validation library to ensure accuracy.",
@@ -145,53 +131,17 @@
                   name: ""
                 }
             ],
-            projectButtonsList: [{
-                id: 1,
+            buttonsList: [{
                 hrefUrl: "https://github.com/CameronRDowner/Vue_Portfolio",
                 iconClasses: "fab fa-github",
-                textOrIconColor: "white",
+                contentColor: "white",
                 buttonColor: ColorVariables.github
               },
               {
-                id: 2,
                 hrefUrl: "https://camerondowner.com",
                 iconClasses: "fas fa-external-link-alt",
-                textOrIconColor: "white",
+                contentColor: "white",
                 buttonColor: ColorVariables.primary
-              }
-            ]
-          },
-          {
-            id: 4,
-            name: "Agenda CRM",
-            mockupFileName: "agenda_crm.jpg",
-            description: "This windows app allows users to add, delete, and edit appointments as well as customer data. Furthermore, it has user authentication, reminders for appointments, multi-language support for prompts, report generation, and field validation. The customer and appointment data is stored on a mySQL relational database.",
-            technologiesList: [
-              {
-                  id: 1,
-                  deviconClasses: "devicon-csharp-plain colored",
-                  name: ""
-                },
-                {
-                  id: 2,
-                  deviconClasses: "devicon-mysql-plain colored",
-                  name: ""
-                }
-            ],
-            projectButtonsList: [
-              {
-                id: 1,
-                hrefUrl: "",
-                iconClasses: "",
-                textOrIconColor: "",
-                buttonColor: ""
-              },
-              {
-                id: 2,
-                hrefUrl: "https://github.com/CameronRDowner/Agenda_CRM",
-                iconClasses: "fab fa-github",
-                textOrIconColor: "white",
-                buttonColor: ColorVariables.github
               }
             ]
           }
@@ -211,7 +161,6 @@
 
 <style scoped lang="scss">
   #projects {
-    padding-top: 6rem;
     h1{
       padding-bottom: 2rem;
     }

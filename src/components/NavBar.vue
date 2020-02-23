@@ -1,16 +1,15 @@
 <template lang="html">
-
-  <div id="nav-bar">
-    <div id="nav-backdrop"></div>
-    <nav>
-      <ul id="nav-links-container">
-        <li class="nav-link">About</li>
-        <li class="nav-link">Projects</li>
-        <li class="nav-link">Technologies</li>
-        <li class="nav-link">Education</li>
+    <nav id="nav-bar">
+      <ul class="nav-links-container">
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="#projects">Projects</a></li>
+      </ul>
+      <div class="nav-links-container"></div>
+      <ul class="nav-links-container">
+        <li class="nav-link"><a href="#technolog">Technologies</a></li>
+        <li class="nav-link"><a href="#education">Education</a></li>
       </ul>
     </nav>
-  </div>
 
 </template>
 
@@ -39,27 +38,39 @@
 </script>
 
 <style scoped lang="scss">
+ @import "../assets/sass/_variables.scss";
   #nav-bar {
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
-  #nav-backdrop{
-    position: fixed;
-    height: 100%;
-    background-color: black;
-    opacity: 0.4;
-    width: 10rem;
-    z-index: 3;
-
-  }
-  #nav-links-container{
-    position: fixed;
+  .nav-links-container{
+    margin: 0 8rem;
     z-index: 4;
-    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 0;
+    width: 20rem;
   }
   .nav-link{
-    color: white;
-    font-size: 1.5rem;
+    padding: 1rem rem 0 2rem;
     text-align: left;
-    padding: 1rem 0 1rem 0.3rem;
+    margin: 1rem 1rem;
+    &:hover{
+      }
+    a{
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin: 1px;
+    }
   }
 </style>
