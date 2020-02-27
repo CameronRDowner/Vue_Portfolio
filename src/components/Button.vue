@@ -1,7 +1,7 @@
 <template lang="html">
 
   <div class="button">
-    <a :style="buttonStyles" v-on:click="emitClick()">{{button.text}}
+    <a class="radial-out" :style="buttonStyles" v-on:click="emitClick()">{{button.text}}
       <i  v-if="button.iconClasses !== undefined" :class="button.iconClasses" :style="iconStyles"></i>
       </a>
   </div>
@@ -54,14 +54,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, var(--button-color) 50%, var(--button-hover-color) 50%);
-    -webkit-transition: background-position 1s;
-    -moz-transition: background-position 1s;
-    transition: background-position 1s;
+    background-color: var(--button-color);
     margin: 0 0.5rem;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 50%;
 
     &:hover{
       background-position: 0 -100%;
@@ -69,6 +66,9 @@
     a{
       margin: 0;
     }
+  }
+  .radial-out:before{
+    background-color: var(--button-hover-color);
   }
   }
   

@@ -64,12 +64,16 @@
 </script>
 
 <style scoped lang="scss">
+@import '../assets/sass/_variables.scss';
   #home-page {
-    width: 100%;
     height: 100%;
     margin: 0;
     overflow: hidden;
     box-sizing: border-box;
+    background-color: $background;
+    border-radius: 1.3rem;
+    width: 60rem;
+    margin: 1rem auto;
     main{
       padding-top: 6rem;
     }

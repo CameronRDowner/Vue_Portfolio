@@ -19,18 +19,21 @@ export default {
 @import "./assets/sass/_animations.scss";
 @import "./assets/sass/_variables.scss";
 @import "./assets/sass/_breakpoints.scss";
+body{
+  background: rgb(250,252,255);
+  background: linear-gradient(121deg, rgba(250,252,255,1) 0%, rgba(51,51,51,1) 88%);
+}
 #app {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: 0;
-  width: 100%;
   height: 100%;
   color: #2c3e50;
 }
 p, h1, h2, h3, h4, h5{
-	font-weight: 300;
+	font-weight: 600;
   line-height: 1;
 }
 p{
@@ -41,7 +44,6 @@ h1{
   }
 body{
   margin: 0;
-  background-color: $background;
 }
 html{
   font-size: 16px;
@@ -56,21 +58,20 @@ ul{
 }
 .rounded-box{
     position: absolute;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 40px;
     background-color: $foreground;
     z-index: 3;
-    left:0;
-    right: 0;
+    right: 4rem;
     margin: auto;
-    width: 22rem;
+    width: 18 rem;
     @media #{$small}{
       width: 78%;
       padding: 25px;
     }
   }
 .floating {
-  box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.18);
+  box-shadow: 15px 10px 30px 0px rgba(135, 149, 177, 0.26);
 }
 .flex-container-row{
   display: flex;
@@ -97,6 +98,5 @@ ul{
   max-width: 50rem;
   margin: 0 auto;
 }
-
 
 </style>

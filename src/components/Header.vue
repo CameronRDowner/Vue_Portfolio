@@ -1,13 +1,12 @@
 <template lang="html">
 
   <header>
-    <div class="banner">
+    <div class="banner" v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
         <div id="resume-button-container">
-          <Button :button="resumeButton" v-on:buttonClicked="buttonHelper.openExternalLink(resumeButton.hrefUrl)" />
         </div>
       <vue-aos animation-class="slide-in-top" threshold="0.2">
         <div class="rounded-box floating">
-          <img src="../assets/images/profile.png" alt="profile picture">
+          <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>
           <h2>Front End Developer</h2>
           <div class="flex-container-row contact-buttons-container">
@@ -43,20 +42,10 @@
     data () {
       return {
           buttonHelper: new ButtonHelper(),
-
-          resumeButton:{
-            iconClasses: "fas fa-file-download",
-            contentColor: "white",
-            buttonColor: colorVariables.primary,
-            hrefUrl: "https://docs.google.com/document/d/14EKr-8gt5VWqWSdxVEhmRJofBPEyvn71atU7G04D1U4/export?format=pdf",
-            text:"Resume",
-            contentSize: "0.9rem",
-            padding: "0.4rem"
-          },
           contactButton: {
-            iconClasses: "far fa-envelope",
+            iconClasses: "fas fa-envelope",
             contentColor: "white",
-            buttonColor: colorVariables.primary
+            buttonColor: colorVariables.yellow
           },
           githubButton: {
             iconClasses: "fab fa-github",
@@ -74,7 +63,23 @@
       }
     },
     methods: {
-      
+      handleNavBarPosition : function (isVisible){
+        // eslint-disable-next-line no-console
+        console.log(isVisible);
+        let navBar = document.getElementById("nav-bar");
+        if(isVisible){
+          // eslint-disable-next-line no-console
+          console.log("nav is absolute");
+          navBar.classList.add("nav-bar-absolute");
+          navBar.classList.remove("nav-bar-fixed");
+        }
+        else{
+          // eslint-disable-next-line no-console
+          console.log("nav is fixed");
+          navBar.classList.add("nav-bar-fixed");
+          navBar.classList.remove("nav-bar-absolute");
+        }
+      }
     },
     computed: {
 
@@ -93,53 +98,30 @@
     width: 100%;
     height: 22rem;
     background: $primary;
-    background: -webkit-linear-gradient(to left, #2a0845, $primary);
-    background: linear-gradient(to left, #2a0845, $primary);
+    border-bottom-left-radius: 1.9rem;
   }
   header{
     .rounded-box{
       font-size: 1rem;
-      top: 30px;
+      top: 80px;
       img{
-        max-width: 200px;
+        max-width: 8rem;
         width: 8.5rem;
-        border-radius: 50%;
+        border-radius: 100%;
         @media #{$medium}{
           
         }
       }
       h1{
         color: #212529;
-        font-size: 2.6em;
+        font-size: 2.0em;
         margin: 0.25em 0;
       }
       h2{
-        font-size: 1.5em;
+        font-size: 1.2em;
+        font-weight: 500;
         margin: 0.25em 0;
-        color:#4A4E69;
-      }
-    }
-    #resume-button-container{
-      position: absolute;
-      right: 0;
-      padding: 1rem;
-      a{
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem;
-        font-size: 0.75rem;
-        margin: 1px;
-        background-color: $primary;
-        border-radius: 5%;
-        &:hover{
-        background: white;
-        color: $primary;
-        margin: 0;
-      }
-        i{
-          padding-right: 1rem;
-          font-size: 1rem;
-        }
+        color:$primary;
       }
     }
   }

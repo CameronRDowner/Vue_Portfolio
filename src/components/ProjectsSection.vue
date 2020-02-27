@@ -115,7 +115,7 @@
             ]
           },
           {
-            id: 4,
+            id: 3,
             name: "Portfolio Website",
             mockupFileName: "portfolio_website.jpg",
             description: "The portfolio page you are currently browsing is built with Vue. Many of the components that make up this page utilize Vue directives, Flexbox and Grid. When appropriate, animations use the Vue transition wrapper component for triggering; all others utilize a scroll event handler. And lastly, the contact form uses a validation library to ensure accuracy.",

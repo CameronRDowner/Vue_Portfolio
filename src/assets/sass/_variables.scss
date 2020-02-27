@@ -1,8 +1,9 @@
 $primary: #6441A5;
-$background: #f8f9fa;
+$background: #F5F8FF;
 $foreground: #ffffff;
 $github: #212529;
 $linkedin: #0077b5;
+$yellow: #FED267;
 
 :export{
     primary: $primary;
@@ -10,4 +11,5 @@ $linkedin: #0077b5;
     foreground: $foreground;
     github: $github;
     linkedin: $linkedin;
+    yellow: $yellow;
 }
