@@ -2,8 +2,6 @@
 
   <header>
     <div class="banner" v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
-        <div id="resume-button-container">
-        </div>
       <vue-aos animation-class="slide-in-top" threshold="0.2">
         <div class="rounded-box floating">
           <img src="../assets/images/profile.jpg" alt="profile picture">
@@ -17,6 +15,12 @@
       </div>
       </vue-aos>
       <NavBar/>
+      <div id="banner-text">
+          <h1>Hi My Name Is Cameron.</h1>
+          <h3>
+            I am a developer with a passion for <b>clean maintainable</b> code, <b>responsive</b> designs, and <b>memorable</b> user experiences.
+          </h3>
+        </div>
     </div>
     </header>
 
@@ -90,11 +94,12 @@
     position: relative;
     margin: 0 auto;
     width: 100%;
-    height: 24rem;
+    height: 25rem;
     background: $primary;
     border-bottom-left-radius: 1.9rem;
   }
   header{
+    margin-bottom: 5.2rem;
     .rounded-box{
       font-size: 1rem;
       top: 80px;
@@ -116,6 +121,21 @@
         margin: 0.25em 0;
         color:$primary;
       }
+    }
+  }
+  #banner-text{
+    position: absolute;
+    width: 25rem;
+    color: white;
+    top: 7rem;
+    left: 5rem;
+    text-align: left;
+    h1{
+      margin-bottom: 2.8rem;
+    }
+    h3{
+      font-weight: 300;
+      line-height: 2rem;
     }
   }
 </style>

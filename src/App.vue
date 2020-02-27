@@ -32,12 +32,13 @@ body{
   height: 100%;
   color: #2c3e50;
 }
-p, h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5{
 	font-weight: 600;
   line-height: 1;
 }
 p{
-  line-height: 2rem;
+  line-height: 2.3rem;
+  font-weight: 400;
 }
 h1{
     font-size: 2em;
@@ -59,7 +60,7 @@ ul{
 .rounded-box{
     position: absolute;
     border-radius: 10px;
-    padding: 40px;
+    padding: 3rem;
     background-color: $foreground;
     z-index: 3;
     right: 4rem;
@@ -95,7 +96,7 @@ ul{
     display: none !important;
 }
 .width-limit{
-  max-width: 50rem;
+  max-width: 53rem;
   margin: 0 auto;
 }
 

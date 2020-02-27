@@ -14,10 +14,14 @@
 </template>
 
 <script lang="js">
+  import Button from "./Button.vue";
   import colorVariables from "../assets/sass/_variables.scss";
   import ButtonHelper from "../models/ButtonHelper.js";
   export default  {
     name: 'nav-bar',
+    components: {
+      Button
+    },
     props: [],
     mounted () {
 
@@ -31,8 +35,9 @@
             buttonColor: colorVariables.primary,
             hrefUrl: "https://docs.google.com/document/d/14EKr-8gt5VWqWSdxVEhmRJofBPEyvn71atU7G04D1U4/export?format=pdf",
             text:"Resume",
-            contentSize: "0.9rem",
-            padding: "0.4rem",
+            contentSize: "0.8rem",
+            padding: "0.3rem 0.9rem",
+            altStyling: true
           },
 
       }
@@ -70,12 +75,12 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 0.6rem 0rem;
-    margin-right: 10rem;  
+    margin-right: 14rem;  
     width: 20rem;
   }
   .nav-link{
     text-align: left;
-    margin: 0rem 1rem 0rem 1rem;
+    margin: 0rem 1.5rem 0rem 1.5rem;
     a{
       text-decoration: none;
       font-size: 1rem;
@@ -122,6 +127,6 @@ right: 2rem;
   font-style: italic;
   font-family: 'Montserrat';
   color: white;
-  margin-right: 25rem;
+  margin-right: 21rem;
 }
 </style>

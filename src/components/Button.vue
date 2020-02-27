@@ -32,7 +32,9 @@
           'font-size' : this.button.hasOwnProperty('contentSize') ? this.button.contentSize : '1.75rem',
           '--button-color': this.button.buttonColor,
           '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString(),
-          padding : this.button.hasOwnProperty('padding') ? this.button.padding : '0.75rem'
+          padding : this.button.hasOwnProperty('padding') ? this.button.padding : '0.75rem',
+          border : this.button.hasOwnProperty('altStyling') ? 'solid 2px' : 'none',
+          'border-color' : this.button.hasOwnProperty('borderColor') ? this.button.borderColor : this.button.contentColor
         }
       },
       iconStyles: function(){
@@ -58,7 +60,7 @@
     margin: 0 0.5rem;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 50px;
 
     &:hover{
       background-position: 0 -100%;

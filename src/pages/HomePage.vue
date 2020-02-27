@@ -4,10 +4,10 @@
       <Header/>
     <main>
       <div id="welcome">
-        <h1>Welcome to my portfolio page!</h1>
-        <h2>I love creating elegant and enjoyable user experiences.</h2>
+        <p class="width-limit">
+          In the about section you can learn a little more about me as well as my journey in coding. I'm always adding my latest projects to the projects section. The technologies section has all of the technologies I've worked with. And lastly, the Education section has the certifications I've completed as well as the diplomas I've earned.
+        </p>
       </div>
-    <hr>
       <AboutSection/>
       <ProjectsSection/>
       <TechnologiesSection/> 
@@ -74,11 +74,11 @@
     border-radius: 1.3rem;
     width: 60rem;
     margin: 1rem auto;
-    main{
-      padding-top: 6rem;
-    }
     #welcome{
-      height: 20rem;
+      height: 12rem;
+      font-size: 1.34rem;
+      font-weight: 200;
+      color: $offBlack;
     }
   }
   #technologies-wrapper{
