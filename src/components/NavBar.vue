@@ -1,7 +1,7 @@
 <template lang="html">
-<div>
-  
-    <nav id="nav-bar" class="nav-bar-absolute">
+<div id="nav-bar" class="nav-bar-absolute">
+  <h1 id="logo">CD</h1>
+    <nav>
       <ul class="nav-links-container">
         <li class="nav-link"><a href="#about" class="underline-from-center">About</a></li>
         <li class="nav-link"><a href="#projects" class="underline-from-center">Projects</a></li>
@@ -114,7 +114,14 @@
     }
 }
 #resume-button{
-  width: 3rem;
-  height: 1rem;
+position: absolute;
+right: 2rem;
+}
+#logo{
+  font-size: 1.7rem;
+  font-style: italic;
+  font-family: 'Montserrat';
+  color: white;
+  margin-right: 25rem;
 }
 </style>

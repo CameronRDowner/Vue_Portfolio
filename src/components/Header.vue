@@ -64,18 +64,12 @@
     },
     methods: {
       handleNavBarPosition : function (isVisible){
-        // eslint-disable-next-line no-console
-        console.log(isVisible);
         let navBar = document.getElementById("nav-bar");
         if(isVisible){
-          // eslint-disable-next-line no-console
-          console.log("nav is absolute");
           navBar.classList.add("nav-bar-absolute");
           navBar.classList.remove("nav-bar-fixed");
         }
         else{
-          // eslint-disable-next-line no-console
-          console.log("nav is fixed");
           navBar.classList.add("nav-bar-fixed");
           navBar.classList.remove("nav-bar-absolute");
         }
@@ -96,7 +90,7 @@
     position: relative;
     margin: 0 auto;
     width: 100%;
-    height: 22rem;
+    height: 24rem;
     background: $primary;
     border-bottom-left-radius: 1.9rem;
   }
@@ -105,8 +99,7 @@
       font-size: 1rem;
       top: 80px;
       img{
-        max-width: 8rem;
-        width: 8.5rem;
+        max-width: 8.2rem;
         border-radius: 100%;
         @media #{$medium}{
           
