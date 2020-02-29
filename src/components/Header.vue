@@ -145,13 +145,13 @@
   #banner-text{
     max-width: 25rem;
     color: white;
-    padding: 11vw 30rem 0 4rem;
+    padding: 7rem 30rem 0 4rem;
     text-align: left;
     @media #{$medium}{
       display: none;
     }
     h1{
-      margin-bottom: 3.7vw;
+      margin-bottom: 2rem;
     }
     h3{
       font-weight: 300;
