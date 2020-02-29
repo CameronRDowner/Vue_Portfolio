@@ -63,6 +63,7 @@
 
 <style scoped lang="scss">
   .button{
+    display: inline-block;
     position: relative;
     a{
     display: flex;

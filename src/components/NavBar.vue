@@ -1,6 +1,8 @@
 <template lang="html">
 <div id="nav-bar" class="nav-bar-absolute">
+  <div id="nav-bar-wrapper">
   <h1 id="logo">CD</h1>
+    <div>
     <nav>
       <ul class="nav-links-container">
         <li class="nav-link"><a href="#about" class="underline-from-center">About</a></li>
@@ -10,6 +12,8 @@
       </ul>
     </nav>
     <div id="resume-button"><Button :button="resumeButton" v-on:buttonClicked="buttonHelper.openExternalLink(resumeButton.hrefUrl)" /></div>
+    </div>
+    </div>
 </div>
 </template>
 
@@ -55,18 +59,13 @@
 
 <style scoped lang="scss">
  @import "../assets/sass/_variables.scss";
+ @import "../assets/sass/_breakpoints.scss";
   #nav-bar {
-    h2{
-      position: absolute;
-      left: 1.5rem;
-      top: 0;
-      color: white;
-    }
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    box-sizing: border-box;
+    @media #{$small-medium}{
+      display: none;
+    }
   }
   .nav-links-container{
     z-index: 4;
@@ -74,9 +73,8 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0.6rem 0rem;
-    margin-right: 14rem;  
-    width: 20rem;
+    flex-wrap: nowrap;
+    margin: 0;
   }
   .nav-link{
     text-align: left;
@@ -87,12 +85,8 @@
       padding: 0.2rem 0;
     }
   }
-  #dummy-links-container{
-    display: inline-block;
-    width: 27rem;
-    height: 1rem;
-  }
   .nav-bar-absolute{
+    padding: 1rem 2rem;
     position: absolute;
     width: 100%;
     a{
@@ -101,14 +95,14 @@
     
 }
 .nav-bar-fixed{
+    padding: 0.7rem 2rem;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     background-color: $primary;
     z-index: 3;
-    width: 60rem;
-    
+    max-width: 60rem;
     border-bottom-left-radius: 1.3rem;
     border-bottom-right-radius: 1.3rem;
     -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
@@ -122,14 +116,24 @@
     }
 }
 #resume-button{
-position: absolute;
-right: 2rem;
+  display: inline-block;
+  width: 7rem;
 }
 #logo{
   font-size: 1.7rem;
   font-style: italic;
   font-family: 'Montserrat';
   color: white;
-  margin-right: 21rem;
+  margin: 0;
+}
+#nav-bar-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+nav{
+  display: inline-block;
 }
 </style>

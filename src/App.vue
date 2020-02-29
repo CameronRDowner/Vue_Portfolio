@@ -64,12 +64,12 @@ ul{
     padding: 3rem;
     background-color: $foreground;
     z-index: 3;
-    right: 4rem;
     margin: auto;
-    width: 18 rem;
+    box-sizing: border-box;
     @media #{$small}{
       width: 78%;
-      padding: 25px;
+      padding: 2rem 0 2rem 0;
+      max-width: 100%;
     }
   }
 .floating {

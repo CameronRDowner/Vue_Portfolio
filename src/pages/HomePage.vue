@@ -65,6 +65,7 @@
 
 <style scoped lang="scss">
 @import '../assets/sass/_variables.scss';
+@import '../assets/sass/_breakpoints.scss';
   #home-page {
     height: 100%;
     margin: 0;
@@ -74,14 +75,15 @@
     border-radius: 1.3rem;
     max-width: 60rem;
     margin: 1rem auto;
-    -webkit-box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
-    -moz-box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
     box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
     #welcome{
       font-size: 1.34rem;
       font-weight: 200;
       color: $off-black;
-      padding-bottom: 5rem;
+      padding: 0 4rem 5rem 4rem;
+      @media #{$small}{
+        padding: 0 2rem 5rem 2rem;
+      }
     }
   }
   #technologies-wrapper{

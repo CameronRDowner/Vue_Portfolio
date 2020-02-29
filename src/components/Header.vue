@@ -100,6 +100,9 @@
     height: 25rem;
     background: $primary;
     border-bottom-left-radius: 1.9rem;
+    @media #{$small-medium}{
+      height: 20rem;
+    }
   }
   header{
     margin-bottom: 5.2rem;
@@ -109,12 +112,22 @@
       box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       font-size: 1rem;
       top: 80px;
+      right: 4rem;
+      left: none;
+      @media #{$medium}{
+        right: 0;
+        left: 0;
+        width: 25rem;
+      }
+      @media #{$small-medium}{
+        top: 0;
+      }
+      @media #{$small}{
+        width: 100%;
+      }
       img{
         max-width: 8.2rem;
         border-radius: 100%;
-        @media #{$medium}{
-          
-        }
       }
       h1{
         color: #212529;
@@ -130,14 +143,15 @@
     }
   }
   #banner-text{
-    position: absolute;
-    width: 25rem;
+    max-width: 25rem;
     color: white;
-    top: 7rem;
-    left: 5rem;
+    padding: 11vw 30rem 0 4rem;
     text-align: left;
+    @media #{$medium}{
+      display: none;
+    }
     h1{
-      margin-bottom: 2.8rem;
+      margin-bottom: 3.7vw;
     }
     h3{
       font-weight: 300;
