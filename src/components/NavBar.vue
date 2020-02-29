@@ -36,7 +36,7 @@
             hrefUrl: "https://docs.google.com/document/d/14EKr-8gt5VWqWSdxVEhmRJofBPEyvn71atU7G04D1U4/export?format=pdf",
             text:"Resume",
             contentSize: "0.8rem",
-            padding: "0.3rem 0.9rem",
+            padding: "0.2rem 0.8rem",
             altStyling: true
           },
 
@@ -108,6 +108,7 @@
     background-color: $primary;
     z-index: 3;
     width: 60rem;
+    
     border-bottom-left-radius: 1.3rem;
     border-bottom-right-radius: 1.3rem;
     box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.18);

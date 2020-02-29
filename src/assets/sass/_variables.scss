@@ -4,8 +4,10 @@ $foreground: #ffffff;
 $github: #212529;
 $linkedin: #0077b5;
 $yellow: #FED267;
-$offBlack: #302E2E;
-$darkPurple: #300E50;
+$off-black: #302E2E;
+$about-background: #300E50;
+$about-foreground: #4A286A;
+$about-content: #715C84;
 
 :export{
     primary: $primary;
@@ -14,6 +16,8 @@ $darkPurple: #300E50;
     github: $github;
     linkedin: $linkedin;
     yellow: $yellow;
-    offBlack: $offBlack;
-    darkPurple: $darkPurple;
+    offBlack: $off-black;
+    aboutBackground: $about-background;
+    aboutForeground: $about-foreground;
+    aboutContent: $about-content;
 }

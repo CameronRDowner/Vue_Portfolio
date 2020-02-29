@@ -3,7 +3,7 @@
   <header>
     <div class="banner" v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
       <vue-aos animation-class="slide-in-top" threshold="0.2">
-        <div class="rounded-box floating">
+        <div class="rounded-box">
           <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>
           <h2>Front End Developer</h2>
@@ -49,19 +49,22 @@
           contactButton: {
             iconClasses: "fas fa-envelope",
             contentColor: "white",
-            buttonColor: colorVariables.yellow
+            buttonColor: colorVariables.yellow,
+            boxShadow: true
           },
           githubButton: {
             iconClasses: "fab fa-github",
             contentColor: "white",
             buttonColor: colorVariables.github,
-            hrefUrl : "https://github.com/CameronRDowner"
+            hrefUrl : "https://github.com/CameronRDowner",
+            boxShadow: true
           },
           linkedinButton:  { 
             iconClasses: "fab fa-linkedin-in",
             contentColor: "white",
             buttonColor: colorVariables.linkedin,
-            hrefUrl : "https://www.linkedin.com/in/CameronRDowner"
+            hrefUrl : "https://www.linkedin.com/in/CameronRDowner",
+            boxShadow: true
           }
         
       }
@@ -101,6 +104,9 @@
   header{
     margin-bottom: 5.2rem;
     .rounded-box{
+      -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
+      -moz-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
+      box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       font-size: 1rem;
       top: 80px;
       img{

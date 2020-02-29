@@ -74,11 +74,14 @@
     border-radius: 1.3rem;
     width: 60rem;
     margin: 1rem auto;
+    -webkit-box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
+    -moz-box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
+    box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
     #welcome{
       height: 12rem;
       font-size: 1.34rem;
       font-weight: 200;
-      color: $offBlack;
+      color: $off-black;
     }
   }
   #technologies-wrapper{
