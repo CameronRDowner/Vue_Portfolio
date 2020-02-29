@@ -21,7 +21,7 @@ export default {
 @import "./assets/sass/_breakpoints.scss";
 body{
   background: rgb(250,252,255);
-background: linear-gradient(121deg, rgba(250,252,255,1) 11%, rgba(97,97,97,1) 100%);
+  background: linear-gradient(121deg, rgba(250,252,255,1) 11%, rgba(97,97,97,1) 100%);
 }
 #app {
   font-family: 'Open Sans', sans-serif;

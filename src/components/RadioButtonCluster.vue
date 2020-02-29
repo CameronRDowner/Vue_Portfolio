@@ -1,7 +1,7 @@
 <template lang="html">
 
   <div class="radio-button-cluster" :style="colorVariables">
-    <label :class="currentlyToggledButton === radioButton.text ? 'toggled-radio-button' : 'untoggled-radio-button'" v-bind:key="radioButton.id" v-for="radioButton in radioButtonCluster.radioButtonList" >
+    <label class="radio-button" :class="currentlyToggledButton === radioButton.text ? 'toggled-radio-button' : ['untoggled-radio-button', 'hover-radial-out']" v-bind:key="radioButton.id" v-for="radioButton in radioButtonCluster.radioButtonList" >
         <input type="radio" :name="radioButtonCluster.name" :value="radioButton.text" v-on:change="handleRadioButtonToggle(radioButton.text)">
         <span>{{radioButton.text}}</span>
     </label>
@@ -17,12 +17,11 @@
    
     },
     created () {
-      
-
+      this.setInitialToggle();
     },
     data () {
       return {
-        currentlyToggledButton: this.radioButtonCluster.radioButtonList[0].text
+        currentlyToggledButton: ""
       }
     },
     methods: {
@@ -38,8 +37,8 @@
       getButton : function (buttonText){
         return this.buttonList.find(button => button.text === buttonText);
       },
-      initialized : function (){
-        
+      setInitialToggle: function (){
+        this.setCurrentlyToggledButton(this.radioButtonCluster.radioButtonList[0].text)
       },
       emitButtonToggle : function (radioButtonValue){
         this.$emit('radioButtonToggled',radioButtonValue);
@@ -64,7 +63,7 @@
 <style scoped lang="scss">
   .radio-button-cluster {
     margin: 2.3rem 2rem 2rem 2rem;
-    label{
+    .radio-button{
       border-radius: 50px;
       border: solid 2px var(--button-color);
       cursor: pointer;
@@ -76,9 +75,6 @@
       input[type="radio"]{
         appearance: none;
         display: none;
-        &:checked{
-          background-color: white;
-        }
       }
     }
   }
@@ -88,4 +84,7 @@
   .untoggled-radio-button{
     background-color: none;
   }
+  .hover-radial-out:before{
+      background-color: var(--button-color);
+    }
 </style>

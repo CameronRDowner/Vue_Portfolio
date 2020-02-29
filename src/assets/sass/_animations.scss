@@ -411,7 +411,6 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
-    background: #e1e1e1;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -426,7 +425,7 @@
     right: 0;
     bottom: 0;
     background: #2098D1;
-    border-radius: 100%;
+    border-radius: 50px;
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transition-property: transform;
@@ -435,9 +434,6 @@
     transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-  }
-  .hover-radial-out:hover, .hover-radial-out:focus, .hover-radial-out:active {
-    color: white;
   }
   .hover-radial-out:hover:before, .hover-radial-out:focus:before, .hover-radial-out:active:before {
     -webkit-transform: scale(2);
