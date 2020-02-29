@@ -1,7 +1,7 @@
 <template lang="html">
 
   <div class="button">
-    <a class="radial-out" :style="buttonStyles" v-on:click="emitClick()">{{button.text}}
+    <a class="hover-radial-out" :style="buttonStyles" v-on:click="emitClick()">{{button.text}}
       <i  v-if="button.iconClasses !== undefined" :class="button.iconClasses" :style="iconStyles"></i>
       <i  v-if="button.iconClasses !== undefined && !button.text" class="fas fa-envelope" :style="pseudoIconStyles"></i>
       </a>
@@ -78,7 +78,7 @@
       background-position: 0 -100%;
     }
   }
-  .radial-out:before{
+  .hover-radial-out:before{
     background-color: var(--button-hover-color);
   }
   }

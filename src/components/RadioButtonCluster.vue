@@ -1,9 +1,9 @@
 <template lang="html">
 
-  <div class="radio-button-cluster">
-    <label class="radio-button" v-bind:key="radioButton.id" v-for="radioButton in radioButtonCluster.radioButtonList">
-        <input type="radio" :name="radioButtonCluster.name" :value="radioButton.text" v-on:change="emitButtonToggle(radioButton.text)">
-        <span :style="spanStyles">{{radioButton.text}}</span>
+  <div class="radio-button-cluster" :style="colorVariables">
+    <label :class="currentlyToggledButton === radioButton.text ? 'toggled-radio-button' : 'untoggled-radio-button'" v-bind:key="radioButton.id" v-for="radioButton in radioButtonCluster.radioButtonList" >
+        <input type="radio" :name="radioButtonCluster.name" :value="radioButton.text" v-on:change="handleRadioButtonToggle(radioButton.text)">
+        <span>{{radioButton.text}}</span>
     </label>
   </div>
 
@@ -22,25 +22,23 @@
     },
     data () {
       return {
-        currentlyToggledButton: this.buttonList[0].text,
-        radioButtonList : []
+        currentlyToggledButton: this.radioButtonCluster.radioButtonList[0].text
       }
     },
     methods: {
-      handleRadioButtonClick : function (){
-
+      setCurrentlyToggledButton : function(radioButtonText){
+        this.currentlyToggledButton = radioButtonText;
+        // eslint-disable-next-line no-console
+        console.log(this.currentlyToggledButton);
       },
-      changeButtonToToggled : function (){
-      
-
-      },
-      changeButtonToUnToggled : function (){
-
+      handleRadioButtonToggle : function (radioButtonText){
+        this.emitButtonToggle(radioButtonText);
+        this.setCurrentlyToggledButton(radioButtonText);
       },
       getButton : function (buttonText){
         return this.buttonList.find(button => button.text === buttonText);
       },
-      initializeRadioButtonsList : function (){
+      initialized : function (){
         
       },
       emitButtonToggle : function (radioButtonValue){
@@ -48,11 +46,14 @@
       }
     },
     computed: {
-      spanStyles : function() {
+      colorVariables : function (){
         return {
-          color: this.radioButtonCluster.textColor
+          '--button-color': this.radioButtonCluster.buttonColor,
+          '--button-content-color' : this.radioButtonCluster.buttonContentColor,
         }
+        
       }
+      
 
     }
 }
@@ -62,23 +63,29 @@
 
 <style scoped lang="scss">
   .radio-button-cluster {
+    margin: 2.3rem 2rem 2rem 2rem;
     label{
       border-radius: 50px;
+      border: solid 2px var(--button-color);
       cursor: pointer;
       margin: 0 1rem;
       padding: 0.5rem 1rem;
+      span{
+        color: var(--button-content-color);
+      }
       input[type="radio"]{
         appearance: none;
+        display: none;
         &:checked{
           background-color: white;
         }
       }
     }
   }
-  .checked-radio-button{
-
+  .toggled-radio-button{
+    background-color: var(--button-color);
   }
-  .radio-button{
-
+  .untoggled-radio-button{
+    background-color: none;
   }
 </style>

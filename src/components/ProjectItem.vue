@@ -119,6 +119,7 @@
     }
     img{
       width: 100%;
+      border-radius: 10px;
       grid-area: project-mockup;
     }
   }

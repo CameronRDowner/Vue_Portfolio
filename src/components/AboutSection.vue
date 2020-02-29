@@ -28,8 +28,7 @@
     data () {
       return {
         radioButtonCluster: {
-          textColor : 'white',
-          activeButtonColor: ColorVariables.aboutContent,
+          buttonColor: ColorVariables.aboutContent,
           buttonContentColor: 'white', 
           name: 'about-content',
           radioButtonList: [

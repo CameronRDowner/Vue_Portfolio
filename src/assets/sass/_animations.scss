@@ -403,7 +403,7 @@
     left: 0;
     right: 0;
   }
-  .radial-out {
+  .hover-radial-out {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -417,7 +417,7 @@
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  .radial-out:before {
+  .hover-radial-out:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -436,10 +436,10 @@
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
-  .radial-out:hover, .radial-out:focus, .radial-out:active {
+  .hover-radial-out:hover, .hover-radial-out:focus, .hover-radial-out:active {
     color: white;
   }
-  .radial-out:hover:before, .radial-out:focus:before, .radial-out:active:before {
+  .hover-radial-out:hover:before, .hover-radial-out:focus:before, .hover-radial-out:active:before {
     -webkit-transform: scale(2);
     transform: scale(2);
   }

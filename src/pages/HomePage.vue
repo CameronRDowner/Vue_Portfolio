@@ -78,10 +78,10 @@
     -moz-box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
     box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.57);
     #welcome{
-      height: 12rem;
       font-size: 1.34rem;
       font-weight: 200;
       color: $off-black;
+      padding-bottom: 5rem;
     }
   }
   #technologies-wrapper{

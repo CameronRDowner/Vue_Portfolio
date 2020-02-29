@@ -111,7 +111,9 @@
     
     border-bottom-left-radius: 1.3rem;
     border-bottom-right-radius: 1.3rem;
-    box-shadow: 0 6px 10px 3px rgba(0, 0, 0, 0.18);
+    -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
+      -moz-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
+      box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
     -webkit-animation: slide-in-top 0.5s ease-in-out forwards;
     animation: slide-in-top 0.5s ease-in-out forwards;
     a{
