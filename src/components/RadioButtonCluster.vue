@@ -27,8 +27,6 @@
     methods: {
       setCurrentlyToggledButton : function(radioButtonText){
         this.currentlyToggledButton = radioButtonText;
-        // eslint-disable-next-line no-console
-        console.log(this.currentlyToggledButton);
       },
       handleRadioButtonToggle : function (radioButtonText){
         this.emitButtonToggle(radioButtonText);
@@ -62,12 +60,17 @@
 
 <style scoped lang="scss">
   .radio-button-cluster {
-    margin: 2.3rem 2rem 2rem 2rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     .radio-button{
       border-radius: 50px;
       border: solid 2px var(--button-color);
       cursor: pointer;
-      margin: 0 1rem;
+      margin: 1rem 1rem;
       padding: 0.5rem 1rem;
       span{
         color: var(--button-content-color);

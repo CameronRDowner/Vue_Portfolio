@@ -5,7 +5,6 @@
     <div id="projects-container">
       <ProjectItem v-bind:key="project.id" v-for="project in projectList" :project="project"/>
     </div>
-    <hr>
   </section>
 
 </template>
@@ -164,9 +163,5 @@
     h1{
       padding-bottom: 2rem;
     }
-  }
-  #projects-container{
-    max-width: 50rem;
-    margin: 0 auto;
   }
 </style>

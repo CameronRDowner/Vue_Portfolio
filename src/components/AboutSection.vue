@@ -3,7 +3,7 @@
   <section id="about">
     <h1>About Me</h1>
     <RadioButtonCluster :radioButtonCluster="radioButtonCluster" v-on:radioButtonToggled="handleRadioButtonClick($event)"/>
-    <div id="about-content-wrapper">
+    <div id="about-content-wrapper" class="responsive-margin responsive-padding">
       <div id="about-content-text">
         <p v-for="paragraph in contentInView.paragraphList"  v-bind:key="paragraph">{{paragraph}}</p>
       </div>
@@ -83,7 +83,6 @@
   #about {
     background-color: $about-background;
     width: 100%;
-    padding: 4.5rem;
     box-sizing: border-box;
     h1{
       color: white;
@@ -99,7 +98,6 @@
     flex-direction: row;
     justify-content: center;
     background-color: $about-foreground;
-    padding: 4rem;
     box-shadow: 7px 11px 21px 0px rgba(0,0,0,0.45);
   }
   #about-content-text{

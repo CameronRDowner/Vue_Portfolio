@@ -58,6 +58,10 @@ ul{
   list-style: none;
   padding-left: 0;
 }
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .rounded-box{
     position: absolute;
     border-radius: 10px;
@@ -68,7 +72,7 @@ ul{
     box-sizing: border-box;
     @media #{$small}{
       width: 78%;
-      padding: 2rem 0 2rem 0;
+      padding: 2.5rem 0 2.5rem 0;
       max-width: 100%;
     }
   }
@@ -96,9 +100,17 @@ ul{
 .hidden{
     display: none !important;
 }
-.width-limit{
-  max-width: 53rem;
-  margin: 0 auto;
+.responsive-margin{
+  margin: 0 3.5rem;
+  @media #{$small-medium}{
+    margin: 0 0.5rem;
+  }
+}
+.responsive-padding{
+  padding: 4rem 4rem;
+  @media #{$small-medium}{
+    padding: 1.5rem 1.5rem;
+  }
 }
 
 </style>

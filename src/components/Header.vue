@@ -101,17 +101,17 @@
     background: $primary;
     border-bottom-left-radius: 1.9rem;
     @media #{$small-medium}{
-      height: 20rem;
+      height: 22rem;
     }
   }
   header{
-    margin-bottom: 5.2rem;
+    padding-bottom: 0.75rem;
     .rounded-box{
       -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       -moz-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       font-size: 1rem;
-      top: 80px;
+      top: 70px;
       right: 4rem;
       left: none;
       @media #{$medium}{

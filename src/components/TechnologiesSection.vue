@@ -38,7 +38,6 @@
       </vue-aos>
     </div>
     </vue-aos>
-    <hr>
   </section>
 
 </template>
@@ -156,10 +155,6 @@
 @import "../assets/sass/_variables.scss";
   #technologies {
     width: 100%;
-
-    hr{
-      margin-top: 3em;
-    }
   }
   #technologies-wrapper{
     display: flex;
