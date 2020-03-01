@@ -40,6 +40,7 @@
       margin-top: 0.5em;
       margin-bottom: 0;
       color:#4A4E69;
+      font-weight: 400;
     }
   }
 </style>

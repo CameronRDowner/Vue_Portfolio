@@ -2,8 +2,8 @@
 
   <header>
     <div class="banner" v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
-      <vue-aos animation-class="slide-in-top" threshold="0.2">
-        <div class="rounded-box">
+      <vue-aos animation-class="slide-in-right" threshold="0.2">
+        <div class="rounded-box floating-high">
           <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>
           <h2>Front End Developer</h2>
@@ -15,6 +15,7 @@
       </div>
       </vue-aos>
       <NavBar/>
+      <NavBarMobile/>
       <div id="banner-text">
           <h1>Hi My Name Is Cameron.</h1>
           <h3>
@@ -28,6 +29,7 @@
 
 <script lang="js">
   import NavBar from "../components/NavBar.vue";
+  import NavBarMobile from "../components/NavBarMobile.vue";
   import Button from "./Button.vue";
   import ButtonHelper from "../models/ButtonHelper.js"
   import colorVariables from "../assets/sass/_variables.scss";
@@ -35,7 +37,8 @@
     name: 'Header',
     components: {
       Button,
-      NavBar
+      NavBar,
+      NavBarMobile
     },
     props: [],
     mounted () {
@@ -107,12 +110,9 @@
   header{
     padding-bottom: 0.75rem;
     .rounded-box{
-      -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
-      -moz-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
-      box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
       font-size: 1rem;
       top: 70px;
-      right: 4rem;
+      right: 4.7rem;
       left: none;
       @media #{$medium}{
         right: 0;
@@ -130,7 +130,7 @@
         border-radius: 100%;
       }
       h1{
-        color: #212529;
+        color: $off-black;
         font-size: 2.0em;
         margin: 0.25em 0;
       }
@@ -145,7 +145,7 @@
   #banner-text{
     max-width: 25rem;
     color: white;
-    padding: 7rem 30rem 0 4rem;
+    padding: 7rem 30rem 0 4.6rem;
     text-align: left;
     @media #{$medium}{
       display: none;

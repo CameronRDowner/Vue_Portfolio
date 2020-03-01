@@ -30,10 +30,10 @@ body{
   text-align: center;
   margin: 0;
   height: 100%;
-  color: #2c3e50;
+  color: $off-black;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3{
 	font-weight: 600;
   line-height: 1;
 }
@@ -65,7 +65,7 @@ section {
 .rounded-box{
     position: absolute;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2.7rem;
     background-color: $foreground;
     z-index: 3;
     margin: auto;
@@ -76,8 +76,11 @@ section {
       max-width: 100%;
     }
   }
-.floating {
-  box-shadow: 15px 10px 30px 0px rgba(135, 149, 177, 0.26);
+.floating-high {
+  box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+}
+.floating-low{
+  box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.43);
 }
 .flex-container-row{
   display: flex;

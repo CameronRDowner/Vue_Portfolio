@@ -85,10 +85,11 @@
   #alert-modal-backdrop{
     position: fixed;
     top: 0;
+    left: 0;
     background-color:#404040;
     opacity: 0.7;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     z-index: 5;
   }
 </style>

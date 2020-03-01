@@ -2,7 +2,7 @@
 
   <footer>
     <vue-aos animation-class="slide-in-bottom" threshold="0.2">
-    <div class="rounded-box floating">
+    <div class="rounded-box floating-high">
       <h3>Thanks for checking out my portfolio!</h3>
       <p>You can reach out to me via any of my handles</p>
       <div class="flex-container-row contact-buttons-container" >
@@ -44,27 +44,31 @@
       scrollTopButton:{
             iconClasses: "fas fa-arrow-up",
             contentColor: "white",
-            buttonColor: colorVariables.primary
+            buttonColor: colorVariables.primary,
+            boxShadow:true
           },
       contactButton: {
             id: 1,
             iconClasses: "far fa-envelope",
             contentColor: "white",
-            buttonColor: colorVariables.primary
+            buttonColor: colorVariables.yellow,
+            boxShadow: true
           },
           githubButton: {
             id: 2,
             iconClasses: "fab fa-github",
             contentColor: "white",
             buttonColor: colorVariables.github,
-            hrefUrl : "https://github.com/CameronRDowner"
+            hrefUrl : "https://github.com/CameronRDowner",
+            boxShadow: true
           },
           linkedinButton:  { 
             id: 3,
             iconClasses: "fab fa-linkedin-in",
             contentColor: "white",
             buttonColor: colorVariables.linkedin,
-            hrefUrl : "https://www.linkedin.com/in/CameronRDowner"
+            hrefUrl : "https://www.linkedin.com/in/CameronRDowner",
+            boxShadow: true
           }
       }
     },
@@ -90,14 +94,15 @@
   footer {
     position: relative;
     height: 15rem;
-    background: $primary;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2a0845, $primary);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #2a0845, $primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: $primary;
 
 
     .rounded-box{
       font-size: 1rem;
       bottom: 2em;
+      right: 0;
+      left: 0;
+      width: 28rem;
     }
     h3{
       font-weight: 500;

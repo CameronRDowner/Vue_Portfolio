@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <section class="contact-form">
+  <div class="contact-form">
     <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form @submit.prevent="handleSubmit(handleFormSubmit)" @reset.prevent="reset" id="contact-modal-form"
           action="https://formspree.io/mvoaojaa" method="post" target="FormSender">
@@ -24,7 +24,7 @@
         </form>
       </ValidationObserver>
       <iframe id="form-sender" class="hidden" name="FormSender" v-on:load="notifyFormRecieved"></iframe>
-  </section>
+  </div>
 
 </template>
 

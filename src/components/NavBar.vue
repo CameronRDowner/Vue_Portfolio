@@ -1,7 +1,7 @@
 <template lang="html">
 <div id="nav-bar" class="nav-bar-absolute">
   <div id="nav-bar-wrapper">
-  <h1 id="logo">CD</h1>
+  <a v-on:click="scrollToTop"><h1 id="logo">CD</h1></a>
     <div>
     <nav>
       <ul class="nav-links-container">
@@ -47,7 +47,13 @@
       }
     },
     methods: {
-
+      scrollToTop : function(){
+        window.scroll({
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth'
+      });
+      }
     },
     computed: {
 
@@ -105,9 +111,9 @@
     max-width: 60rem;
     border-bottom-left-radius: 1.3rem;
     border-bottom-right-radius: 1.3rem;
-    -webkit-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
-      -moz-box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
-      box-shadow: 10px 11px 30px 5px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+    -moz-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+    box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
     -webkit-animation: slide-in-top 0.5s ease-in-out forwards;
     animation: slide-in-top 0.5s ease-in-out forwards;
     a{
@@ -125,6 +131,7 @@
   font-family: 'Montserrat';
   color: white;
   margin: 0;
+  cursor: pointer;
 }
 #nav-bar-wrapper{
   display: flex;

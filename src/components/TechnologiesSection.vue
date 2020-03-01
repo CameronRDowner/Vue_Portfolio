@@ -3,7 +3,7 @@
   <section id="technologies">
     <h1>Technologies</h1>
     <vue-aos animation-class="shadow-drop" threshold="0.8">
-    <div id="technologies-wrapper" class="floating">
+    <div id="technologies-wrapper" class="floating-high">
       <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
       <div>
         <h3>Front End</h3>
@@ -169,7 +169,7 @@
       width: 10rem;
     }
     h3{
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 

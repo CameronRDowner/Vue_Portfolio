@@ -6,8 +6,8 @@
         <p>{{project.description}}</p>
       </div>
       <div class="project-buttons-container flex-container-row">
-        <Button :button="project.buttonsList[0]"  v-on:buttonClicked="handleOpenProjectGithub()"/>
-        <Button :button="project.buttonsList[1]"  v-on:buttonClicked="handleOpenLiveProject()"/>
+        <Button :button="githubButton"  v-on:buttonClicked="handleOpenProjectGithub()"/>
+        <Button :button="liveButton"  v-on:buttonClicked="handleOpenProjectLive()"/>
       </div>
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
@@ -18,6 +18,7 @@
 </template>
 
 <script lang="js">
+  import ColorVariables from '../assets/sass/_variables.scss'
   import Button from "./Button.vue"
   import ButtonHelper from "../models/ButtonHelper.js"
   import TechnologyIcon from "./TechnologyIcon.vue"
@@ -36,24 +37,43 @@
         buttonHelper: new ButtonHelper(),
         projectVisible: false,
         mockupFloating: false,
-        mockupId: "projectMockup" + this.project.id.toString()
+        mockupId: "projectMockup" + this.project.id.toString(),
+        githubButton:{
+          iconClasses: "fab fa-github",
+          contentColor: "white",
+          contentSize: '1rem',
+          padding: '0.5rem 1rem',
+          buttonColor: ColorVariables.github,
+          text: "View Code",
+          boxShadow: true
+        },
+        liveButton:{
+          iconClasses: "fas fa-external-link-alt",
+          contentColor: "white",
+          contentSize: '1rem',
+          padding: '0.5rem 1rem',
+          buttonColor: ColorVariables.primary,
+          text: "View Live",
+          boxShadow: true
+        }
+
       }
     },
     methods: {
-      handleOpenLiveProject : function (){
-        if(this.project.buttonsList[1].hrefUrl === undefined){
+      handleOpenProjectLive : function (){
+        if(this.project.liveUrl === undefined){
           this.buttonHelper.emitEventBus("alert-modal-open-clicks", "This project is currently under development. To view the progress so far, click the corresponding Github button.");
         }
         else{
-          this.buttonHelper.openExternalLink(this.project.buttonsList[1].hrefUrl);
+          this.buttonHelper.openExternalLink(this.project.liveUrl);
         }
       },
       handleOpenProjectGithub: function(){
-        if(this.project.buttonsList[0].hrefUrl === undefined){
+        if(this.project.githubUrl === undefined){
           this.buttonHelper.emitEventBus("alert-modal-open-clicks", "This Github repository was made private. Please contact me if you need access.");
         }
         else{
-          this.buttonHelper.openExternalLink(this.project.buttonsList[0].hrefUrl);
+          this.buttonHelper.openExternalLink(this.project.githubUrl);
         }
       },
       handleProjectVisibility : function (isVisible){
@@ -65,11 +85,11 @@
         }
       },
       floatMockup: function (){
-        document.getElementById(this.mockupId).classList.add("shadow-drop", "floating");
+        document.getElementById(this.mockupId).classList.add("shadow-drop", "float-high");
         this.mockupFloating = true;
       },
       unfloatMockup: function(){
-        document.getElementById(this.mockupId).ClassList.remove("shadow-drop","floating");
+        document.getElementById(this.mockupId).ClassList.remove("shadow-drop");
         this.mockupFloating = false;
       },
       makeProjectVisible : function (){
@@ -94,16 +114,18 @@
 <style scoped lang="scss">
 @import "../assets/sass/_breakpoints.scss";
   .project-wrapper{
-    height: 24rem;
-
+    display: block;
+    margin: 0 auto;
+    padding: 3rem 0;
+    height: 25rem;
     @media #{$medium}{
-      height: 40rem;
+    padding: 1.5rem 0;
+    height: auto;
     }
   }
   .project-item {
     justify-content: center;
-    width: 100%;
-    margin: 1rem auto;
+
     h2{
       margin-top: 0;
       font-weight: 500;
@@ -131,10 +153,7 @@
   }
   .project-buttons-container{
     grid-area: buttons-container;
-    align-items: flex-end;
-    @media #{$medium}{
-      justify-content: space-evenly;
-    }
+    align-items: center;
   }
   .project-technologies-container{    
     margin: 0;
@@ -147,48 +166,52 @@
   }
   .project-grid-container-right{
     display: grid;
-    grid-template-columns: 10rem 10rem 30.7rem;
-    grid-template-rows: 16.9rem 3.7rem;
+    grid-template-columns: 20rem 30.7rem;
+    grid-template-rows: auto auto;
     grid-template-areas: 
-      "text-container text-container project-mockup"
-      "technologies-container buttons-container project-mockup";
+      "text-container project-mockup"
+      "buttons-container technologies-container";
     text-align: right;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
     @media #{$medium} {
-      grid-template-columns: 14rem 14rem;
-      grid-template-rows: auto 3.8rem auto;
+      grid-template-columns: 28rem;
+      grid-template-rows: auto auto auto auto;
       grid-template-areas:
-      "text-container text-container"
-      "technologies-container buttons-container"
-      "project-mockup project-mockup";
+      "text-container"
+      "buttons-container"
+      "project-mockup"
+      "technologies-container";
       text-align: center;
       row-gap: 1rem;
     }
     @media #{$small}{
-      grid-template-columns: 45% 45%;
+      grid-template-columns: 98%;
     }
   }
   .project-grid-container-left{
     display: grid;
-    grid-template-columns: 30.7rem 10rem 10rem;
-    grid-template-rows: 16.9rem 3.7rem;
+    grid-template-columns: 30.7rem 20rem;
+    grid-template-rows: auto auto;
     grid-template-areas: 
-    "project-mockup text-container text-container"
-    "project-mockup buttons-container technologies-container";
+    "project-mockup text-container"
+    "technologies-container buttons-container";
     text-align: left;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
     @media #{$medium}{
-      grid-template-columns: 14rem 14rem;
-      grid-template-rows: auto 3.8rem auto;
+      grid-template-columns: 28rem;
+      grid-template-rows: auto auto auto auto;
       grid-template-areas:
-      "text-container text-container"
-      "technologies-container buttons-container"
-      "project-mockup project-mockup";
+      "text-container"
+      "buttons-container"
+      "project-mockup"
+      "technologies-container";
       text-align: center;
       row-gap: 1rem;
     }
     @media #{$small}{
-      grid-template-columns: 45% 45%;
+      grid-template-columns: 98%
     }
   }
 </style>

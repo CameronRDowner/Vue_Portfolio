@@ -5,7 +5,7 @@
     <RadioButtonCluster :radioButtonCluster="radioButtonCluster" v-on:radioButtonToggled="handleRadioButtonClick($event)"/>
     <div id="about-content-wrapper" class="responsive-margin responsive-padding">
       <div id="about-content-text">
-        <p v-for="paragraph in contentInView.paragraphList"  v-bind:key="paragraph">{{paragraph}}</p>
+        <p class="fade-in" v-for="paragraph in contentInView.paragraphList"  v-bind:key="paragraph">{{paragraph}}</p>
       </div>
     </div>
    

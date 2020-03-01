@@ -49,7 +49,8 @@
             text: "Submit",
             contentColor: "white",
             buttonColor: ColorVariables.primary,
-            contentSize: '1rem'
+            contentSize: '1rem',
+            padding: '0.5rem 2rem'
         }
       }
     },
@@ -118,7 +119,6 @@
     }
     h2{
       margin-top: 0;
-      font-weight: 500;
     }
     #contact-modal-buttons-container{
     align-items: center;
@@ -128,10 +128,11 @@
   #contact-modal-backdrop{
     position: fixed;
     top: 0;
+    right: 0;
     background-color:#404040;
     opacity: 0.7;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     z-index: 5;
   }
  

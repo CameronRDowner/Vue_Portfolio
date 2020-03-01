@@ -4,6 +4,27 @@
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }
+  .fade-in {
+    -webkit-animation: fade-in 0.5s ease-out forwards;
+            animation: fade-in 0.5s ease-out forwards;
+  }
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
   .scale-enter-active {
   animation: scale-in 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
   -webkit-animation: scale-in 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
@@ -151,8 +172,9 @@
     100% {
       -webkit-transform: translateZ(50px);
               transform: translateZ(50px);
-      -webkit-box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
-      box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
+              -webkit-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              -moz-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
     }
   }
   @keyframes shadow-drop {
@@ -165,8 +187,9 @@
     100% {
       -webkit-transform: translateZ(50px);
               transform: translateZ(50px);
-      -webkit-box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
-      box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
+              -webkit-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              -moz-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
     }
   }
   .shadow-raise {
@@ -177,8 +200,9 @@
     0% {
       -webkit-transform: translateZ(50px);
               transform: translateZ(50px);
-      -webkit-box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
-      box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
+              -webkit-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              -moz-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
     }
     100% {
       -webkit-transform: translateZ(0);
@@ -191,8 +215,9 @@
     0% {
       -webkit-transform: translateZ(50px);
               transform: translateZ(50px);
-      -webkit-box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
-      box-shadow: 0 8px 10px 3px rgba(0, 0, 0, 0.18);
+              -webkit-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              -moz-box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
+              box-shadow: 9px 9px 19px 4px rgba(0,0,0,0.3);
     }
     100% {
       -webkit-transform: translateZ(0);
