@@ -23,7 +23,7 @@
           <button id="form-submit-button" type="submit">Submit</button>
         </form>
       </ValidationObserver>
-      <iframe id="form-sender" class="hidden" name="FormSender" v-on:load="notifyFormRecieved"></iframe>
+      <iframe id="form-sender" class="hidden-from-flow" name="FormSender" v-on:load="notifyFormRecieved"></iframe>
   </div>
 
 </template>

@@ -1,7 +1,7 @@
 <template lang="html">
 
   <li class="certification-item">
-    <transition name="scale">
+    <transition enter-active-class="scale-in">
       <div v-show="contentVisible" :style="{'animation-duration' : '1s'}">
     <img :src="require(`@/assets/images/certification_logos/${certification.logoName}`)" alt="certification logo" class="floating-low">
     <div class="certification-item-text-container">
@@ -52,7 +52,9 @@
       margin-right: 0.25em;
     }
     h4{
+      font-size: 0.9rem;
       margin: 0.3em;
+      font-weight: 400;
       &:first-child{
         font-weight: 600;
       }

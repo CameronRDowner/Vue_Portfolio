@@ -41,20 +41,18 @@
         githubButton:{
           iconClasses: "fab fa-github",
           contentColor: "white",
-          contentSize: '1rem',
-          padding: '0.5rem 1rem',
+          contentSize: '1.1rem',
+          padding: '0.8rem 1.2rem',
           buttonColor: ColorVariables.github,
-          text: "View Code",
-          boxShadow: true
+          text: "View Code"
         },
         liveButton:{
           iconClasses: "fas fa-external-link-alt",
           contentColor: "white",
-          contentSize: '1rem',
-          padding: '0.5rem 1rem',
+          contentSize: '1.1rem',
+          padding: '0.8rem 1.2rem',
           buttonColor: ColorVariables.primary,
-          text: "View Live",
-          boxShadow: true
+          text: "View Live"
         }
 
       }

@@ -3,7 +3,7 @@
   <div id="home-page">
       <Header/>
     <main>
-      <div id="welcome" class="responsive-margin">
+      <div id="summary-wrapper" class="responsive-margin">
         <p >
           In the about section you can learn a little more about me as well as my journey in coding. I'm always adding my latest projects to the projects section. The technologies section has all of the technologies I've worked with. And lastly, the Education section has the certifications I've completed as well as the diplomas I've earned.
         </p>
@@ -79,7 +79,7 @@
     @media #{$small-medium}{
       margin: 0 auto;
     }
-    #welcome{
+    #summary-wrapper{
       font-size: 1.34rem;
       font-weight: 200;
       color: $off-black;

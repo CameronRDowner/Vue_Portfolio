@@ -101,12 +101,15 @@ section {
     margin: 1.5rem auto 0 auto;
 }
 .hidden{
-    display: none !important;
+    opacity: 0;
+}
+.hidden-from-flow{
+  display: none;
 }
 .responsive-margin{
-  margin: 0 3.5rem;
+  margin: 0 3.5rem 3.5rem 3.5rem;
   @media #{$small-medium}{
-    margin: 0 0.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
   }
 }
 .responsive-padding{
@@ -115,5 +118,6 @@ section {
     padding: 1.5rem 1.5rem;
   }
 }
+
 
 </style>

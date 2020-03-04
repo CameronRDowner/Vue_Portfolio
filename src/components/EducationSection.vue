@@ -1,7 +1,7 @@
 <template lang="html">
 
   <section id="education">
-    <h1>Education</h1>
+    <h1>My Education</h1>
     <div id="education-containers-wrapper" class="flex-container-row">
       <div id="certifications-container">
         <h2>Certifications</h2>
@@ -113,8 +113,6 @@
     },
     methods: {
       triggerCertificationAnimations : function (){
-        // eslint-disable-next-line no-console
-        console.log('animations triggered');
         let delayedIndexPostions = [1,2];
         this.$refs.certificationItems.forEach((certification, currentIndex)=>{
           if(currentIndex == delayedIndexPostions[0]){
@@ -156,7 +154,7 @@
   #education-containers-wrapper{
     align-items: flex-start;
     h2{
-      font-weight: 500;
+      font-weight: 600;
     }
   }
   #certifications-container{

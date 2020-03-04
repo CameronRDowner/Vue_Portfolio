@@ -1,7 +1,7 @@
 <template lang="html">
 
   <section id="projects">
-    <h1>Projects</h1>
+    <h1>My Projects</h1>
     <div id="projects-container">
       <ProjectItem v-bind:key="project.id" v-for="project in projectList" :project="project"/>
     </div>

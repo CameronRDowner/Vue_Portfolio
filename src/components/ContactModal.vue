@@ -5,7 +5,7 @@
   <transition name="fade">
     <div id="contact-modal" v-show="modalVisible">
       <h2>Contact Me</h2>
-      <transition name="scale">
+      <transition enter-active-class="scale-in">
       <i id="form-recieved-checkmark" class="fas fa-check" v-show="checkmarkVisible"></i>
       </transition>
       <transition name="fade">

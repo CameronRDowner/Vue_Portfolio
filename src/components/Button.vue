@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--button-color);
-    margin: 0 0.5rem;
+    margin: 0 0.25rem;
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;

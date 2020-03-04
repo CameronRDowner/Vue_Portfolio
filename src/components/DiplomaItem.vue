@@ -1,5 +1,5 @@
 <template lang="html">
-  <vue-aos animation-class="scale-enter-active" :style="{'animation-duration' : '0.8s'}">
+  <vue-aos animation-class="scale-in" :style="{'animation-duration' : '0.8s'}">
   <li class="diploma-item">
     <img :src="require(`@/assets/images/school_logos/${diploma.schoolLogoName}`)" alt="school logo">
     <h3>{{diploma.name}}</h3>
@@ -40,7 +40,7 @@
     img{
       width: 17em;
     }
-    h3{
+    h4{
       font-weight: 500;
     }
     h3, h4 {

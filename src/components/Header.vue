@@ -1,9 +1,8 @@
 <template lang="html">
 
-  <header>
-    <div class="banner" v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
-      <vue-aos animation-class="slide-in-right" threshold="0.2">
-        <div class="rounded-box floating-high">
+  <header v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
+    <div id="banner" v-observe-visibility="{callback: triggerAnimations, once: true, intersection: {threshold: 0.2}}">
+        <div id="profile-card" class="rounded-box floating-high hidden animation-delay-500ms">
           <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>
           <h2>Front End Developer</h2>
@@ -13,12 +12,11 @@
             <Button :button="linkedinButton" v-on:buttonClicked="buttonHelper.openExternalLink(linkedinButton.hrefUrl)"/>
           </div>
       </div>
-      </vue-aos>
       <NavBar/>
       <NavBarMobile/>
-      <div id="banner-text">
-          <h1>Hi My Name Is Cameron.</h1>
-          <h3>
+      <div id="banner-text" >
+          <h1 id="textA" class="hidden animation-delay-500ms">Hi My Name Is Cameron.</h1>
+          <h3 id="textB" class="hidden animation-delay-1s animation-duration-1s">
             I am a developer with a passion for <b>clean maintainable</b> code, <b>responsive</b> designs, and <b>memorable</b> user experiences.
           </h3>
         </div>
@@ -73,16 +71,30 @@
       }
     },
     methods: {
-      handleNavBarPosition : function (isVisible){
-        let navBar = document.getElementById("nav-bar");
-        if(isVisible){
-          navBar.classList.add("nav-bar-absolute");
-          navBar.classList.remove("nav-bar-fixed");
+      handleNavBarPosition : function (bannerVisible){
+         let navBar = document.getElementById("nav-bar");
+         if(bannerVisible){
+           navBar.classList.add("nav-bar-absolute");
+           navBar.classList.remove("nav-bar-fixed");
+         }
+         else{
+           navBar.classList.add("nav-bar-fixed");
+           navBar.classList.remove("nav-bar-absolute");
+         }
+      },
+      triggerAnimations: function(headerVisible){
+        if(headerVisible){
+          let navBarClassList = document.getElementById('nav-bar').classList;
+          document.getElementById('banner').classList.add('scale-from-top');
+          document.getElementById('profile-card').classList.add('scale-in');
+          navBarClassList.add('fade-in-top');
+          document.getElementById('textA').classList.add('fade-in');
+          document.getElementById('textB').classList.add('fade-in');
+          setTimeout(() => {
+            navBarClassList.remove('fade-in-top')
+          }, 500);
         }
-        else{
-          navBar.classList.add("nav-bar-fixed");
-          navBar.classList.remove("nav-bar-absolute");
-        }
+        
       }
     },
     computed: {
@@ -96,7 +108,7 @@
 <style scoped lang="scss">
 @import "../assets/sass/_variables.scss";
 @import "../assets/sass/_breakpoints.scss";
-   .banner{
+   #banner{
     position: relative;
     margin: 0 auto;
     width: 100%;
