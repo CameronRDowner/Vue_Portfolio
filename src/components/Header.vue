@@ -1,7 +1,7 @@
 <template lang="html">
 
   <header v-observe-visibility="{callback: handleNavBarPosition, once: false, intersection: {threshold: 0.1}}">
-    <div id="banner" v-observe-visibility="{callback: triggerAnimations, once: true, intersection: {threshold: 0.2}}">
+    <div id="banner" v-observe-visibility="{callback: triggerAnimations, once: true, intersection: {threshold: 0.3}}">
         <div id="profile-card" class="rounded-box floating-high hidden animation-delay-500ms">
           <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>

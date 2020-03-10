@@ -1,8 +1,7 @@
 <template lang="html">
 
-  <footer>
-    <vue-aos animation-class="scale-in" threshold="0.2">
-    <div class="rounded-box floating-high">
+  <footer v-observe-visibility="{callback: handleFooterVisibility, once: true, intersection: {threshold: 0.5}}">
+    <div id="footer-card" class="rounded-box floating-high hidden">
       <h3>Thanks for checking out my portfolio!</h3>
       <p>You can reach out to me via any of my handles</p>
       <div class="flex-container-row contact-buttons-container" >
@@ -15,7 +14,6 @@
 
       </div>
     </div>
-    </vue-aos>
     <div id="scroll-top-button">
     <Button :button="scrollTopButton" v-on:buttonClicked="scrollToTop()" />
     </div>
@@ -25,14 +23,12 @@
 
 <script lang="js">
   import Button from "./Button.vue";
-  import VueAos from 'vue-aos';
   import ButtonHelper from "../models/ButtonHelper.js";
   import colorVariables from "../assets/sass/_variables.scss"
   export default  {
     name: 'Footer',
     components: {
-      Button,
-      VueAos
+      Button
     },
     props: [],
     mounted () {
@@ -79,6 +75,11 @@
         left: 0, 
         behavior: 'smooth'
       });
+      },
+      handleFooterVisibility : function (footerVisible){
+        if(footerVisible){
+          document.getElementById("footer-card").classList.add("scale-in");
+        }
       }
     },
     computed: {

@@ -1,15 +1,15 @@
 <template lang="html">
 
-  <section id="education">
+  <section id="education" v-observe-visibility="{callback: handleEducationVisibility, once: true, intersection: {threshold: 0.4}}">
     <h1>My Education</h1>
     <div id="education-containers-wrapper" class="flex-container-row">
-      <div id="certifications-container">
+      <div id="certifications-container" class="animation-duration-1s hidden">
         <h2>Certifications</h2>
-        <ul class="flex-container-row" v-observe-visibility="handleCertificationVisibility">
+        <ul class="flex-container-row">
           <CertificationItem v-bind:key="certification.id" v-for="certification in certificationsList" :certification="certification" ref="certificationItems" />
         </ul>
       </div>
-      <div id="diplomas-container">
+      <div id="diplomas-container" class="animation-duration-1s hidden">
         <h2>Diplomas</h2>
         <ul>
           <DiplomaItem v-bind:key="diploma.id" v-for="diploma in diplomasList" :diploma="diploma" />
@@ -112,27 +112,16 @@
       }
     },
     methods: {
-      triggerCertificationAnimations : function (){
-        let delayedIndexPostions = [1,2];
-        this.$refs.certificationItems.forEach((certification, currentIndex)=>{
-          if(currentIndex == delayedIndexPostions[0]){
-            delayedIndexPostions[0] += 4;
-            certification.contentVisible = true;
-          }
-          else if(currentIndex == delayedIndexPostions[1]){
-            delayedIndexPostions[1] += 4;
-            certification.contentVisible = true;
-          }
-          else{
-            setTimeout(() => {
-              certification.contentVisible = true;
-            }, 700);
-          }
-        })
+      triggerDiplomaAnimations : function (){
+        document.getElementById("diplomas-container").classList.add("fade-in");
       },
-      handleCertificationVisibility : function (isVisible){
+      triggerCertificationAnimations : function (){
+       document.getElementById("certifications-container").classList.add("fade-in"); 
+      },
+      handleEducationVisibility : function (isVisible){
         if(isVisible == true){
           this.triggerCertificationAnimations();
+          this.triggerDiplomaAnimations();
         }
         else{
           return

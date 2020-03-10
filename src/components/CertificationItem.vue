@@ -1,15 +1,13 @@
 <template lang="html">
 
   <li class="certification-item">
-    <transition enter-active-class="scale-in">
-      <div v-show="contentVisible" :style="{'animation-duration' : '1s'}">
+      <div>
     <img :src="require(`@/assets/images/certification_logos/${certification.logoName}`)" alt="certification logo" class="floating-low">
     <div class="certification-item-text-container">
       <h4>{{certification.name}}</h4>
       <h4>{{certification.vendorName}}</h4>
     </div>
     </div>
-    </transition>
   </li>
 
 </template>
@@ -24,7 +22,6 @@
     },
     data () {
       return {
-        contentVisible : false
 
       }
     },
