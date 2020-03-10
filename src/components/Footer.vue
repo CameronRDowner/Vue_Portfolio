@@ -1,7 +1,7 @@
 <template lang="html">
 
   <footer>
-    <vue-aos animation-class="slide-in-bottom" threshold="0.2">
+    <vue-aos animation-class="scale-in" threshold="0.2">
     <div class="rounded-box floating-high">
       <h3>Thanks for checking out my portfolio!</h3>
       <p>You can reach out to me via any of my handles</p>

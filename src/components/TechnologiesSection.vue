@@ -1,43 +1,33 @@
 <template lang="html">
 
-  <section id="technologies">
+  <section id="technologies" v-observe-visibility="{callback: triggerAboutAnimations, once: false, intersection: {threshold: 0.1}}">
     <h1>Technologies Learned</h1>
-    <vue-aos animation-class="shadow-drop" threshold="0.8">
     <div id="technologies-wrapper" class="floating-high">
-      <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
-      <div class="technology-list">
+      <div id="front-end-list" class="technology-list animation-delay-500ms hidden">
         <h3>Front End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frontEndTechnologyList" :technology="technology" />
         </ul>
       </div>
-      </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
-      <div class="technology-list">
+      <div id="back-end-list" class="technology-list animation-delay-600ms hidden">
         <h3>Back End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in backEndTechnologyList" :technology="technology" />
         </ul>
       </div>
-      </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
-      <div class="technology-list">
+      <div id="frameworks-list" class="technology-list animation-delay-700ms hidden">
         <h3>Frameworks</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frameworksTechnologyList" :technology="technology" />
         </ul>
       </div>
-      </vue-aos>
-      <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
-      <div class="technology-list">
+      <div id="libraries-list" class="technology-list animation-delay-800ms hidden">
         <h3>Libraries</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in librariesTechnologyList" :technology="technology" />
         </ul>
       </div>
-      </vue-aos>
     </div>
-    </vue-aos>
   </section>
 
 </template>
@@ -140,7 +130,15 @@
       }
     },
     methods: {
-
+      triggerAboutAnimations : function (technologiesSectionVisible){
+        if (technologiesSectionVisible) {
+          document.getElementById("technologies-wrapper").classList.add("scale-up-horizontal");
+          document.getElementById("front-end-list").classList.add("puff-in-center");
+          document.getElementById("back-end-list").classList.add("puff-in-center");
+          document.getElementById("frameworks-list").classList.add("puff-in-center");
+          document.getElementById("libraries-list").classList.add("puff-in-center");
+        }
+      }
     },
     computed: {
 
