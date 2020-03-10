@@ -5,7 +5,7 @@
     <vue-aos animation-class="shadow-drop" threshold="0.8">
     <div id="technologies-wrapper" class="floating-high">
       <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
-      <div>
+      <div class="technology-list">
         <h3>Front End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frontEndTechnologyList" :technology="technology" />
@@ -13,7 +13,7 @@
       </div>
       </vue-aos>
       <vue-aos animation-class="slide-in-blurred-left" threshold="0.3">
-      <div>
+      <div class="technology-list">
         <h3>Back End</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in backEndTechnologyList" :technology="technology" />
@@ -21,7 +21,7 @@
       </div>
       </vue-aos>
       <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
-      <div>
+      <div class="technology-list">
         <h3>Frameworks</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in frameworksTechnologyList" :technology="technology" />
@@ -29,7 +29,7 @@
       </div>
       </vue-aos>
       <vue-aos animation-class="slide-in-blurred-right" threshold="0.3">
-      <div>
+      <div class="technology-list">
         <h3>Libraries</h3>
         <ul class="flex-container-row">
           <TechnologyIcon v-bind:key="technology.id" v-for="technology in librariesTechnologyList" :technology="technology" />
@@ -118,7 +118,7 @@
           },
           {
             id: 2,
-            name: "Vue",
+            name: "Vue.js",
             deviconClasses: "devicon-vuejs-plain colored",
             startHidden: true
           }
@@ -155,6 +155,15 @@
 @import "../assets/sass/_variables.scss";
   #technologies {
     width: 100%;
+    background-color: $technologies-background;
+    h1{
+      color: white;
+    }
+  }
+  .technology-list{
+    background-color: white;
+    border-radius: 20px;
+    margin: 0.5rem;
   }
   #technologies-wrapper{
     display: flex;
@@ -162,11 +171,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    background-color: 	white;
+    background-color: $technologies-foreground;
     padding: 3em;
   
     ul{
-      width: 10rem;
+      width: 12rem;
     }
     h3{
       font-weight: 600;

@@ -2,7 +2,9 @@
 
   <li class="technology-icon">
       <i :class="technology.deviconClasses"></i>
-      <h4 v-if="technology.name !== undefined">{{technology.name}}</h4>
+      <div v-if="technology.name !== undefined">
+        <h4  class="floating-low">{{technology.name}}</h4>
+      </div>
   </li>
 
 </template>
@@ -31,16 +33,24 @@
 </script>
 
 <style scoped lang="scss">
+@import "../assets/sass/_variables.scss";
   .technology-icon {
-    margin: 0.5rem 0.25rem;
+    margin: 0.5rem 0.4rem;
     i{
       font-size: 3.5rem;
     }
-    h4{
-      margin-top: 0.5em;
+    div{
+      margin-top: 0.3rem;
       margin-bottom: 0;
-      color:#4A4E69;
+      box-sizing: border-box;
+      h4{
+      display: inline-block;
+      color: white;
       font-weight: 400;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+      background-color: $off-black;
+    }
     }
   }
 </style>

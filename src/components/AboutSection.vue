@@ -30,7 +30,7 @@
     data () {
       return {
         radioButtonCluster: {
-          buttonColor: ColorVariables.aboutContent,
+          buttonColor: ColorVariables.aboutControls,
           buttonContentColor: 'white', 
           name: 'about-content',
           radioButtonList: [
@@ -109,7 +109,7 @@
     box-shadow: 7px 11px 21px 0px rgba(0,0,0,0.45);
   }
   #about-content-text{
-    color: $about-content;
+    color: $about-text;
     p{
       display: inline-block;
       text-align: left;

@@ -4,10 +4,13 @@ $foreground: #ffffff;
 $github: #4F455D;
 $linkedin: #1374F6;
 $yellow: #FED267;
-$off-black: #575555;
+$off-black: #3D3C3E;
 $about-background: #300E50;
 $about-foreground: #4A286A;
-$about-content: #715C84;
+$about-controls: #715C84;
+$about-text: #B7B7B7;
+$technologies-background: #480355;
+$technologies-foreground: #5B0D6A;
 
 :export{
     primary: $primary;
@@ -19,5 +22,8 @@ $about-content: #715C84;
     offBlack: $off-black;
     aboutBackground: $about-background;
     aboutForeground: $about-foreground;
-    aboutContent: $about-content;
+    aboutControls: $about-controls;
+    aboutText: $about-text;
+    technologiesBackground: $technologies-background;
+    technologiesForeground: $technologies-foreground;
 }

@@ -59,8 +59,8 @@ ul{
   padding-left: 0;
 }
 section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .rounded-box{
     position: absolute;
