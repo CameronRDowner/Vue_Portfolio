@@ -111,7 +111,13 @@
             name: "Vue.js",
             deviconClasses: "devicon-vuejs-plain colored",
             startHidden: true
-          }
+          },
+          {
+            id: 3,
+            name: "React",
+            deviconClasses: "devicon-react-plain colored",
+            startHidden: true
+          },
         ],
           librariesTechnologyList: [
           {
