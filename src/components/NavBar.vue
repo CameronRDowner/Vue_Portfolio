@@ -37,7 +37,7 @@
             iconClasses: "fas fa-file-download",
             contentColor: "white",
             buttonColor: colorVariables.primary,
-            hrefUrl: "https://docs.google.com/document/d/14EKr-8gt5VWqWSdxVEhmRJofBPEyvn71atU7G04D1U4/export?format=pdf",
+            hrefUrl: "https://drive.google.com/uc?export=download&id=1iQPr7cv9XNwEhT82_6ZbPkECIcAKpa5s",
             text:"Resume",
             contentSize: "0.8rem",
             padding: "0.2rem 0.8rem",

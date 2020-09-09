@@ -37,17 +37,24 @@
       return {
         certificationsList: [
           {
-            id: 1,
-            name: "Javascript Algorithmns and Data Structures",
-            vendorName: "FreeCodeCamp",
-            logoName: "freecodecamp.jpeg",
+            id: 6,
+            name: "User Interface Designer",
+            vendorName: "CIW",
+            logoName: "ciw.jpg",
             contentVisible: false
           },
           {
-            id: 2,
-            name: "Responsive Web Design",
-            vendorName: "FreeCodeCamp",
-            logoName: "freecodecamp.jpeg",
+            id: 7,
+            name: "Advanced HTML 5 & CSS3 Specialist",
+            vendorName: "CIW",
+            logoName: "ciw.jpg",
+            contentVisible: false
+          },
+          {
+            id: 8,
+            name: "Site Development Associate",
+            vendorName: "CIW",
+            logoName: "ciw.jpg",
             contentVisible: false
           },
           {
@@ -70,28 +77,7 @@
             vendorName: "Comptia",
             logoName: "a+.png",
             contentVisible: false
-          },
-          {
-            id: 6,
-            name: "User Interface Designer",
-            vendorName: "CIW",
-            logoName: "ciw.jpg",
-            contentVisible: false
-          },
-          {
-            id: 7,
-            name: "Advanced HTML 5 & CSS3 Specialist",
-            vendorName: "CIW",
-            logoName: "ciw.jpg",
-            contentVisible: false
-          },
-          {
-            id: 8,
-            name: "Site Development Associate",
-            vendorName: "CIW",
-            logoName: "ciw.jpg",
-            contentVisible: false
-          },
+          }
         ],
         diplomasList: [
           {
