@@ -24,7 +24,7 @@
       return {
         projectList: [
           {
-            id: 2,
+            id: 0,
             name: "Login Sample App",
             mockupFileName: "project_coming_soon.jpg",
             description: "A fullstack project that demonstrates the ability to log into an app and manage a current session. The front end is built in React and uses OAuth for authentication. The back end uses both Express and MongoDb.",
@@ -61,7 +61,7 @@
             ]
           },
           {
-            id: 0,
+            id: 1,
             name: "SongHunter",
             mockupFileName: "songhunter_mockup.jpg",
             description: "This is a React webapp to view the top 10 songs, search for songs via lyrics or song name, and view the lyrics for any song. Utilizes the Musixmatch REST API for song data and the React Context API for state management.",
@@ -91,7 +91,7 @@
             ],
           },
           {
-            id: 1,
+            id: 2,
             name: "PokeDirectory",
             mockupFileName: "pokedirectory_mockup.jpg",
             description: "An Angular webapp for the purpose of browsing and viewing the stats of your favorite pokemon. All pokemon data is retrieved via the RESTful PokeApi. State data is efficiently managed with NgRx.",
