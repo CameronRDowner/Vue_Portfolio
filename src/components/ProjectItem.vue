@@ -12,7 +12,9 @@
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
       </ul>
+      <a v-bind:href="project.liveUrl">
         <img :id="mockupId" :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)">
+      </a>
   </div>
 </div>
 </template>

@@ -1,7 +1,7 @@
 <template lang="html">
 
   <section id="technologies" v-observe-visibility="{callback: triggerAboutAnimations, once: false, intersection: {threshold: 0.1}}">
-    <h1>Technologies Learned</h1>
+    <h1>Technologies Utilized</h1>
     <div id="technologies-wrapper" class="floating-high">
       <div id="front-end-list" class="technology-list animation-delay-500ms hidden">
         <h3>Front End</h3>

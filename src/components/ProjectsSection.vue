@@ -24,6 +24,43 @@
       return {
         projectList: [
           {
+            id: 2,
+            name: "Login Sample App",
+            mockupFileName: "project_coming_soon.jpg",
+            description: "A fullstack project that demonstrates the ability to log into an app and manage a current session. The front end is built in React and uses OAuth for authentication. The back end uses both Express and MongoDb.",
+            githubUrl: "https://github.com/CameronRDowner/React_Login_App",
+            technologiesList: [
+              {
+                id: 0,
+                deviconClasses: "devicon-html5-plain colored"
+              },
+              {
+                id: 1,
+                deviconClasses: "devicon-css3-plain colored"
+              },
+              {
+                id: 2,
+                deviconClasses: "devicon-javascript-plain colored"
+              },
+              {
+                id: 3,
+                deviconClasses: "devicon-react-plain colored"
+              },
+              {
+                id: 4,
+                deviconClasses: "devicon-sass-plain colored"
+              },
+              {
+                id: 5,
+                deviconClasses: "devicon-express-plain colored"
+              },
+              {
+                id: 6,
+                deviconClasses: "devicon-mongodb-plain colored"
+              }
+            ]
+          },
+          {
             id: 0,
             name: "SongHunter",
             mockupFileName: "songhunter_mockup.jpg",
@@ -76,35 +113,6 @@
                 {
                   id: 3,
                   deviconClasses: "devicon-angularjs-plain colored"
-                },
-                {
-                  id: 4,
-                  deviconClasses: "devicon-sass-plain colored"
-                }
-            ],
-          },
-          {
-            id: 2,
-            name: "Wescot Roofing Website",
-            mockupFileName: "wescot_roofing_website.jpg",
-            description: "This website began with the Elevation template from pixilarity.com which was then heavily modified to meet the branding and functional needs of the client. CSS animations were added along with a scroll event handler to activate them. Additionally, field validation was integrated into the contact form to ensure accurate submissions.",
-            liveUrl: "https://www.wescotroofing.com",
-            technologiesList: [
-                {
-                  id: 0,
-                  deviconClasses: "devicon-html5-plain colored"
-                },
-                {
-                  id: 1,
-                  deviconClasses: "devicon-css3-plain colored"
-                },
-                {
-                  id: 2,
-                  deviconClasses: "devicon-javascript-plain colored"
-                },
-                {
-                  id: 3,
-                  deviconClasses: "devicon-jquery-plain colored"
                 },
                 {
                   id: 4,
