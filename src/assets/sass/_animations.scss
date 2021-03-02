@@ -81,6 +81,33 @@
       opacity: 1;
     }
   }
+
+  .scale-in-vert {
+    -webkit-animation: scale-in-vert 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+            animation: scale-in-vert 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  }
+  @-webkit-keyframes scale-in-vert {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+  }
+  @keyframes scale-in-vert {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+  }
+  
+  
   /* General Animation Classes*/
   .slide-in-top {
       -webkit-animation: slide-in-top 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;

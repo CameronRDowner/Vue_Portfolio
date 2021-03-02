@@ -5,17 +5,20 @@
     <div id="about-radio-buttons" class="hidden">
     <RadioButtonCluster :radioButtonCluster="radioButtonCluster" v-on:radioButtonToggled="handleRadioButtonClick($event)"/>
     </div>
-    <div id="about-content-wrapper" class="responsive-margin responsive-padding hidden animation-delay-500ms">
-      <div v-if="contentInView === 'Coding Journey'"  id="about-content-text" class="hidden animation-delay-1s">
-        <p class="fade-in" v-for="paragraph in codingJourney.paragraphList"  v-bind:key="paragraph">{{paragraph}}</p>
+    <div id="about-content-wrapper" class="hidden">
+      <div v-if="contentInView === 'Coding Journey'" id="about-summary-wrapper">
+        <div class="about-content-text responsive-padding responsive-margin hidden scale-in">
+          <p v-for="paragraph in codingJourney.paragraphList"  v-bind:key="paragraph">{{paragraph}}</p>
+        </div>
       </div>
-      <ul v-else-if="contentInView === 'Employment History'">
-        <li v-for="job in employmentHistory" v-bind:key="job.id">
-          <JobEntry :job="job"/>
-        </li>
+      <div v-else-if="contentInView === 'Employment History'" id="about-jobs-wrapper">
+      <ul class="about-jobs-list responsive-margin scale-in-vert">
+          <li v-for="job in employmentHistory" v-bind:key="job.id" class="about-job-item">
+            <JobEntry :job="job"  />
+          </li>
       </ul>
-    </div>
-   
+      </div>
+   </div>
   </section>
 
 </template>
@@ -56,19 +59,63 @@
         },
         employmentHistory: [
           {
+            employerLogo: 'globalsource_it.png',
             employer: 'GlobalSource IT',
-            jobTitle: 'Front End Developer',
-            jobType: 'Contract',
-            start: new Date('September 26 2020'),
-            end: new Date('February 26 2021'),
+            position: 'Remote Front End Developer',
+            type: 'Contract',
+            start: new Date('September 2020'),
+            end: new Date('February 2021'),
             location: 'Milwaukee, WI',
-            employmentSummary: 'I was contracted out to work remotely as a Front End Developer for Coopervision on a short term contract basis.',
             duties: [
-              'write code',
-              'fix bugs'
+              'Worked on CooperVisions GPS II planning software project',
+              'Diagnosed and fixed a range of different UI bugs',
+              'Took part in Agile Software Methodology practices',
+              'Planned and built out features, self-directed and with team',
+              'Worked closely with stakeholders to collect business requirements'
             ]
-
-          }
+          },
+          {
+            employer: 'Self',
+            position: 'Front End Developer',
+            type: 'Freelance',
+            start: new Date('November 2019'),
+            end: new Date('September 2020'),
+            location: 'Elburn, IL',
+            duties: [
+              'Worked on CooperVisions GPS II planning software project',
+              'Diagnosed and fixed a range of different UI bugs',
+              'Took part in Agile Software Methodology practices',
+              'Planned and built out features, self-directed and with team',
+              'Worked closely with stakeholders to collect business requirements'
+            ]
+          },
+          {
+            employer: 'CD Computer Solutions',
+            position: 'IT Technician',
+            type: 'Part Time',
+            start: new Date('September 2012'),
+            location: 'Elburn, IL',
+            duties: [
+              'Resolved a variety of software and hardware defects on tablets, phones, computers, and network devices.',
+              'Trained clients how to use both hardware and software.',
+              'Handled multiple concurrent projects.'
+            ]
+          },
+          {
+            employerLogo: 'showalter_roofing.jpg',
+            employer: 'Showalter Roofing',
+            position: 'Support Specialist / IT Technician',
+            type: 'Part Time',
+            start: new Date('August 2015'),
+            end: new Date('December 2018'),
+            location: 'Naperville, IL',
+            duties: [
+              'Handled maintenance and repairs of all IT infrastructure',
+              'Coded a specialized calculator for data analysis duties',
+              'Supported different departments with ongoing projects',
+              'Assisted with several insurance audits'
+            ]
+          },
         ],
         contentInView: {
           paragraphList: ""
@@ -92,7 +139,7 @@
         if(aboutSectionVisible){
           document.getElementById('about-radio-buttons').classList.add('slide-in-right');
           document.getElementById('about-content-wrapper').classList.add('scale-in');
-          document.getElementById('about-content-text').classList.add('fade-in');
+
         }
       }
     },
@@ -123,10 +170,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+  .about-content-text{
     background-color: $about-foreground;
     box-shadow: 7px 11px 21px 0px rgba(0,0,0,0.45);
-  }
-  #about-content-text{
     color: $about-text;
     p{
       display: inline-block;
@@ -145,5 +192,21 @@
       color: $about-background;
       font-size: 9rem;
     }
+  }
+
+  .about-jobs-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .about-job-item{
+    width: 100%;
+  }
+
+  #about-summary-wrapper{
+    
   }
 </style>
