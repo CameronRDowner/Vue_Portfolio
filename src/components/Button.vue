@@ -24,22 +24,19 @@
     methods: {
       emitClick: function () {
         this.$emit('buttonClicked');
-      },
-      buttonHasProperty(buttonProperty){
-        return this.button.hasOwnProperty(buttonProperty);
       }
     },
     computed: {
       buttonStyles: function (){
         return {
           color : this.button.contentColor,
-          'font-size' : this.buttonHasProperty('contentSize') ? this.button.contentSize : '1.7rem',
+          'font-size' : this.button.contentSize ? this.button.contentSize : '1.7rem',
           '--button-color': this.button.buttonColor,
           '--button-hover-color' : tinycolor(this.button.buttonColor).lighten(15).toString(),
-          padding : this.buttonHasProperty('padding') ? this.button.padding : '0.8rem',
-          border : this.buttonHasProperty('altStyling') ? 'solid 2px' : 'none',
-          'border-color' : this.buttonHasProperty('borderColor') ? this.button.borderColor : this.button.contentColor,
-          'box-shadow' : this.buttonHasProperty('boxShadow') ? '1px 1px 4px 1px rgba(0,0,0,0.43)' : 'none'
+          padding : this.button.padding ? this.button.padding : '0.8rem',
+          border : this.button.altStyling ? 'solid 2px' : 'none',
+          'border-color' : this.button.borderColor ? this.button.borderColor : this.button.contentColor,
+          'box-shadow' : this.button.boxShadow ? '1px 1px 4px 1px rgba(0,0,0,0.43)' : 'none'
         }
       },
       //added pseudo icon to keep round button aspect ratio consistant
@@ -51,7 +48,7 @@
       iconStyles: function(){
         return {
           'padding-left' : this.button.iconClasses && this.button.text ? '0.4rem' : '0',
-          position : this.button.hasOwnProperty('text') ? 'static' : 'absolute'
+          position : this.button.text ? 'static' : 'absolute'
         }
       }
       
