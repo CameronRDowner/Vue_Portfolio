@@ -26,7 +26,7 @@
           {
             id: 0,
             name: "Login REST API",
-            mockupFileName: "project_coming_soon.jpg",
+            mockupFileName: "login_api.jpg",
             description: "A backend project that demonstrates the ability to create new users, log them into a session, manage that session, and retrieve user data. This REST API uses JSON Web Tokens for authentication, MongoDB for data storage, and uses Express to serve up its functionality within the Node environment.",
             githubUrl: "https://github.com/CameronRDowner/Express_Login_App_REST_API",
             liveUrl: null,
