@@ -7,7 +7,7 @@
       </div>
       <div class="project-buttons-container flex-container-row">
         <Button :button="githubButton"  v-on:buttonClicked="handleOpenProjectGithub()"/>
-        <Button :button="liveButton"  v-on:buttonClicked="handleOpenProjectLive()"/>
+        <Button v-if="project.liveUrl !== null" :button="liveButton"  v-on:buttonClicked="handleOpenProjectLive()"/>
       </div>
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>

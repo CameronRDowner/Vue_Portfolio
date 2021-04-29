@@ -25,37 +25,22 @@
         projectList: [
           {
             id: 0,
-            name: "Login Sample App",
+            name: "Login REST API",
             mockupFileName: "project_coming_soon.jpg",
-            description: "A fullstack project that demonstrates the ability to log into an app and manage a current session. The front end is built in React and uses OAuth for authentication. The back end uses both Express and MongoDb.",
-            githubUrl: "https://github.com/CameronRDowner/React_Login_App",
+            description: "A backend project that demonstrates the ability to create new users, log them into a session, manage that session, and retrieve user data. This REST API uses JSON Web Tokens for authentication, MongoDB for data storage, and uses Express to serve up its functionality within the Node environment.",
+            githubUrl: "https://github.com/CameronRDowner/Express_Login_App_REST_API",
+            liveUrl: null,
             technologiesList: [
               {
                 id: 0,
-                deviconClasses: "devicon-html5-plain colored"
+                deviconClasses: "devicon-nodejs-plain colored"
               },
               {
                 id: 1,
-                deviconClasses: "devicon-css3-plain colored"
+                deviconClasses: "devicon-express-original colored"
               },
               {
                 id: 2,
-                deviconClasses: "devicon-javascript-plain colored"
-              },
-              {
-                id: 3,
-                deviconClasses: "devicon-react-plain colored"
-              },
-              {
-                id: 4,
-                deviconClasses: "devicon-sass-plain colored"
-              },
-              {
-                id: 5,
-                deviconClasses: "devicon-express-plain colored"
-              },
-              {
-                id: 6,
                 deviconClasses: "devicon-mongodb-plain colored"
               }
             ]
