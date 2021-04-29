@@ -69,6 +69,24 @@
             name: "SQL",
             deviconClasses: "devicon-oracle-plain colored",
             startHidden: true
+          },
+          {
+            id: 5,
+            name: "Node",
+            deviconClasses: "devicon-nodejs-plain colored",
+            startHidden: true
+          },
+          {
+            id: 4,
+            name: "MongoDB",
+            deviconClasses: "devicon-mongodb-plain colored",
+            startHidden: true
+          },
+          {
+            id: 4,
+            name: "Python",
+            deviconClasses: "devicon-python-plain colored",
+            startHidden: true
           }
 
         ],
@@ -114,10 +132,10 @@
           },
           {
             id: 3,
-            name: "React",
-            deviconClasses: "devicon-react-plain colored",
+            name: "Express.js",
+            deviconClasses: "devicon-express-original colored",
             startHidden: true
-          },
+          }
         ],
           librariesTechnologyList: [
           {
@@ -131,7 +149,13 @@
             name: "Bootstrap",
             deviconClasses: "devicon-bootstrap-plain colored",
             startHidden: true
-          }
+          },
+          {
+            id: 3,
+            name: "React",
+            deviconClasses: "devicon-react-plain colored",
+            startHidden: true
+          },
         ]
       }
     },
