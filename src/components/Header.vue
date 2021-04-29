@@ -5,7 +5,7 @@
         <div id="profile-card" class="rounded-box floating-high hidden animation-delay-500ms">
           <img src="../assets/images/profile.jpg" alt="profile picture">
           <h1>Cameron Downer</h1>
-          <h2>Front End Developer</h2>
+          <h2>Web Developer</h2>
           <div class="flex-container-row contact-buttons-container">
             <Button :button="contactButton" v-on:buttonClicked="buttonHelper.emitEventBus(`contact-modal-open-clicks`)" />
             <Button :button="githubButton" v-on:buttonClicked="buttonHelper.openExternalLink(githubButton.hrefUrl)"/>
