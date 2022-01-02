@@ -1,12 +1,14 @@
 <template lang="html">
-
   <section id="projects">
     <h1>My Projects</h1>
     <div id="projects-container">
-      <ProjectItem v-bind:key="project.id" v-for="project in projectList" :project="project"/>
+      <ProjectItem
+        v-bind:key="project.id"
+        v-for="project in projectList"
+        :project="project"
+      />
     </div>
   </section>
-
 </template>
 
 <script lang="js">
@@ -24,7 +26,33 @@
       return {
         projectList: [
           {
-            id: 0,
+            id: 4,
+            name: "Items GraphQL API",
+            mockupFileName: "item_api.png",
+            description: "A simple CRUD GraphQL app that demonstrates the ability to create, update, and delete resources. This API uses Apollo Server for fast efficient requests, and MongoDB for data storage. ",
+            githubUrl: "https://github.com/CameronRDowner/Node_Item_Manager_GraphQL_API",
+            liveUrl: null,
+            technologiesList: [
+              {
+                id: 0,
+                deviconClasses: "devicon-nodejs-plain colored"
+              },
+              {
+                id: 1,
+                deviconClasses: "devicon-express-original colored"
+              },
+              {
+                id: 2,
+                deviconClasses: "devicon-mongodb-plain colored"
+              },
+              {
+                id: 3,
+                deviconClasses: "devicon-graphql-plain-wordmark colored"
+              }
+            ]
+          },
+          {
+            id: 3,
             name: "Login REST API",
             mockupFileName: "login_api.jpg",
             description: "A backend project that demonstrates the ability to create new users, log them into a session, manage that session, and retrieve user data. This REST API uses JSON Web Tokens for authentication, MongoDB for data storage, and uses Express to serve up its functionality within the Node environment.",
@@ -46,7 +74,7 @@
             ]
           },
           {
-            id: 1,
+            id: 2,
             name: "SongHunter",
             mockupFileName: "songhunter_mockup.jpg",
             description: "This is a React webapp to view the top 10 songs, search for songs via lyrics or song name, and view the lyrics for any song. Utilizes the Musixmatch REST API for song data and the React Context API for state management.",
@@ -76,7 +104,7 @@
             ],
           },
           {
-            id: 2,
+            id: 1,
             name: "PokeDirectory",
             mockupFileName: "pokedirectory_mockup.jpg",
             description: "An Angular webapp for the purpose of browsing and viewing the stats of your favorite pokemon. All pokemon data is retrieved via the RESTful PokeApi. State data is efficiently managed with NgRx.",
@@ -106,7 +134,7 @@
             ],
           },
           {
-            id: 3,
+            id: 0,
             name: "Portfolio Website",
             mockupFileName: "portfolio_website.jpg",
             description: "The portfolio page you are currently browsing, I built and designed from scratch. The overall project was built in the Vue.js framework and uses many of its directives in the UI.",
@@ -145,12 +173,10 @@
 
     }
 }
-
-
 </script>
 
 <style scoped lang="scss">
-  #projects {
-    box-sizing: border-box;
-  }
+#projects {
+  box-sizing: border-box;
+}
 </style>
