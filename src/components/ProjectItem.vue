@@ -1,22 +1,53 @@
 <template lang="html">
-<div class="project-wrapper" v-observe-visibility="{callback: handleProjectVisibility, once: true, intersection: {threshold: 0.3}}">
-  <div class="project-item" :class="['project-grid-container-' + getOrientation, 'slide-in-' + getOrientation]" v-show="projectVisible">
+  <div
+    class="project-wrapper"
+    v-observe-visibility="{
+      callback: handleProjectVisibility,
+      once: true,
+      intersection: { threshold: 0.3 },
+    }"
+  >
+    <div
+      class="project-item"
+      :class="[
+        'project-grid-container-' + getOrientation,
+        'slide-in-' + getOrientation,
+      ]"
+      v-show="projectVisible"
+    >
       <div class="project-text-container">
-        <h2>{{project.name}}</h2>
-        <p>{{project.description}}</p>
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
       </div>
       <div class="project-buttons-container flex-container-row">
-        <Button :button="githubButton"  v-on:buttonClicked="handleOpenProjectGithub()"/>
-        <Button v-if="project.liveUrl !== null" :button="liveButton"  v-on:buttonClicked="handleOpenProjectLive()"/>
+        <Button
+          v-if="project.githubUrl"
+          :button="githubButton"
+          v-on:buttonClicked="handleOpenProjectGithub()"
+        />
+        <Button
+          v-if="project.liveUrl"
+          :button="liveButton"
+          v-on:buttonClicked="handleOpenProjectLive()"
+        />
       </div>
       <ul class="project-technologies-container flex-container-row">
-        <TechnologyIcon v-bind:key="technology.id" v-for="technology in project.technologiesList" :technology="technology"/>
+        <TechnologyIcon
+          v-bind:key="technology.id"
+          v-for="technology in project.technologiesList"
+          :technology="technology"
+        />
       </ul>
       <a v-bind:href="project.liveUrl">
-        <img :id="mockupId" :src="require(`@/assets/images/project_mockups/${project.mockupFileName}`)">
+        <img
+          :id="mockupId"
+          :src="
+            require(`@/assets/images/project_mockups/${project.mockupFileName}`)
+          "
+        />
       </a>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="js">
@@ -103,9 +134,9 @@
         }
       else {
         return "left";
-      }  
+      }
     },
-     
+
 }
 
   }
@@ -113,105 +144,105 @@
 
 <style scoped lang="scss">
 @import "../assets/sass/_breakpoints.scss";
-  .project-wrapper{
-    display: block;
-    margin: 0 auto;
-    padding: 3rem 0;
-    height: 25rem;
-    @media #{$medium}{
+.project-wrapper {
+  display: block;
+  margin: 0 auto;
+  padding: 3rem 0;
+  height: 25rem;
+  @media #{$medium} {
     padding: 1.5rem 0;
     height: auto;
-    }
   }
-  .project-item {
-    justify-content: center;
+}
+.project-item {
+  justify-content: center;
 
-    h2{
-      margin-top: 0;
-      font-weight: 500;
-      padding: 0 1rem;
-    }
-    p{
-      padding: 0 1rem;
-      line-height: 1.5rem;
-      @media #{$medium}{
-        padding: 0;
-        margin: 0;
-      }
-    }
-    img{
-      width: 100%;
-      border-radius: 10px;
-      grid-area: project-mockup;
-    }
+  h2 {
+    margin-top: 0;
+    font-weight: 500;
+    padding: 0 1rem;
   }
-  .project-text-container{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    grid-area: text-container;
-  }
-  .project-buttons-container{
-    grid-area: buttons-container;
-    align-items: center;
-  }
-  .project-technologies-container{    
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    grid-area: technologies-container;
-    @media #{$medium}{
-      justify-content: center;
-    }
-  }
-  .project-grid-container-right{
-    display: grid;
-    grid-template-columns: 20rem 30.7rem;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-      "text-container project-mockup"
-      "buttons-container technologies-container";
-    text-align: right;
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
+  p {
+    padding: 0 1rem;
+    line-height: 1.5rem;
     @media #{$medium} {
-      grid-template-columns: 28rem;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas:
+      padding: 0;
+      margin: 0;
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 10px;
+    grid-area: project-mockup;
+  }
+}
+.project-text-container {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  grid-area: text-container;
+}
+.project-buttons-container {
+  grid-area: buttons-container;
+  align-items: center;
+}
+.project-technologies-container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  grid-area: technologies-container;
+  @media #{$medium} {
+    justify-content: center;
+  }
+}
+.project-grid-container-right {
+  display: grid;
+  grid-template-columns: 20rem 30.7rem;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "text-container project-mockup"
+    "buttons-container technologies-container";
+  text-align: right;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  @media #{$medium} {
+    grid-template-columns: 28rem;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
       "text-container"
       "buttons-container"
       "project-mockup"
       "technologies-container";
-      text-align: center;
-      row-gap: 1rem;
-    }
-    @media #{$small}{
-      grid-template-columns: 98%;
-    }
+    text-align: center;
+    row-gap: 1rem;
   }
-  .project-grid-container-left{
-    display: grid;
-    grid-template-columns: 30.7rem 20rem;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
+  @media #{$small} {
+    grid-template-columns: 98%;
+  }
+}
+.project-grid-container-left {
+  display: grid;
+  grid-template-columns: 30.7rem 20rem;
+  grid-template-rows: auto auto;
+  grid-template-areas:
     "project-mockup text-container"
     "technologies-container buttons-container";
-    text-align: left;
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
-    @media #{$medium}{
-      grid-template-columns: 28rem;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas:
+  text-align: left;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  @media #{$medium} {
+    grid-template-columns: 28rem;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
       "text-container"
       "buttons-container"
       "project-mockup"
       "technologies-container";
-      text-align: center;
-      row-gap: 1rem;
-    }
-    @media #{$small}{
-      grid-template-columns: 98%
-    }
+    text-align: center;
+    row-gap: 1rem;
   }
+  @media #{$small} {
+    grid-template-columns: 98%;
+  }
+}
 </style>

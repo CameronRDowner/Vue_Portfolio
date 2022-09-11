@@ -1,19 +1,21 @@
 <template lang="html">
-
   <div class="job-entry-wrapper">
-    <img :src="companyLogoPath" alt="business logo" width="50" height="50">
+    <img :src="companyLogoPath" alt="business logo" width="50" height="50" />
     <div>
-      <div class="position-text">{{job.position}}</div>
-      <div>{{job.employer}}<span v-if="job.type"> - {{job.type}}</span></div>
-      <div class="light-text">{{employmentDates}}</div>
-      <div class="light-text">{{job.location}}</div>
-      <div v-if="job.employmentSummary">{{job.employmentSummary}}</div>
+      <div class="position-text">{{ job.position }}</div>
+      <div>
+        {{ job.employer }}<span v-if="job.type"> - {{ job.type }}</span>
+      </div>
+      <div class="light-text">{{ employmentDates }}</div>
+      <div class="light-text">{{ job.location }}</div>
+      <div v-if="job.employmentSummary">{{ job.employmentSummary }}</div>
       <ul class="duties-list">
-        <li v-for="duty in job.duties" v-bind:key="job.duties.indexOf(duty)">↳{{duty}}</li>
+        <li v-for="duty in job.duties" v-bind:key="job.duties.indexOf(duty)">
+          -{{ duty }}
+        </li>
       </ul>
     </div>
   </div>
-
 </template>
 
 <script lang="js">
@@ -47,38 +49,36 @@
 
     }
 }
-
-
 </script>
 
 <style scoped lang="scss">
-@import '../assets/sass/_variables.scss';
-  .job-entry-wrapper {
-    background-color: $about-foreground;
-    box-shadow: 7px 11px 21px 0px rgba(0,0,0,0.45);
-    width: 100%;
-    padding: 2em;
-    color: $about-text;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.5em;
-    box-sizing: border-box;
-  }
+@import "../assets/sass/_variables.scss";
+.job-entry-wrapper {
+  background-color: $about-foreground;
+  box-shadow: 7px 11px 21px 0px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  padding: 2em;
+  color: $about-text;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5em;
+  box-sizing: border-box;
+}
 
-  .position-text{
-    font-weight: 900;
-  }
+.position-text {
+  font-weight: 900;
+}
 
-  .light-text{
-    color: darken($about-text, 15%);
-    font-size: 0.8rem;
-  }
+.light-text {
+  color: darken($about-text, 15%);
+  font-size: 0.8rem;
+}
 
-  .duties-list{
-    margin-top: 0.5em;
-    font-size: 0.9rem;
-  }
+.duties-list {
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+}
 </style>

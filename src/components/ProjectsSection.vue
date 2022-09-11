@@ -26,6 +26,32 @@
       return {
         projectList: [
           {
+            id: 5,
+            name: "Hackit FE & BE",
+            mockupFileName: "project_coming_soon.jpg",
+            description: "A red team cybersecurity daily challenge game for practicing hacks. Front end is utilizing React and TypeScript, back end is a rest api written in Django.",
+            githubUrl: null,
+            liveUrl: null,
+            technologiesList: [
+              {
+                id: 0,
+                deviconClasses: "devicon-react-original colored"
+              },
+              {
+                id: 1,
+                deviconClasses: "devicon-typescript-plain colored"
+              },
+              {
+                id: 2,
+                deviconClasses: "devicon-django-plain colored"
+              },
+              {
+                id: 3,
+                deviconClasses: "devicon-sqlite-plain colored"
+              },
+            ]
+          },
+          {
             id: 4,
             name: "Items GraphQL API",
             mockupFileName: "item_api.png",

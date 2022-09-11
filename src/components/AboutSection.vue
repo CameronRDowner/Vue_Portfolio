@@ -89,9 +89,11 @@
             location: 'Northport, NY',
             duties: [
               'Developed features for large scale production app built in React and TypeScript',
-              'Created and utilized many Apollo GraphQL queries and mutations',
+              'Built out many Apollo GraphQL queries and mutations',
               'Improved UI performance by leveraging React Virtualized, query caching, and Styled Components',
-              'Assisted with Agile Backlog Grooming in providing effort estimates and technical expertise',
+              'Assisted with Agile Backlog Grooming in providing story point estimates and technical expertise',
+              'Uncovered performance bottlenecks with React Performance Profiler',
+              'Utilized MUI for UI build and theming',
             ]
           },
           {
