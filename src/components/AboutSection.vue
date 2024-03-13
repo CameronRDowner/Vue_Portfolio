@@ -27,15 +27,9 @@
 
 <script lang="js">
   import ColorVariables from "../assets/sass/_variables.scss";
-  import RadioButtonCluster from './RadioButtonCluster.vue';
-  import JobEntry from './JobEntry.vue';
   export default  {
     name: 'about-section',
     props: [],
-    components: {
-      RadioButtonCluster,
-      JobEntry
-    },
     created () {
       this.setInitialContent();
     },
