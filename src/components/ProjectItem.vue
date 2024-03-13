@@ -30,6 +30,11 @@
           :button="liveButton"
           v-on:buttonClicked="handleOpenProjectLive()"
         />
+        <Button
+          v-if="project.productPage"
+          :button="productWebsiteButton"
+          v-on:buttonClicked="handleOpenProductWebsite()"
+        />
       </div>
       <ul class="project-technologies-container flex-container-row">
         <TechnologyIcon
@@ -86,6 +91,14 @@
           padding: '0.8rem 1.2rem',
           buttonColor: ColorVariables.primary,
           text: "View Live"
+        },
+        productWebsiteButton:{
+          iconClasses: "fas fa-external-link-alt",
+          contentColor: "white",
+          contentSize: '1.1rem',
+          padding: '0.8rem 1.2rem',
+          buttonColor: ColorVariables.primary,
+          text: "View Product Page"
         }
 
       }
@@ -106,6 +119,9 @@
         else{
           this.buttonHelper.openExternalLink(this.project.githubUrl);
         }
+      },
+      handleOpenProductWebsite: function(){
+          this.buttonHelper.openExternalLink(this.project.productPage);
       },
       handleProjectVisibility : function (isVisible){
         if(isVisible){

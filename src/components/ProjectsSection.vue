@@ -27,11 +27,11 @@
         projectList: [
           {
             id: 5,
-            name: "Hackit FE & BE",
-            mockupFileName: "project_coming_soon.jpg",
-            description: "A red team cybersecurity daily challenge game for practicing hacks. Front end is utilizing React and TypeScript, back end is a rest api written in Django.",
+            name: "Rogue Arena",
+            mockupFileName: "rogue_arena.png",
+            description: "An all in one cyber range and e-learning platform for cyber security professionals. Features internal window management system for displaying content, virtual environment management, support for course content, and full controls for viewing and interacting with virtual machines.",
             githubUrl: null,
-            liveUrl: null,
+            productPage: "https://www.roguelabs.io/",
             technologiesList: [
               {
                 id: 0,
@@ -43,11 +43,11 @@
               },
               {
                 id: 2,
-                deviconClasses: "devicon-django-plain colored"
+                deviconClasses: "devicon-postgres-plain colored"
               },
               {
                 id: 3,
-                deviconClasses: "devicon-sqlite-plain colored"
+                deviconClasses: "devicon-nodejs-plain colored"
               },
             ]
           },

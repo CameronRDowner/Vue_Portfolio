@@ -3,19 +3,13 @@
     id="about"
     v-observe-visibility="{
       callback: triggerAboutAnimations,
-      once: false,
+      once: true,
       intersection: { threshold: 0.1 },
     }"
   >
     <h1 id="about-title">About Me</h1>
-    <div id="about-radio-buttons" class="hidden">
-      <RadioButtonCluster
-        :radioButtonCluster="radioButtonCluster"
-        v-on:radioButtonToggled="handleRadioButtonClick($event)"
-      />
-    </div>
     <div id="about-content-wrapper" class="hidden">
-      <div v-if="contentInView === 'Coding Journey'" id="about-summary-wrapper">
+      <div id="about-summary-wrapper">
         <div
           class="about-content-text responsive-padding responsive-margin hidden scale-in"
         >
@@ -26,20 +20,6 @@
             {{ paragraph }}
           </p>
         </div>
-      </div>
-      <div
-        v-else-if="contentInView === 'Employment History'"
-        id="about-jobs-wrapper"
-      >
-        <ul class="about-jobs-list responsive-margin scale-in-vert">
-          <li
-            v-for="job in employmentHistory"
-            v-bind:key="job.id"
-            class="about-job-item"
-          >
-            <JobEntry :job="job" />
-          </li>
-        </ul>
       </div>
     </div>
   </section>
@@ -77,7 +57,7 @@
           ],
         },
         codingJourney: {
-          paragraphList: ["I've been involved in IT support for many years. When I started my skills quickly progressed from just minor knowledge, to having the ability to work with, repair, and troubleshoot a wide variety of tech. Even though I developed this knack for IT support, it wasn't something I felt passionate about.", "Fast forward to a few years ago -after completing a couple of challenges in my first web development course, I immediately knew that this was the occupation for me. Not only was coding a gratifying analytical challenge, but also an outlet for my artsy-creative side that I never got to use in IT; needless to say, I was sold. And since then, my passion has only grown with each line of code written and new technology learned.", "One of my favorite things about front end work is being able to see the visual result of the code I write. I love bringing prototypes to life and making those key tweaks that really make the page stand out. Its not just the visual aspect that I relish, but also the problem solving process of taking back end data and figuring out how to organize it and present it in the most efficient way possible."],
+          paragraphList: ["I've been involved in IT support for many years. When I started my skills quickly progressed from just minor knowledge, to having the ability to work with, repair, and troubleshoot a wide variety of tech. Even though I developed this knack for IT support, it wasn't something I felt passionate about.", "Fast forward to a few years ago -after completing a couple of challenges in my first web development course, I immediately knew that this was the occupation for me. Not only was coding a gratifying analytical challenge, but also an outlet for my artsy-creative side that I never got to use in IT; needless to say, I was sold. And since then, my passion has only grown with each line of code written and new technology learned."],
         },
         employmentHistory: [
           {
@@ -175,7 +155,6 @@
 
       triggerAboutAnimations: function(aboutSectionVisible){
         if(aboutSectionVisible){
-          document.getElementById('about-radio-buttons').classList.add('slide-in-right');
           document.getElementById('about-content-wrapper').classList.add('scale-in');
 
         }
@@ -196,7 +175,7 @@
   h1 {
     color: white;
     text-align: center;
-    margin: 0;
+    margin-bottom: 25px;
   }
   p {
     line-height: 2rem;
